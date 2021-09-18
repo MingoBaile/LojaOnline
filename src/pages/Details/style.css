@@ -134,9 +134,10 @@
 .descrition>.carac>.tab-horizontal>.tab-head{
     width:100%;
     border-bottom:2px solid var(--color-neutral-1);
-    height:var(--scale-big);
+    height:auto;
     display: flex;
     flex-flow:row nowrap;
+    user-select: none;
 }
 .descrition>.carac>.tab-horizontal>.tab-head>a{
     text-decoration: none;
@@ -149,6 +150,7 @@
 .descrition>.carac>.tab-horizontal>.tab-head>a:hover,
 .descrition>.carac>.tab-horizontal>.tab-head>a.active:hover{
     color:var(--color-primary-1);
+    cursor:pointer;
 }
 
 .descrition>.carac>.tab-horizontal>.tab-head>a.active{
@@ -176,12 +178,15 @@
 
 .descrition>.carac>.tab-horizontal>.tab-body>.tab-content{
     display:none;
+    height:0;
+    opacity:0;
 }
 
 .descrition>.carac>.tab-horizontal>.tab-body>.tab-content.active{
     display:flex;
     flex-flow:column nowrap;
     gap:var(--scale-xlarge);
+    animation: slide-down 700ms both ease-in-out;
 }
 
 .descrition>.carac>.tab-horizontal>.tab-body>.tab-content>p{
