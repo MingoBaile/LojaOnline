@@ -4,13 +4,265 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartunings | Home</title>
+    <title>Cartunings | Listagem categoria</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../../scripts/index.js" defer></script>
+    <script src="../../components/Navigation/index.js" defer></script>
 </head>
-<body class="home">
-
-
-<script src="./script.js"></script>
+<body>
+    <navigation-top >
+        <a href="#home" slot="brand">
+            <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
+        </a>
+        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
+        <div slot="actions" class="actions flex gap-3 center">
+            <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="user"></i></button>
+            <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></button>
+            <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></button>
+        </div>
+    </navigation-top>
+    <main>
+        <div class="wrapper-container">
+            <section class="flex row  gap-3 justify-between">
+               <a hraf="" class="categoira">
+                    <label>Kits turbos</label>
+                    <i data-feather="arrow-right"></i>
+                    <img src="../../assets/img-products/categorias/categoria-kit.jpg" alt="Categoria de kits turbo" title="kit turbos">
+               </a>
+               <a hraf="" class="categoira">
+                    <label>Kits turbos</label>
+                    <i data-feather="arrow-right"></i>
+                    <img src="../../assets/img-products/categorias/categoria-farou.jpg" alt="Categoria de kits turbo" title="kit turbos">
+                </a>
+                <a hraf="" class="categoira">
+                    <label>Kits turbos</label>
+                    <i data-feather="arrow-right"></i>
+                    <img src="../../assets/img-products/categorias/categoria-roda.jpg" alt="Categoria de kits turbo" title="kit turbos">
+                </a>
+                <a hraf="" class="categoira">
+                    <label>Kits turbos</label>
+                    <i data-feather="arrow-right"></i>
+                    <img src="../../assets/img-products/categorias/categoria-turbo.jpg" alt="Categoria de kits turbo" title="kit turbos">
+                </a>
+            </section>
+            <h4 class="heading">Kits turbos</h4>
+            <section class="list-products">
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
+                        <div class="galeria hover-only">
+                            <span>
+                                <img src="../../assets/img-products/car-opala-1.jpg" alt="">
+                            </span>
+                            <span>
+                                <img src="../../assets/img-products/car-opala-2.jpg" alt="">
+                            </span>
+                            <span>
+                                <img src="../../assets/img-products/car-opala-3.jpg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Opala SS - 6 cilindros </h5>
+                            <p>Opala SS 1979 Original 2.5...</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>500,00</small>
+                                    <strong class="price">345,00</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-lancer-principal.jpg" alt="">
+                        <div class="galeria hover-only"></div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Fiat 147 - 4 cilindros</h5>
+                            <p>Kit Retifica Fiat 147....</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>2.100,00</small>
+                                    <strong class="price">1.899,00</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-fiat147-principal.jpg" alt="">
+                        <div class="galeria hover-only"></div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Mitsubishi Lancer Gt 2016</h5>
+                            <p>Kit completo Mitsubishi Lancer Gt 2016...</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>4.000,00</small>
+                                    <strong class="price">2.999,99</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-ferrari-principal.jpg" alt="">
+                        <div class="galeria hover-only">
+                            <span>
+                                <img src="../../assets/img-products/car-ferrari-principal.jpg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Ferrari 488 Gtb</h5>
+                            <p>3.9 V8 TURBO GASOLINA F1-DCT ...</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>7.200,00</small>
+                                    <strong class="price">4.499,99</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
+                        <div class="galeria hover-only">
+                            <span>
+                                <img src="../../assets/img-products/car-opala-1.jpg" alt="">
+                            </span>
+                            <span>
+                                <img src="../../assets/img-products/car-opala-2.jpg" alt="">
+                            </span>
+                            <span>
+                                <img src="../../assets/img-products/car-opala-3.jpg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Opala SS - 6 cilindros </h5>
+                            <p>Opala SS 1979 Original 2.5...</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>500,00</small>
+                                    <strong class="price">345,00</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product">
+                    <div class="picture">
+                        <span class="flex row justify-end">
+                            <button class="px-3"><i data-feather="heart"></i></button>
+                        </span>
+                        <img src="../../assets/img-products/car-lancer-principal.jpg" alt="">
+                        <div class="galeria hover-only"></div>
+                    </div>
+                    <div class="body">
+                        <a class="information" href="#product">
+                            <h5>Kit Fiat 147 - 4 cilindros</h5>
+                            <p>Kit Retifica Fiat 147....</p>
+                        </a>
+                        <div class="value hover-only">
+                            <span class="flex row  align-center gap-3">
+                                <i data-feather="dollar-sign"></i>
+                                <span class="flex column gap-1 align-start values">
+                                    <small>2.100,00</small>
+                                    <strong class="price">1.899,00</strong>
+                                </span>
+                            </span>
+                            <div class="actions-card">
+                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="w-100 pb-4">
+            <button class="w-100">Continuar carregando</button>
+        </footer>
+    </main>
+    <nav class="navigation-bottom">
+        <span>
+            <a href="http://"><i class="icon-1" data-feather="home"></i></a>
+        </span>
+        <span>
+            <a href="http://"><i class="icon-1" data-feather="search"></i></a>
+        </span>
+        <span>
+            <a href="http://"><i class="icon-1" data-feather="heart"></i></a>
+        </span>
+        <span>
+            <a href="http://"><i class="icon-1" data-feather="shopping-cart"></i></a>
+        </span>
+        <span>
+            <a href="http://"><i class="icon-1" data-feather="user"></i></a>
+        </span>
+    </nav>
+<script src="./script.js" defer></script>
 </body>
 </html>
