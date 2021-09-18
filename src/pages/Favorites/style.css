@@ -36,12 +36,119 @@ nav .nav-container{
 
     border-radius:var(--radius-small);
     border:1px solid var(--color-neutral-1);
-    background:var(--color-principal-light);
+
 }
 
-.wrapper-container>.heading{
+div.cabecalhofavoritos>.heading{
     color:var(--color-neutral-4);
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     gap:var(--scale-large);
+
+}
+.cabecalhofavoritos{
+    width:var(--width-main);
+}
+
+.list-products > .card-product{
+    background:var(--color-principal-light);
+    border-radius:var(--radius-small);
+    overflow: hidden;
+
+    display: flex;
+    gap: var(--scale-xlarge);
+    padding: var(--scale-large);
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-product>.body{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap:var(--scale-large);
+    float:right;
+}
+
+.wrapper-container>.list-products.list>.card-product>.body>.information{
+    width: 100%;
+}
+
+.list-products > .card-product>.body>.information{
+    display: flex;
+    flex-direction:column;
+    text-decoration: none;
+}
+
+.list-products > .card-product>.body>.information h5{
+    color:var(--color-neutral-5);
+}
+
+.list-products > .card-product>.body>.information p{
+    color:var(--color-neutral-3);
+}
+
+.wrapper-container>.list-products>.card-product>.body>.value>.actions-card{
+    display: none;
+}
+
+.actions-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:var(--scale-medium);
+}
+
+.picture>img{
+    width: 120px;
+    object-fit: cover;
+    border:2px solid var(--color-principal-dark);
+    cursor: pointer;
+    border-radius: var(--scale-small);
+}
+
+.picture>.galeria>span>img{
+    width:var(--scale-big);
+    height:var(--scale-big);
+    border-radius: var(--radius-small);
+    border:1px solid var(--color-neutral-3);
+}
+
+.wrapper-container>.list-products.list>.card-product>.picture>img{
+    width: 128px;
+    border-radius:var(--radius-small);
+    border:1px solid var(--color-neutral-3);
+}
+
+.detalhes{
+    white-space: nowrap;
+}
+
+.list-products>.card-product>.value, .list-products{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--scale-large);
+}
+
+@media only screen and (max-width: 1199.98px){
+
+}
+@media only screen and (max-width: 991.98px){
+    main{
+        width:100%;
+        padding: var(--scale-large);
+    }
+}
+@media only screen and (max-width:767.98px){
+
+}
+@media only screen and (max-width:575.98px){
+
 }
