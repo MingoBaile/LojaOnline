@@ -15,40 +15,77 @@
     margin-bottom:var(--scale-xxlarge);
 }
 
+.list-categorias{
+    display:flex;
+    flex-flow:row nowrap;
+    gap:var(--scale-large);
+    place-content: between center;
+    overflow-x: auto;
+}
+
 .categoira{
+    flex-grow: 1;
     position:relative;
-    width:100%;
+    min-width:240px;
     height:160px;
     overflow:hidden;
     padding:var(--scale-large);
     border-radius:var(--radius-small);
     cursor:pointer;
-}
-.categoira>svg{
-    display:block;
-    position:absolute;
-    z-index:2;
-    bottom:var(--scale-large);
-    color:var(--color-principal-light);
-    right:var(--scale-large);
+    user-select: none;
 }
 
+.categoira::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    width:100%;
+    height:100%;
+    background:linear-gradient(180deg, rgba(0,0,0,.8), rgba(255,0,0,0));
+}
+
+.categoira>.hover-only{
+    position:absolute;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: flex-end;
+    gap:var(--scale-medium);
+    padding:var(--scale-large);
+    width: 100%;
+    height:0;
+    bottom:0;
+    right:0;
+    z-index:2;
+    
+    opacity:0;
+    color:var(--color-principal-light);
+    background:linear-gradient(0deg, rgba(0,0,0,.8), rgba(255,0,0,0));
+}
+
+.categoira:hover .hover-only{
+    animation: slide-down .400s both ease-in-out .100s;
+}
+.categoira:hover img{
+    filter: grayscale(0%);
+}
 .categoira>label{
     position:relative;
-    z-index:1;
+    z-index:3;
 
     font-size:var(--font-label);
     color:var(--color-principal-light);
 }
 .categoira>img{
     width:100%;
+    height:100%;
     position:absolute;
     top:0;
     left:0;
     z-index:0;
     object-fit: cover;
-    background:linear-gradient(0deg, rgba(0,0,0,.8), rgba(255,0,0,0));
-    filter: grayscale(79%);
+    filter: grayscale(80%);
 }
 
 /* Media Desktops */
@@ -79,6 +116,9 @@
     navigation-top .actions,navigation-top input{
         display:none;
     }
+    .list-categorias{
+        flex-direction:row !important;
+    }
 }
 
 /* Media Smartphones */
@@ -88,6 +128,21 @@
     }
     .wrapper-container>section>.lead-actions>button:nth-child(1){
         display:none;
+    }
+    .list-categorias{
+        flex-direction:row !important;
+        padding-bottom:var(--scale-medium);
+    }
+    .list-categorias>.categoira{
+        min-width:240px;
+        height:112px;
+    }
+    .categoira>.hover-only{
+        opacity: 1;
+        height:auto;
+    }
+    .wrapper-container > .list-products{
+        grid-template-columns: 1fr;
     }
 }
 
