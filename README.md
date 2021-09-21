@@ -6,7 +6,7 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] [Mobile](https://www.figma.com/proto/Flot7v1pDSWhWgHybwJ387/Store-On?page-id=2%3A7&node-id=111%3A6577&viewport=241%2C48%2C0.21&scaling=scale-down&starting-point-node-id=111%3A6577)
 
 ## Check List Screens
-- [ ] Home
+- [X] Home
 - [X] Listagem categoria
 - [X] Listagem categoria bloco
 - [ ] Login
@@ -34,8 +34,6 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 
 ```sh
 cd src
-yarn dev
-node app
 ```
 
 ## Colaboradores do projeto
