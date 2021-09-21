@@ -116,8 +116,8 @@
     navigation-top .actions,navigation-top input{
         display:none;
     }
-    .list-categorias{
-        flex-direction:row !important;
+    .wrapper-container>.list-categorias{
+        flex-direction:row;
     }
 }
 
@@ -129,8 +129,8 @@
     .wrapper-container>section>.lead-actions>button:nth-child(1){
         display:none;
     }
-    .list-categorias{
-        flex-direction:row !important;
+    .wrapper-container>.list-categorias{
+        flex-direction:row;
         padding-bottom:var(--scale-medium);
     }
     .list-categorias>.categoira{
