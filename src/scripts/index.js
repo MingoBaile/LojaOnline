@@ -75,4 +75,13 @@ window.onload = function () {
     }
 
     tableResize();
-};
+
+    // https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
+    const scrollContainer = document.querySelector('.list-categorias');
+
+    scrollContainer.addEventListener('wheel', (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+
+}
