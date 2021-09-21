@@ -37,15 +37,15 @@ window.onload = function () {
     }
 
     function tableResize() {
-        var thElm;
-        var startOffset;
+        let thElm;
+        let startOffset;
     
         Array.prototype.forEach.call(
           document.querySelectorAll("table th"),
           function (th) {
             th.style.position = 'relative';
     
-            var grip = document.createElement('div');
+            let grip = document.createElement('div');
             grip.innerHTML = "&nbsp;";
             grip.style.top = 0;
             grip.style.height = '100%';
@@ -73,6 +73,6 @@ window.onload = function () {
             thElm = undefined;
         });
     }
-    
+
     tableResize();
 };
