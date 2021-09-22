@@ -69,7 +69,7 @@ div.cabecalhofavoritos>.heading{
     justify-content: center;
 }
 
-footer{
+span{
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
