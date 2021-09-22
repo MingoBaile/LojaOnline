@@ -217,7 +217,6 @@ select {
 	padding: 0.5rem 1rem;
 	border: 1px solid #d9d9d9;
 	border-radius: 0.2rem;
-	margin: var(--scale-medium);
 }
 
 input[type="search"]{
