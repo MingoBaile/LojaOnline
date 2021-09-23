@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartunings | Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="../../scripts/index.js" defer></script>
+    <script src="../../components/Navigation/index.js" defer></script>
+</head>
+<body>
+    <navigation-top style="width: 100%;">
+        <a href="#home" slot="brand">
+            <img src="../../assets/brand-white.svg" alt="Cartunings logo" height="40">
+        </a>
+        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100">
+        <div slot="actions" class="actions flex gap-3 center">
+            <button class="p-3 ghost-white r-circle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user icon-1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+            <button class="p-3 ghost-white r-circle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart icon-1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+            <button class="p-3 ghost-white r-circle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart icon-1"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></button>
+        </div>
+    </navigation-top>
+
+    <main>
+        <div class="wrapper-container">
+             <h4 class="heading"><!--<i class="icon-3" data-feather="check"></i>-->Para continuar precisamos de um e-mail.</h4>
+             <h5 class="headingdesc"> Caso nao queira se cadastrar, você pode só informar o e-mail!</h5> 
+            
+            <section>
+                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-100"  />
+            </section>
+            <p align="right">
+                <button class="primary w-15 flex justify-between align-center">
+                    Continuar
+                    
+                </button>
+            </p>
+
+        </div>
+        <section class="container grid grid-template-columns-3">
+            <div class="item">
+                <h4 class="heading">Acessar a conta</h4>
+                <h5 class="headingdesc"> Entre na conta para continuar a venda</h5>
+                <br>
+                <p > E-mail</p>
+                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-100"  />
+                <br>
+                <p>Password</p>
+                <input type="password"  placeholder="Digite sua senha aqui." slot="search" class="w-100"  />
+             </div>
+             <div class="headingitem2">
+                <h4 class="headingitem2">Não tem Cadastro</h4>
+                <h5 class="headingitem2"> Faça cadastro para continuar a venda.</h5>
+                <br>
+                <div class="headingitem2">Nome</div>
+                <input  type="text"  placeholder="Digite seu e-mail aqui." slot="search" class="w-100" />
+                <br>
+                <div class="headingitem2">Nome</div>
+                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-100"  />
+                <br>
+                <div class="headingitem2">Nome</div>
+                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-100"  />
+
+            </div>
+            
+            
+        </section>
+        </div>
+
+
+        <!-- <div class="login">
+            <div class="wrapper-container">
+                <table>
+                    <tr>
+                        <td>
+                            <h4 class="heading">Acessar a conta</h4>
+                            <h5 class="headingdesc"> Entre na conta para continuar a venda</h5> 
+                            <section>
+                                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-50"  />
+                            </section>
+                            <section>
+                                <input type="password"  placeholder="Digite sua senha aqui." slot="search" class="w-50"  />
+                                <p align="right">
+                            </section>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                            <button w-15>Esqueci a senha<i data-feather="log-in"></i></button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>   
+                                                <button class="primary w-15 flex justify-between align-center">
+                                                    Continuar                            
+                                                </button>
+                                            </div>
+                                        </td>       
+                                    </tr>
+                                </table>
+                            </div>
+                        
+                        </td>
+            </div>
+                        <td>    
+                            <div>teste</div>
+                        </td>
+                    </tr>   
+                </table> -->
+            
+        </div>
+
+        
+        <footer>
+            
+        </footer>
+    </main>
+<script src="./script.js" defer></script>
+</body>
+</html>
+
