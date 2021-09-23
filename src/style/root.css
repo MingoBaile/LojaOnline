@@ -216,6 +216,7 @@ select {
 	transition: all 400ms ease-in-out;
 	padding: 0.5rem 1rem;
 	border: 1px solid #d9d9d9;
+	min-height: var(--scale-xxbig);
 	border-radius: 0.2rem;
 }
 
