@@ -23,9 +23,9 @@ input[type=password] {
 .grid {
     display: grid;
 }
-p {
-    line-height:2 ;
-    padding-left: 10px;    
+
+.sub-heading{
+    color:var(--color-neutral-2);
 }
 
 
@@ -51,17 +51,15 @@ nav .nav-container{
     justify-content: space-between;
     align-items: center;
 }
-.headingitem2{
-    padding-left: 50px ;
-}
-
 
 .wrapper-container{
-    margin-bottom:var(--scale-large);
-    padding:var(--scale-large);
     display:flex;
     flex-direction: column;
-    gap:var(--scale-xxlarge);
+    gap:var(--scale-large);
+}
+
+.wrapper-container * section,.wrapper-container>section{
+    padding:var(--scale-large);
 
     border-radius:var(--radius-small);
     border:1px solid var(--color-neutral-1);
@@ -70,27 +68,10 @@ nav .nav-container{
 
 
 .wrapper-container>.heading{
-    color: rgb(160, 156, 156)
+    color: var(--color-neutral-2);
     display:flex;
     align-items:center;
     gap:var(--scale-large);
-}
-
-.wrapper-container>.headingdesc{
-    color:var(--color-neutral-4);
-    display:flex;
-    align-items:center;
-    gap:var(--scale-large);
-}
-
-.wrapper-container > section{
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
-    gap:var(--scale-large);
-    /* @extend gap-4; */
-    /* @apply --gap-4; */
-
 }
 
 footer{

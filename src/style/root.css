@@ -53,8 +53,25 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: var(--font-primary);
 	line-height: var(--font-line-height-headline);
 	margin: 0;
+}
+
+.heading{
+	font-family: var(--font-primary);
+}
+
+.sub-heading{
+	font-family: var(--font-accent);
+	font-size:var(--font-paragraph);
+	line-height: var(--font-line-height-headline);
+	font-weight: var(--font-weight-subbold);
+	color:var(--color-neutral-3);
+}
+
+p,small,strong,a{
+	font-family: var(--font-accent);
 }
 
 h1 {
@@ -78,7 +95,7 @@ h6 {
 
 label{
 	font-size:var(--font-label);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-regular);
 	line-height: var(--font-line-base);
 	color:var(--color-neutral-3);
 }
@@ -232,6 +249,21 @@ input[type="search"]::placeholder{
 input:hover,
 select:hover {
 	background: var(--color-neutral-1);
+}
+
+.input-group{
+	display: flex;
+	flex-flow:column nowrap;
+	gap:var(--scale-xsmall);
+}
+.input-group>label{
+	font-weight: var(--font-weight-regular);
+	font-size:var(--font-lead);
+	color:var(--color-neutral-3);
+}
+.input-group>input{
+	font-weight: var(--font-weight-regular);
+	font-size:var(--font-label);
 }
 
 textarea {

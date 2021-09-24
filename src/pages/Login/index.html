@@ -24,40 +24,71 @@
 
     <main>
         <div class="wrapper-container">
-             <h4 class="heading">Para continuar precisamos de um e-mail.</h4>
-             <p class="sub-heading"> Caso nao queira se cadastrar, você pode só informar o e-mail!</p> 
-            <section>
-                <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"  />
+            <section class="flex column gap-4">
+                <header class="w-100 flex column gap-2">
+                    <h4 class="heading">Para continuar precisamos de um e-mail.</h4>
+                    <h6 class="w-100 sub-heading">Caso nao queira se cadastrar, você pode só informar o e-mail!</h6> 
+                </header>
+                <div class="body w-100">
+                    <div class="input-group">
+                        <label>E-mail</label>
+                        <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"/>
+                    </div>
+                </div>
+                <footer class="w-100 flex justify-end">
+                    <button class="primary">Continuar<i data-feather="arrow-right"></i></button>
+                </footer>
             </section>
-            <button class="primary">
-                Continuar
-            </button>
-        </div>
-        <section class="container grid grid-template-columns-3">
-            <div class="item">
-                <h4 class="heading">Acessar a conta</h4>
-                <h5 class="headingdesc"> Entre na conta para continuar a venda</h5>
-                <br>
-                <p > E-mail</p>
-                <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"  />
-                <br>
-                <p>Password</p>
-                <input type="password"  placeholder="Digite sua senha aqui." class="w-100"  />
-             </div>
-             <div class="headingitem2">
-                <h4 class="headingitem2">Não tem Cadastro</h4>
-                <h5 class="headingitem2"> Faça cadastro para continuar a venda.</h5>
-                <br>
-                <div class="headingitem2">Nome</div>
-                <input  type="text"  placeholder="Digite seu e-mail aqui." class="w-100" />
-                <br>
-                <div class="headingitem2">Nome</div>
-                <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"  />
-                <br>
-                <div class="headingitem2">Nome</div>
-                <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"  />
+            <div class="flex row gap-5">
+                <section class="flex column w-100 gap-4">
+                    <header class="w-100 flex column gap-2">
+                        <h4 class="heading">Acessar a conta</h4>
+                        <h6 class="w-100 sub-heading">Entre na conta para continuar a venda</h6> 
+                    </header>
+                    <div class="body w-100 flex column gap-3">
+                        <div class="input-group w-100">
+                            <label>E-mail</label>
+                            <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"/>
+                        </div>
+                        <div class="input-group w-100">
+                            <label>Senha</label>
+                            <input type="password"  placeholder="*********" class="w-100"/>
+                        </div>
+                    </div>
+                    <footer class="w-100 flex justify-end gap-3">
+                        <button class="ghost">Esqueci a senha</button>
+                        <button class="primary">Logar<i data-feather="log-in"></i></button>
+                    </footer>
+                </section>
+                <section class="flex column w-100 gap-4">
+                    <header class="w-100 flex column gap-2">
+                        <h4 class="heading">Não tem Cadastro</h4>
+                        <h6 class="w-100 sub-heading">Faça cadastro para continuar a venda.</h6> 
+                    </header>
+                    <div class="body w-100 flex column gap-3">
+                        <div class="input-group w-100">
+                            <label>Nome</label>
+                            <input type="text"  placeholder="João Oliveira" class="w-100"/>
+                        </div>
+                        <div class="input-group w-100">
+                            <label>E-mail</label>
+                            <input type="email"  placeholder="joao@gmail.com" class="w-100"/>
+                        </div>
+                        <div class="input-group w-100">
+                            <label>Senha</label>
+                            <input type="password"  placeholder="************" class="w-100"/>
+                        </div>
+                        <div class="input-group w-100">
+                            <label>Confirme a senha</label>
+                            <input type="password"  placeholder="************" class="w-100"/>
+                        </div>
+                    </div>
+                    <footer class="w-100 flex justify-end">
+                        <button class="primary">Cadastar<i data-feather="arrow-right"></i></button>
+                    </footer>
+                </section>
             </div>
-        </section>
+        </div>
         </div>
 
 
@@ -67,7 +98,7 @@
                     <tr>
                         <td>
                             <h4 class="heading">Acessar a conta</h4>
-                            <h5 class="headingdesc"> Entre na conta para continuar a venda</h5> 
+                            <h6 class="headingdesc"> Entre na conta para continuar a venda</h5> 
                             <section>
                                 <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-50"  />
                             </section>
