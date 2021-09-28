@@ -100,7 +100,7 @@ label{
 	color:var(--color-neutral-3);
 }
 
-button {
+button, a.btn{
 	padding: var(--scale-medium) var(--scale-xxlarge);
 	display: flex;
 	gap:var(--scale-medium);
@@ -115,6 +115,7 @@ button {
 	font-size: var(--font-label);
 	line-height: var(--font-line-base);
 	font-weight: 600;
+	text-decoration: none;
 	color: var(--color-neutral-5);
 	border-radius: 4px;
 	position: relative;
@@ -198,13 +199,13 @@ button.ghost:hover {
 	border: 2px solid var(--color-primary-2);
 }
 
-button.ghost-white {
+button.ghost-white, a.btn.ghost-white {
 	background: transparent;
 	color: var(--color-principal-light);
 	border: none;
 }
 
-button.ghost-white:hover {
+button.ghost-white:hover, a.btn.ghost-white:hover {
 	color: var(--color-primary-2);
 	background: rgba(255,255,255,0.04);
 }

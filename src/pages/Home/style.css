@@ -1,5 +1,5 @@
 @import '../../style/root.css';
-@import '../ListagemCategoria/style.css';
+@import '../List/style.css';
 
 .home{
     background:var(--color-feedback-warning-3);
@@ -33,6 +33,7 @@
     border-radius:var(--radius-small);
     cursor:pointer;
     user-select: none;
+    text-decoration: none;
 }
 
 .categoira::after{

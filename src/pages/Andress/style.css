@@ -49,7 +49,7 @@ nav .nav-container{
 }
 
 .cabecalhostatus{
-    background-color: var(--color-neutral-1);
+    user-select: none;
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -164,7 +164,6 @@ nav .nav-container{
 .dadd-cads{
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--scale-large);
 }
 
 .dadd-cads>input{
@@ -177,7 +176,6 @@ nav .nav-container{
     justify-content: flex-end;
     flex-direction: row;
     gap:var(--scale-large);
-    float:right;
 }
 
 .details-cards{

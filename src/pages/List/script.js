@@ -22,4 +22,10 @@ window.onload = function(){
     imgGaleria.forEach(item=>{
         item.addEventListener('click',swap);
     });
+
+    const btnHome = document.querySelector('.btnHome');
+
+    btnHome.addEventListener('click',()=>{
+        document.location = 'https://5500-maroon-marsupial-yki2sr1z.ws-us18.gitpod.io/src/pages/Home/index.html';
+    })
 }
