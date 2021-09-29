@@ -13,14 +13,18 @@ imgGaleria.forEach(item=>{
 const onVibrate = document.querySelector('.onVibrate');
 let counterRange = 0;
 
-onVibrate.addEventListener('mousedown',vibrate);
-onVibrate.addEventListener('touchstart',vibrate);
-
 const vibrate = (ms)=>{
     if(counterRange>=5){
+        window.navigator.vibrate(ms | 1000);
+        counterRange = 0;
+    }else if(ms.type =='touchstart'){
         window.navigator.vibrate(ms | 1000);
         counterRange = 0;
     }else{
         counterRange++;
     }
 }
+
+onVibrate.addEventListener('click',vibrate);
+onVibrate.addEventListener('touchstart',vibrate);
+
