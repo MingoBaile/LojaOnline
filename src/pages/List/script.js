@@ -28,4 +28,4 @@ window.onload = function(){
     btnHome.addEventListener('click',()=>{
         document.location = '../Home/index.html';
     })
-}();
+}
