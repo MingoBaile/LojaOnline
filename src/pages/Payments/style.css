@@ -33,36 +33,6 @@ nav .nav-container{
     align-items: center;
 }
 
-
-.navigation-bottom{
-    width: 100%;
-    padding:0 var(--scale-big);
-    height:var(--scale-xxbig);
-    position: fixed;
-    z-index:1091;
-    bottom:0;
-    left:0;
-    display: none;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap:var(--scale-large);
-}
-
-.navigation-bottom>span{
-    height:100%;
-    display: flex;
-    place-content: center center;
-}
-
-.navigation-bottom>span>a{
-    display: flex;
-    justify-content: center;
-    padding:var(--scale-small) var(--scale-large);
-    align-items: center;
-    height:100%;
-    color:var(--color-principal-light);
-}
-
 .wrapper-container{
     width: 100%;
     margin-bottom:var(--scale-large);
