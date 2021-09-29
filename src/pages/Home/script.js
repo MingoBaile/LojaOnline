@@ -9,3 +9,15 @@ function swap(src){
 imgGaleria.forEach(item=>{
     item.addEventListener('click',swap);
 });
+
+const onVibrate = document.querySelector('.onVibrate');
+let counterRange = 0;
+
+onVibrate.addEventListener('click',()=>{
+    if(counterRange>5){
+        window.navigator.vibrate(200);
+        counterRange = 0;
+    }else{
+        counterRange++;
+    }
+})
