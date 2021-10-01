@@ -10,10 +10,11 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] Listagem categoria
 - [X] Listagem categoria bloco
 - [X] Login
+- [ ] Profile
 - [X] Detalhe item
-- [ ] Favoritos
+- [X] Favoritos
 - [ ] Carrinho
-- [ ] Endereço
+- [X] Endereço
 - [X] Pagamento
 - [ ] Resumo
 - [X] OrderFinish
