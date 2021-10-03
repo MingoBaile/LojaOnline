@@ -6,18 +6,17 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] [Mobile](https://www.figma.com/proto/Flot7v1pDSWhWgHybwJ387/Store-On?page-id=2%3A7&node-id=111%3A6577&viewport=241%2C48%2C0.21&scaling=scale-down&starting-point-node-id=111%3A6577)
 
 ## Check List Screens
-- [X] Home
-- [X] Listagem categoria
-- [X] Listagem categoria bloco
-- [X] Login
-- [ ] Profile
-- [X] Detalhe item
-- [X] Favoritos
-- [ ] Carrinho
-- [X] Endereço
-- [X] Pagamento
-- [ ] Resumo
-- [X] OrderFinish
+- [X] Home						Gilson [_] Back End Gilson
+- [X] Listagem categoria		Gilson [_] Back End	Gilson
+- [X] Listagem categoria bloco	Gilson [_] Back End Gilson
+- [X] Login						Gilson [_] Back End Diogo
+- [X] Detalhe item				Gilson [_] Back End	Gilson
+- [X] Favoritos				  Jeferson [_] Back End Jeferson prazo para entrega 10/10
+- [ ] Carrinho					Gilson [_] Back End Jeferson
+- [X] Endereço					Gilson [_] Back End Diogo
+- [X] Pagamento				  Jeferson [_] Back End Jeferson
+- [ ] Resumo				  Jeferson [_] Back End Jeferson
+- [X] OrderFinish				Gilson [_] Back End Diogo
 
 ## Histórias de Usuário
 - [ ] Navegar por uma lista de produtos
