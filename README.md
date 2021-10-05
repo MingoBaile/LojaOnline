@@ -6,17 +6,17 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] [Mobile](https://www.figma.com/proto/Flot7v1pDSWhWgHybwJ387/Store-On?page-id=2%3A7&node-id=111%3A6577&viewport=241%2C48%2C0.21&scaling=scale-down&starting-point-node-id=111%3A6577)
 
 ## Check List Screens
-- [X] Home
-- [X] Listagem categoria
-- [X] Listagem categoria bloco
-- [X] Login
-- [X] Detalhe item
-- [ ] Favoritos
-- [ ] Carrinho
-- [ ] Endereço
-- [X] Pagamento
-- [ ] Resumo
-- [X] OrderFinish
+- [X] Home						Gilson [_] Back End Gilson
+- [X] Listagem categoria		Gilson [_] Back End	Gilson
+- [X] Listagem categoria bloco	Gilson [_] Back End Gilson
+- [X] Login						Gilson [_] Back End Diogo
+- [X] Detalhe item				Gilson [_] Back End	Gilson
+- [X] Favoritos				  Jeferson [_] Back End Jeferson prazo para entrega 10/10
+- [ ] Carrinho					Gilson [_] Back End Jeferson
+- [X] Endereço					Gilson [_] Back End Diogo
+- [X] Pagamento				  Jeferson [_] Back End Jeferson
+- [ ] Resumo				  Jeferson [_] Back End Jeferson
+- [X] OrderFinish				Gilson [_] Back End Diogo
 
 ## Histórias de Usuário
 - [ ] Navegar por uma lista de produtos
@@ -43,8 +43,6 @@ cd src
 |[![Diogo Felipe](https://avatars.githubusercontent.com/u/67284614?s=64&v=4)](https://github.com/diogof651) | [@DiogoFelipe](https://github.com/diogof651) |
 |[![Gilson Santos](https://avatars.githubusercontent.com/u/5659433?s=64&v=4)](https://github.com/gilsonsantosux) | [@GilsonSantosUX](https://github.com/gilsonsantosux) |
 |[![Jeferson Lima](https://avatars.githubusercontent.com/u/11639069?s=64&v=4)](https://github.com/jefersonlima) | [@JefersonLima](https://github.com/jefersonlima) |
-|[![Rafael](https://avatars.githubusercontent.com/u/61856131?s=64&v=4)](https://github.com/robertopaulo) | [@RafaelEng](https://github.com/robertopaulo) |
-|[![Roberto Paulo](https://avatars.githubusercontent.com/u/5995781?s=64&v=4)](https://github.com/robertopaulo) | [@RobertoPaulo](https://github.com/robertopaulo) |
 
 > Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
 
