@@ -100,6 +100,19 @@ label{
 	color:var(--color-neutral-3);
 }
 
+button.small{
+	height:var(--scale-xxlarge) !important;
+	padding: var(--scale-medium) !important;
+}
+
+hr.dividers{
+	outline: none;
+	border:none;
+	width:100%;
+	height:var(--scale-xxsmall);
+	background: var(--color-neutral-1);
+}
+
 button, a.btn{
 	padding: var(--scale-medium) var(--scale-xxlarge);
 	display: flex;
@@ -109,7 +122,8 @@ button, a.btn{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	min-height:var(--scale-xbig);
+	min-height:var(--scale-xxlarge);
+	height:var(--scale-xxbig);
 
 	background: var(--color-principal-light);
 	font-size: var(--font-label);
