@@ -1,13 +1,22 @@
 <?php 
     // https://www.php.com.br/instalacao-php-linux
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $name = $_POST['nome'];
-        $order = [
-                id=>"#0001",
-                date=>'04/10/2021 09:45',
-                quant=>1,
-                price=>'1.500,00',
-                tot=>'1.500,00'];
+        require '../../auth/auth_login.php';
+        if(!auth_validate($_POST['nome'],$_POST['pass'])){
+            header('Location: ../../pages/Login/index.html');
+            die();
+        }
+
+        // encode json -> https://www.webtutorial.com.br/como-ler-um-arquivo-json-e-decodificar-para-um-objeto-php/
+        $json = file_get_contents("data.json");
+        $data = json_decode($json);
+
+        // for($i=0;$i<count($data);$i++){
+        //     print $data[$i]->id;
+        // }
+        // foreach ($data as $key => $value){
+        //     print $value->id;
+        // }
         // sleep(1);
         // header('Location: pages/Profile/index.php');
         // die();
@@ -98,38 +107,21 @@
                         </div>
                     </div>
                     <div class="t-grid-body">
-                        <div class="t-row">
-                            <span class="t-item">#0001</span>
-                            <span class="t-item">04/10/2021 09:45</span>
-                            <span class="t-item">1</span>
-                            <span class="t-item">R$ 1.500,00</span>
-                            <span class="t-item">R$ 1.500,00</span>
-                            <span class="t-item t-actions">
-                                <button class="small"><i data-feather="eye"></i></button>
-                                <button class="small"><i data-feather="printer"></i></button>
-                            </span>
-                        </div>
-                        <?php 
-                        for($i=0;$i<$order.length;$i++){
-                            ' 
-                            <div class="t-row">
-                                <span class="t-item">{$order[$i].id}</span>
-                                <span class="t-item">{$order[$i].date}</span>
-                                <span class="t-item">{$order[$i].quant}</span>
-                                <span class="t-item">R$ {$order[$i].price}</span>
-                                <span class="t-item">R$ {$order[$i].tot}</span>
+                        <?php foreach ($data as $key => $value){?>
+                            <div class="t-row" id="<?= $value->id?>">
+                                <span class="t-item"><?= $value->id?></span>
+                                <span class="t-item"><?= $value->date?></span>
+                                <span class="t-item"><?= $value->quant?></span>
+                                <span class="t-item">R$ <?= $value->price?></span>
+                                <span class="t-item">R$ <?= $value->tot?></span>
                                 <span class="t-item t-actions">
-                                    <button class="small"><i data-feather="eye"></i></button>
-                                    <button class="small"><i data-feather="printer"></i></button>
+                                    <button class="small" onclick="alert('<?= $value->id?>')"><i data-feather="eye"></i></button>
+                                    <button class="small" onclick="alert('<?= $value->id?>')"><i data-feather="printer"></i></button>
                                 </span>
                             </div>
-                            ';
-                        }
-                        
-                        ?>
+                        <?php }?>
                     </div>
-                    <div class="t-grid-foot">
-                    </div>
+                    <div class="t-grid-foot"></div>
                 </div>
             </article>
         </section>
