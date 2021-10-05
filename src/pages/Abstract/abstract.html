@@ -16,9 +16,9 @@
             </a>
             <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
             <div slot="actions" class="actions flex gap-3 center">
-                <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="user"></i></button>
-                <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></button>
-                <button class="p-3 ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></button>
+                <a href="../Login/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
+                <a href="../Favorites/favorites.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+                <a href="../Cart/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
             </div>
         </navigation-top>
         <main>
@@ -30,7 +30,7 @@
             <h4 class="heading">Resumo da Compra</h4>
 
             <section class="wrapper-container">
-                <Section>
+                <Section class="sessioncards">
                     <div class="account-data">
                         <h4 class="heading">Dados da conta</h4>
                         <div class="daccount-data">    
@@ -75,38 +75,38 @@
                     </div>
                     <div class="account-data">
                         <h4 class="heading">Pagamento</h4>
-                        <div class="endereco">        
+                        <div class="dpagamento">        
                             <span class="spagamento">  
                                 <small>Forma de pagamento</small>
                                 <strong>Cartão</strong>  
                             </span>
-                            <span class="nomeCartao">  
+                            <span class="snomeCartao">  
                                 <small>Nome do cartão</small>
                                 <strong>Cartão 1</strong>  
                             </span>
-                            <span class="numeroCartao">  
+                            <span class="snumeroCartao">  
                                 <small>Número do cartão</small>
                                 <strong>**** **** **** *000</strong>  
                             </span>
                         </div>  
-                        <div class="pagamento">
-                            <span class="bandeira">  
+                        <div class="dpagamento">
+                            <span class="sbandeira">  
                                 <small>Bandeira</small>
                                 <strong>Master Card 1</strong>  
                             </span>
-                            <span class="cvv">  
+                            <span class="scvv">  
                                 <small>CVV</small>
                                 <strong>***</strong>  
                             </span>
-                        </div>
-                    
+                        </div>                     
                         <div>
                             <button class="white view-more"><i data-feather="arrow-down"></i>Ver mais</i></button>
-                        </div>
+                        </div>                     
                     </div>
                 </Section>
-                <section class="list-products">
-                    <h4 class="heading">Produtos</h4>
+                <section class="list-products sessioncards">
+                    <section class="account-data sessioncards list-products">
+                        <h4 class="heading">Produtos</h4>
                     <div class="card-product">
                         <div class="picture">
                             <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
@@ -139,6 +139,8 @@
                             </div>
                         </div>
                     </div>
+                    </section>
+                    
                     <div class="amount">
                         <h4 class="heading">Valor Total</h4>
                         <div class="d-amount">
@@ -162,10 +164,9 @@
                             
                         </div>
                     </div>
-                    <span>
+                    <span class="finish">
                         <a href="../Payments/payments.html"><button><i data-feather="arrow-left"></i>Voltar</button></a>
-                        <a href="../Home/index.html"><button class="primary">Finalizar Compra<i data-feather="arrow-right"></i></button></a>
-                        
+                        <a href="../Home/index.html"><button class="primary">Finalizar Compra<i data-feather="arrow-right"></i></button></a>    
                     </span>
                 </section>
             </section>

@@ -57,6 +57,23 @@ nav .nav-container{
 
 }
 
+.daccount-data, .endereco{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dpagamento{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name, .email, .sendereco, .cep, .logradouro, .numero, .spagamento, .snomeCartao, .snumeroCartao, .sbandeira, .scvv{
+    display: flex;
+    flex-direction: column;
+}
+
 /* inicio div cabecalhostatus*/
 .step-item{
     border-radius: var(--radius-xxbig);
@@ -266,6 +283,20 @@ nav .nav-container{
     flex-flow: column nowrap;
     gap: var(--scale-xxlarge)
 }
+.pagamento{
+    background-color: var(--color-principal-light);
+    padding: var(--scale-large);
+    border-radius: var(--scale-xsmall);
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.spagamento{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .account-data, .amount{
     background-color: var(--color-principal-light);
@@ -273,17 +304,7 @@ nav .nav-container{
     border-radius: var(--scale-xsmall);
 }
 
-.daccount-data, .endereco{
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.name, .email, .sendereco, .cep, .logradouro, .numero, .spagamento, .nomeCartao, .numeroCartao, .bandeira, .cvv{
-    display: flex;
-    flex-direction: column;
-}
 
 .view-more{
     width:100%;
