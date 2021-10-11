@@ -270,14 +270,17 @@ select:hover {
 	display: flex;
 	flex-flow:column nowrap;
 	gap:var(--scale-xsmall);
+	width: 100%;
 }
 .input-group>label{
-	font-weight: var(--font-weight-regular);
+	width: 100%;
+	font-weight: var(--font-weight-subbold);
 	font-size:var(--font-lead);
 	color:var(--color-neutral-3);
 }
 .input-group>input{
-	font-weight: var(--font-weight-regular);
+	width: 100%;
+	font-weight: var(--font-weight-subbold);
 	font-size:var(--font-label);
 }
 

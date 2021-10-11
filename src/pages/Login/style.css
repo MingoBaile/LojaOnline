@@ -58,7 +58,7 @@ nav .nav-container{
     gap:var(--scale-large);
 }
 
-.wrapper-container * section,.wrapper-container>section{
+.wrapper-container * form,.wrapper-container>form{
     padding:var(--scale-large);
 
     border-radius:var(--radius-small);

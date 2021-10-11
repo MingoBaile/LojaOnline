@@ -24,7 +24,7 @@
 
     <main>
         <div class="wrapper-container">
-            <section class="flex column gap-4">
+            <form class="flex column gap-4">
                 <header class="w-100 flex column gap-2">
                     <h4 class="heading">Para continuar precisamos de um e-mail.</h4>
                     <h6 class="w-100 sub-heading">Caso nao queira se cadastrar, você pode só informar o e-mail!</h6> 
@@ -38,29 +38,29 @@
                 <footer class="w-100 flex justify-end">
                     <button class="primary">Continuar<i data-feather="arrow-right"></i></button>
                 </footer>
-            </section>
+            </form>
             <div class="flex row gap-5">
-                <section class="flex column w-100 gap-4">
+                <form class="flex column w-100 gap-4" action="../Profile/index.php" method="POST">
                     <header class="w-100 flex column gap-2">
                         <h4 class="heading">Acessar a conta</h4>
                         <h6 class="w-100 sub-heading">Entre na conta para continuar a venda</h6> 
                     </header>
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
-                            <label>E-mail</label>
-                            <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"/>
+                            <label for="nome">E-mail</label>
+                            <input type="text" name="nome" id="nome" placeholder="Digite seu e-mail aqui." class="w-100"/>
                         </div>
                         <div class="input-group w-100">
-                            <label>Senha</label>
-                            <input type="password"  placeholder="*********" class="w-100"/>
+                            <label for="nome" aria-label="Senha">Senha</label>
+                            <input type="password" name="pass" id="pass" placeholder="*********" class="w-100"/>
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end gap-3">
                         <button class="ghost">Esqueci a senha</button>
-                        <button class="primary">Logar<i data-feather="log-in"></i></button>
+                        <button class="primary" type="submit">Logar<i data-feather="log-in"></i></button>
                     </footer>
-                </section>
-                <section class="flex column w-100 gap-4">
+                </form>
+                <form class="flex column w-100 gap-4">
                     <header class="w-100 flex column gap-2">
                         <h4 class="heading">Não tem Cadastro</h4>
                         <h6 class="w-100 sub-heading">Faça cadastro para continuar a venda.</h6> 
@@ -84,9 +84,9 @@
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end">
-                        <button class="primary">Cadastar<i data-feather="arrow-right"></i></button>
+                        <button class="primary" type="submit">Cadastar<i data-feather="arrow-right"></i></button>
                     </footer>
-                </section>
+                </form>
             </div>
         </div>
         </div>

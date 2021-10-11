@@ -1,11 +1,15 @@
 <?php 
     // https://www.php.com.br/instalacao-php-linux
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        require '../../auth/auth_login.php';
+        require_once '../../auth/auth_login.php';
         if(!auth_validate($_POST['nome'],$_POST['pass'])){
             header('Location: ../../pages/Login/index.html');
             die();
         }
+        
+        // require_once('../../../app/Model/Product.php');
+        // $product = new Product();
+        // $product->insertProduct('Produto 1','Descricao do produto','1.500,00');
 
         // encode json -> https://www.webtutorial.com.br/como-ler-um-arquivo-json-e-decodificar-para-um-objeto-php/
         $json = file_get_contents("data.json");
@@ -20,6 +24,16 @@
         // sleep(1);
         // header('Location: pages/Profile/index.php');
         // die();
+        // function setTimeout($fn, $timeout){
+        //     sleep(($timeout/1000));
+        //     $fn();
+        // }
+
+        // $someFunctionToExecute = function() {
+        //     header('Location: pages/Profile/index.php');
+        //     die();
+        // }
+        // setTimeout($someFunctionToExecute, 3000);
     }
 ?>
 <!DOCTYPE html>
@@ -48,7 +62,7 @@
         <aside class="aside-profile">
             <div class="card-perfil">
                 <img src="../../assets/img-products/car-opala-principal.jpg" alt="Imagem ">
-                <label><?php echo "{$name}" ?></label>
+                <label><?php echo "{$_POST['nome']}" ?></label>
             </div>
             <div class="nav-link">
                 <ul class="nav-upper">
@@ -64,13 +78,14 @@
                 </ul>
                 <ul class="nav-below">
                     <li>
-                        <a href="#"><i data-feather="log-out"></i>Sair</a>
+                        <a href="../Home/"><i data-feather="log-out"></i>Sair</a>
                     </li>
                 </ul>
             </div>
         </aside>
+        
         <section class="profile-content">
-            <h4>Bem-vindo, <?php echo "{$name}" ?>!</h4>
+            <h4>Bem-vindo, <?php echo "{$_POST['nome']}" ?>!</h4>
             <article class="section-content profile-grid">
                 <div class="profile-grid-item">
                     <a href=""><i data-feather="user"></i>Perfil</a>
@@ -88,6 +103,7 @@
                     <img src="../../assets/logo-white.svg" alt="Imagem ">
                 </div>
             </article>
+            <?php if(!empty($data)){?>
             <article class="section-content">
                 <h5 class="panel-title">Lista de pedidos</h5>
                 <div class="filter">
@@ -124,6 +140,7 @@
                     <div class="t-grid-foot"></div>
                 </div>
             </article>
+            <?php }?>
         </section>
     </main>
     <nav class="navigation-bottom">

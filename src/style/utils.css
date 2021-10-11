@@ -593,3 +593,32 @@
 .pl-x {
 	padding-left: var(--scale-xbig);
 }
+
+.bg-principal-dark{
+	background:var(--color-principal-dark);
+}
+.bg-principal-light{
+	background:var(--color-principal-light);
+}
+.bg-principal-foreground{
+	background:var(--color-principal-foreground);
+}
+
+.bg-primary-0{
+	background:var(--color-primary-0);
+}
+.bg-primary-1{
+	background:var(--color-primary-1);
+}
+.bg-primary-2{
+	background:var(--color-primary-2);
+}
+.bg-primary-3{
+	background:var(--color-primary-3);
+}
+.bg-primary-4{
+	background:var(--color-primary-4);
+}
+.bg-primary-5{
+	background:var(--color-primary-5);
+}

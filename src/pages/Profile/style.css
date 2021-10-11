@@ -23,6 +23,11 @@ main{
     gap:var(--scale-medium);
 }
 
+.card-perfil.border-gradient{
+    border:4px solid;
+    border-image: linear-gradient(277.91deg,var(--color-primary-3) 0%,var(--color-secondary-3) 100%) 1;
+}
+
 .card-perfil > img{
     width:var(--scale-xextra);
     height:var(--scale-xextra);
