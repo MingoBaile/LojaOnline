@@ -49,12 +49,12 @@
 </head>
 <body>
     <navigation-top >
-        <a href="#" slot="brand" class="onVibrate">
+        <a href="../Home/" slot="brand" class="onVibrate">
             <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
         <div slot="actions" class="actions flex gap-3 center">
             <a href="../Login/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-            <a href="../Favorites/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Favorites/favorites.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
             <a href="../Cartshopping/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
