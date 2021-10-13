@@ -74,6 +74,30 @@ function tableResize() {
 
 tableResize();
 
+// Input-group number
+const inputNumber = document.querySelectorAll(".input-number");
+inputNumber.forEach(input =>{
+    const minus = input.querySelector('button:first-child');
+    const number = input.querySelector("input[type='number']");
+    const plus = input.querySelector('button:last-child');
+
+    minus.addEventListener('click',value=>{
+        let quantidade = number.value;
+        if(quantidade>1){
+            quantidade--;
+            number.setAttribute('value',quantidade);
+        }
+    });
+
+    plus.addEventListener('click',value=>{
+        let quantidade = number.value;
+        if(number.value<10){
+            quantidade++;
+            number.setAttribute('value',quantidade);
+        }
+    });
+});
+
 // https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
 const scrollContainer = document.querySelector('.list-categorias');
 

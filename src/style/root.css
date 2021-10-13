@@ -284,6 +284,50 @@ select:hover {
 	font-size:var(--font-label);
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.input-number{
+	display:flex;
+	flex-flow:row nowrap;
+	gap:0;
+}
+.input-number:hover>button,.input-number:hover>input{
+	border-color:var(--color-primary-3);
+}
+.input-number>button{
+	border-radius:0;
+	border-width: var(--scale-xxsmall);
+	border-color: var(--color-neutral-1);
+}
+.input-number>button:hover{
+	border-width: var(--scale-xxsmall);
+}
+.input-number>button:first-child{
+	border-top-left-radius: var(--radius-small);
+	border-bottom-left-radius: var(--radius-small);
+	border-right-width:0;
+}
+.input-number>button:last-child{
+	border-top-right-radius: var(--radius-small);
+	border-bottom-right-radius: var(--radius-small);
+	border-left-width:0;
+}
+
+.input-number>input{
+	width:64px;
+
+	border-radius:0;
+	border-left-width:0;
+	border-right-width:0;
+	font-size: var(--font-headline-x4);
+    text-align: center;
+}
+
 textarea {
 	resize: none;
 }

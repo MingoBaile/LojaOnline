@@ -55,7 +55,7 @@
         <div slot="actions" class="actions flex gap-3 center">
             <a href="../Login/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
             <a href="../Favorites/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-            <a href="../Cart/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Cartshopping/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
     <main>
@@ -154,7 +154,7 @@
             <a href="../Favorites/index.html"><i class="icon-1" data-feather="heart"></i></a>
         </span>
         <span>
-            <a href="../Cart/index.html"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Cartshopping/index.html"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </span>
         <span>
             <a href="../Login/index.html"><i class="icon-1" data-feather="user"></i></a>
