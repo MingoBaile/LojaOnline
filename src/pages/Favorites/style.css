@@ -46,9 +46,6 @@ div.cabecalhofavoritos>.heading{
     gap:var(--scale-large);
 
 }
-.cabecalhofavoritos{
-    width:var(--width-main);
-}
 
 .list-products > .card-product{
     background:var(--color-principal-light);
@@ -137,6 +134,13 @@ span{
     gap: var(--scale-large);
 }
 
+footer{
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: end;
+    gap:var(--scale-medium);
+}
+
 @media only screen and (max-width: 1199.98px){
 
 }
@@ -147,6 +151,33 @@ span{
     }
 }
 @media only screen and (max-width:767.98px){
+    main{
+        padding-bottom:var(--scale-xbig);
+    }
+    .list-products > .card-product{
+        flex-flow:row wrap;
+        gap:var(--scale-large);
+    }
+
+    .list-products > .card-product > .picture{
+        flex:0;
+    }
+    .list-products > .card-product >.body{
+        flex:1;
+    }
+
+    .list-products > .card-product >.value{
+        flex:1;
+    }
+
+    footer{
+        flex-flow:column nowrap;
+        gap:var(--scale-medium);
+    }
+
+    footer>button{
+        width:100%;
+    }
 
 }
 @media only screen and (max-width:575.98px){

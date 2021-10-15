@@ -137,13 +137,14 @@ button, a.btn{
 	border-style: solid;
 	border-color: transparent;
 	border: none;
+	white-space: nowrap;
 
 	cursor: pointer;
 	user-select: none;
 	transition: all 400ms ease-in-out;
 }
 
-button>svg{
+button>svg,a.btn>svg{
 	stroke:currentColor;
 	width:var(--scale-large);
 	height:var(--scale-large);
@@ -162,7 +163,7 @@ a:focus-visible {
 	
 }
 
-button:hover {
+button:hover,a.btn:hover {
 	background: var(--color-neutral-2);
 }
 
@@ -175,30 +176,30 @@ button span {
 	animation: animate-ripple 500ms both ease-in-out;
 }
 
-button.primary {
+button.primary,a.primary:hover {
 	background: var(--color-primary-3);
 	color: var(--color-principal-light);
 }
 
-button.primary:hover {
+button.primary:hover,a.primary:hover {
 	background: var(--color-primary-2);
 }
 
-button.secondary {
+button.secondary,a.secondary {
 	background: var(--color-secondary-3);
 	color: var(--color-principal-light);
 }
 
-button.secondary:hover {
+button.secondary:hover,a.secondary:hover {
 	background: var(--color-secondary-2);
 }
 
-button.tertiary {
+button.tertiary,a.tertiary {
 	background: var(--color-tertiary-3);
 	color: var(--color-principal-light);
 }
 
-button.tertiary:hover {
+button.tertiary:hover, a.tertiary:hover {
 	background: var(--color-tertiary-2);
 }
 
@@ -420,6 +421,29 @@ table.table-left td:last-child{
     border-right-width:1px;
 }
 
+
+/* Navigator Bottom */
+nav{
+    width:100%;
+    max-height:var(--scale-xxextra);
+    padding:var(--scale-medium) var(--scale-big);
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background:var(--color-neutral-5);
+}
+
+nav .nav-container{
+    width:var(--width-main);
+    display:flex;
+    gap:var(--scale-big);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Navigator Bottom */
 
 .navigation-bottom{
@@ -449,4 +473,43 @@ table.table-left td:last-child{
     align-items: center;
     height:100%;
     color:var(--color-principal-light);
+}
+
+/* Media Desktops */
+@media only screen and (max-width: 1199.98px)  {
+    main{
+        width:var(--width-fullscreen);
+        padding:0 var(--scale-large);
+    }
+    nav .nav-container{
+        width:var(--width-fullscreen);
+    }
+}
+
+/* Media Tablets */
+@media only screen and (max-width: 991.98px)  {
+    body{
+        position: relative;
+    }
+    navigation-top nav .nav-container{
+        place-content: center center;
+    }
+    navigation-top a{
+        margin:0;
+    }
+    navigation-top .actions,navigation-top input{
+        display:none;
+    }
+}
+
+/* Media Smartphones */
+@media only screen and (max-width:767.98px){
+    .navigation-bottom{
+        display: flex;
+    }
+}
+
+/* Media all devices */
+@media only screen and (max-width:575.98px){
+    
 }

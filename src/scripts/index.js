@@ -21,6 +21,7 @@ bt.forEach((btn) =>
     })
 );
 
+// Navegator bottom Mobile
 const navbarBottom = document.querySelector("nav.navigation-bottom");
 lastScroll = window.scrollY;
 if(navbarBottom!=undefined){

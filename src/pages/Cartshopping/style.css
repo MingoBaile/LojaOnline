@@ -1,5 +1,6 @@
 @import '../../style/root.css';
 
+@import '../../style/root.css';
 
 /* FLEX - GAP */
 main,.wrapper-container,.list-cart,.cart-tot,.cart-item,.cart-descrition,.cart-unidade,.cart-quantidade,.tot,.actions,.desc-total,.sub-total{
@@ -96,6 +97,18 @@ main,.wrapper-container,.list-cart,.cart-descrition,.cart-unidade,.cart-quantida
 @media only screen and (max-width: 991.98px){
 }
 @media only screen and (max-width:767.98px){
+    main{
+        padding-bottom:var(--scale-xbig);
+    }
+    .cart-item,.cart-tot{
+        flex-flow:row wrap;
+    }
+    footer{
+        flex-flow:column nowrap;
+    }
+    footer>button{
+        width:100%;
+    }
 }
 @media only screen and (max-width:575.98px){
 }

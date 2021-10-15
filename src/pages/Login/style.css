@@ -1,17 +1,5 @@
 @import '../../style/root.css';
 
-nav{
-    width:100%;
-    max-height:var(--scale-xxextra);
-    padding:var(--scale-medium) var(--scale-big);
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    background:var(--color-neutral-5);
-}
-
 input[type=email] {
     height: 50px;
 }
@@ -94,20 +82,14 @@ footer{
 }
 
 @media only screen and (max-width:640px){
+    main{
+        padding-bottom:var(--scale-xbig);
+    }
     .wrapper-container>.heading{
         font-size:var(--font-headline-x5);
     }
-    navigation-top nav .nav-container{
-        place-content: center center;
-    }
-    navigation-top a{
-        margin:0;
-    }
-    navigation-top .actions{
-        display:none;
-    }
-    .wrapper-container>section {
-        flex-direction: column;
+    .wrapper-container section {
+        flex-flow: column nowrap !important;
     }
     footer{
         flex-direction: column;
