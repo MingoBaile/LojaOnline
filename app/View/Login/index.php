@@ -1,5 +1,8 @@
+<?php
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +15,12 @@
 <body>
     <navigation-top style="width: 100%;">
         <a href="../Home/" slot="brand">
-            <img src="../../assets/brand-white.svg" alt="Cartunings logo" height="40">
+            <img src="../../assets/brand-white.svg" alt="Cartunings logo" height="40" aria-label="">
         </a>
         <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100">
         <div slot="actions" class="actions flex gap-3 center">
-            <a href="../Favorites/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-            <a href="../Cartshopping/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Favorites/" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Cartshopping/" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
 
@@ -136,19 +139,19 @@
     </main>
     <nav class="navigation-bottom">
         <span>
-            <a href="../Home/index.html"><i class="icon-1" data-feather="home"></i></a>
+            <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
         </span>
         <span>
-            <a href="../Search/index.html"><i class="icon-1" data-feather="search"></i></a>
+            <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
         </span>
         <span>
-            <a href="../Favorites/index.html"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
         </span>
         <span>
-            <a href="../Cartshopping/index.html"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </span>
         <span>
-            <a href="../Login/index.html"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
         </span>
     </nav>
 <script src="./script.js" defer></script>

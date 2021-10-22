@@ -622,3 +622,8 @@
 .bg-primary-5{
 	background:var(--color-primary-5);
 }
+
+.is-favorite>svg{
+	stroke:var(--color-feedback-negative-3);
+	stroke-width: var(--scale-xsmall);
+}

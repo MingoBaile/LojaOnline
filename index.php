@@ -1,4 +1,30 @@
-<!DOCTYPE html>
+<?php
+    require_once __DIR__ . '/libs/Router.php';
+    include_once('app/controller/Home.php');
+    include_once('app/controller/Login.php');
+    // Use this namespace
+    use Steampixel\Route;
+
+    // Add your first route
+    Route::add('/.*', function() {
+        http_response_code(404);
+        echo "Pagina não encontrada!";
+    },['get','post']);
+
+    Route::add('/login', function() {
+        $controller = new Login();
+        $controller->login();
+    },'get');
+
+    Route::add('/home', function() {
+        $controller = new Home();
+        $controller->home();
+    },'get');
+
+    // Run the router
+    Route::run('/');
+?>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -140,4 +166,4 @@
     </main>
     <script module="true" src="./scripts/index.js"></script>
 </body>
-</html>
+</html> -->

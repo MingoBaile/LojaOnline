@@ -3,7 +3,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         require_once '../../auth/auth_login.php';
         if(!auth_validate($_POST['nome'],$_POST['pass'])){
-            header('Location: ../../pages/Login/index.html');
+            header('Location: ../../pages/Login/');
             die();
         }
         
@@ -53,9 +53,9 @@
             <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
         <div slot="actions" class="actions flex gap-3 center">
-            <a href="../Login/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-            <a href="../Favorites/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-            <a href="../Cartshopping/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Login/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Favorites/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Cartshopping/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
     <main>
@@ -145,19 +145,19 @@
     </main>
     <nav class="navigation-bottom">
         <span>
-            <a href="../Home/index.html"><i class="icon-1" data-feather="home"></i></a>
+            <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
         </span>
         <span>
-            <a href="../Search/index.html"><i class="icon-1" data-feather="search"></i></a>
+            <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
         </span>
         <span>
-            <a href="../Favorites/index.html"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
         </span>
         <span>
-            <a href="../Cartshopping/index.html"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </span>
         <span>
-            <a href="../Login/index.html"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
         </span>
     </nav>
 <script src="./script.js" defer></script>

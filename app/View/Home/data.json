@@ -1,0 +1,71 @@
+{
+    "products":[
+        {
+            "idProduct":"01",
+            "title":"Kit Opala SS - 6 cilindros",
+            "categoria":"Kits turbos",
+            "descrition":"Opala SS 1979 Original 2.5",
+            "imgBanner":"../../assets/img-products/car-opala-principal.jpg",
+            "favorite":"true",
+            "imgsGalery":[
+                "../../assets/img-products/car-opala-1.jpg",
+                "../../assets/img-products/car-opala-2.jpg",
+                "../../assets/img-products/car-opala-3.jpg"
+            ],
+            "price":"1.500,00"
+        },
+        {
+            "idProduct":"02",
+            "title":"Kit Fiat 147 - 4 cilindros",
+            "categoria":"Kits turbos",
+            "descrition":"Kit Retifica Fiat 147....",
+            "favorite":"false",
+            "imgsGalery":[],
+            "imgBanner":"../../assets/img-products/car-fiat147-principal.jpg",
+            "price":"1.200,00"
+        },
+        {
+            "idProduct":"03",
+            "title":"Kit Mitsubishi Lancer Gt 2016",
+            "categoria":"Kits turbos",
+            "favorite":"false",
+            "imgsGalery":[],
+            "descrition":"Kit completo Mitsubishi Lancer Gt 2016...",
+            "imgBanner":"../../assets/img-products/car-lancer-principal.jpg",
+            "price":"4.000,00"
+        },
+        {
+            "idProduct":"04",
+            "title":"Turbo Ferrari 488 Gtb",
+            "categoria":"Turbos",
+            "favorite":"false",
+            "imgsGalery":[],
+            "descrition":"3.9 V8 TURBO GASOLINA F1-DCT ...",
+            "imgBanner":"../../assets/img-products/car-ferrari-principal.jpg",
+            "price":"7.200,00"
+        }
+    ],
+    "categoria":[
+        {
+            "title":"Kits turbos",
+            "img":"../../assets/img-products/categorias/categoria-kit.jpg",
+            "url":"../List/"
+        },
+        {
+            "title":"Faróis",
+            "img":"../../assets/img-products/categorias/categoria-farou.jpg",
+            "url":"../List/"
+        },
+        {
+            "title":"Rodas",
+            "img":"../../assets/img-products/categorias/categoria-roda.jpg",
+            "url":"../List/"
+        },
+        {
+            "title":"Turbos",
+            "img":"../../assets/img-products/categorias/categoria-turbo.jpg",
+            "url":"../List/"
+        }
+
+    ]
+}

@@ -6,48 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | Listagem categoria</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="../../scripts/index.js" defer></script>
     <script src="../../components/Navigation/index.js" defer></script>
 </head>
 <body>
     <navigation-top >
-        <a href="#" slot="brand" class="onVibrate">
+        <a href="../Home/index.php" slot="brand">
             <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
         <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
         <div slot="actions" class="actions flex gap-3 center">
-            <a href="../Login/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-            <a href="../Favorites/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-            <a href="../Cartshopping/index.html" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Login/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Favorites/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Cartshopping/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
+    <div class="sub-catgoria">
+        <ul>
+            <li>
+                <a href="#kits" class="active">KITS</a>
+            </li>
+            <li>
+                <a href="#kits">RODAS</a>
+            </li>
+            <li>
+                <a href="#kits">Peças customizadas</a>
+            </li>
+            <li>
+                <a href="#kits">Faróis</a>
+            </li>
+            <li>
+                <a href="#kits">Turbo</a>
+            </li>
+            <li>
+                <a href="#kits">Pinturas</a>
+            </li>
+        </ul>
+    </div>
     <main>
         <div class="wrapper-container">
-            <h4 class="heading">Categorias</h4>
-            <section class="list-categorias">
-               <a href="../List/index.html" class="categoira">
-                    <label>Kits turbos</label>
-                    <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
-                    <img src="../../assets/img-products/categorias/categoria-kit.jpg" alt="Categoria de kits turbo" title="kit turbos">
-               </a>
-               <a href="../List/index.html" class="categoira">
-                    <label>Faróis</label>
-                    <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
-                    <img src="../../assets/img-products/categorias/categoria-farou.jpg" alt="Categoria de kits turbo" title="kit turbos">
-                </a>
-                <a href="../List/index.html" class="categoira">
-                    <label>Rodas</label>
-                    <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
-                    <img src="../../assets/img-products/categorias/categoria-roda.jpg" alt="Categoria de kits turbo" title="kit turbos">
-                </a>
-                <a href="../List/index.html" class="categoira">
-                    <label>Turbos</label>
-                    <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
-                    <img src="../../assets/img-products/categorias/categoria-turbo.jpg" alt="Categoria de kits turbo" title="kit turbos">
-                </a>
+            <section class="flex row  gap-3 justify-between">
+                <button class="px-3 btnHome"><i data-feather="home"></i></button>
+                <div class="lead-actions flex gap-3">
+                    <button class="px-3"><i data-feather="server"></i>
+                        <i data-feather="grid"></i></button>
+                    <button class="px-3"><i data-feather="filter"></i></button>
+                </div>
             </section>
-            <h4 class="heading">Últimos adicionados</h4>
+            <h4 class="heading">Kits turbos</h4>
             <section class="list-products">
+                <!-- <card-product>
+                    <img src="../../assets/img-products/car-opala-principal.jpg" alt="" slot="img">
+                    <img src="../../assets/img-products/car-opala-1.jpg" alt="" slot="galeria-img">
+                    <h5 slot="title-product">Kit Opala SS - 6 cilindros</h5>
+                    <p slot="title-descrition">Opala SS 1979 Original 2.5...</p>
+                    <small slot="value-default">500,00</small>
+                    <strong slot="price">345,00</strong>
+                </card-product> -->
                 <div class="card-product">
                     <div class="picture">
                         <span class="flex row justify-end">
@@ -67,7 +81,7 @@
                         </div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Opala SS - 6 cilindros </h5>
                             <p>Opala SS 1979 Original 2.5...</p>
                         </a>
@@ -96,7 +110,7 @@
                         <div class="galeria hover-only"></div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Fiat 147 - 4 cilindros</h5>
                             <p>Kit Retifica Fiat 147....</p>
                         </a>
@@ -124,7 +138,7 @@
                         <div class="galeria hover-only"></div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Mitsubishi Lancer Gt 2016</h5>
                             <p>Kit completo Mitsubishi Lancer Gt 2016...</p>
                         </a>
@@ -156,7 +170,7 @@
                         </div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Ferrari 488 Gtb</h5>
                             <p>3.9 V8 TURBO GASOLINA F1-DCT ...</p>
                         </a>
@@ -194,7 +208,7 @@
                         </div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Opala SS - 6 cilindros </h5>
                             <p>Opala SS 1979 Original 2.5...</p>
                         </a>
@@ -222,7 +236,7 @@
                         <div class="galeria hover-only"></div>
                     </div>
                     <div class="body">
-                        <a class="information" href="../Details/index.html">
+                        <a class="information" href="../Details/">
                             <h5>Kit Fiat 147 - 4 cilindros</h5>
                             <p>Kit Retifica Fiat 147....</p>
                         </a>
@@ -249,21 +263,22 @@
     </main>
     <nav class="navigation-bottom">
         <span>
-            <a href="../Home/index.html"><i class="icon-1" data-feather="home"></i></a>
+            <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
         </span>
         <span>
-            <a href="../Search/index.html"><i class="icon-1" data-feather="search"></i></a>
+            <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
         </span>
         <span>
-            <a href="../Favorites/index.html"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
         </span>
         <span>
-            <a href="../Cartshopping/index.html"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </span>
         <span>
-            <a href="../Login/index.html"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
         </span>
     </nav>
 <script src="./script.js" defer></script>
+<script src="../../scripts/index.js" defer></script>
 </body>
 </html>
