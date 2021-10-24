@@ -11,7 +11,6 @@
 </head>
 <body>
     <navigation-top >
-<<<<<<< HEAD:app/View/Cartshopping/index.php
         <a href="../Home" slot="brand">
             <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
@@ -19,15 +18,6 @@
         <div slot="actions" class="actions flex row gap-3 center">
             <a href="../Login" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
             <a href="../Favorites" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-=======
-        <a href="../Home/index.php" slot="brand">
-            <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
-        </a>
-        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
-        <div slot="actions" class="actions flex row gap-3 center">
-            <a href="../Login/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-            <a href="../Favorites/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Cartshopping/index.html
         </div>
     </navigation-top>
     <main>
@@ -80,7 +70,6 @@
     </main>
     <nav class="navigation-bottom">
         <span>
-<<<<<<< HEAD:app/View/Cartshopping/index.php
             <a href="../Home"><i class="icon-1" data-feather="home"></i></a>
         </span>
         <span>
@@ -91,18 +80,6 @@
         </span>
         <span>
             <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
-=======
-            <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
-        </span>
-        <span>
-            <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
-        </span>
-        <span>
-            <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
-        </span>
-        <span>
-            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Cartshopping/index.html
         </span>
     </nav>
 <script src="../app/View/CartShopping/script.js" defer></script>

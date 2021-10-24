@@ -11,7 +11,6 @@
     </head>
     <body>
         <navigation-top >
-<<<<<<< HEAD:app/View/Resume/index.php
             <a href="../Home" slot="brand">
                 <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
             </a>
@@ -20,16 +19,6 @@
                 <a href="../Login" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
                 <a href="../Favorites" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
                 <a href="../Cartshopping" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
-=======
-            <a href="../Home/index.php" slot="brand">
-                <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
-            </a>
-            <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
-            <div slot="actions" class="actions flex gap-3 center">
-                <a href="../Login/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-                <a href="../Favorites/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-                <a href="../Cartshopping/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Abstract/abstract.html
             </div>
         </navigation-top>
         <main>
@@ -176,20 +165,14 @@
                         </div>
                     </div>
                     <span class="finish">
-<<<<<<< HEAD:app/View/Resume/index.php
                         <a href="../Payments" class="btn"><i data-feather="arrow-left"></i>Volta</a>
                         <a href="../Home" class="btn primary">Finalizar Compra<i data-feather="arrow-right"></i></a>    
-=======
-                        <a href="../Payments/payments.html"><button><i data-feather="arrow-left"></i>Voltar</button></a>
-                        <a href="../Home/index.php"><button class="primary">Finalizar Compra<i data-feather="arrow-right"></i></button></a>    
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Abstract/abstract.html
                     </span>
                 </section>
             </section>
         </main>
         <nav class="navigation-bottom">
             <span>
-<<<<<<< HEAD:app/View/Resume/index.php
                 <a href="../Home"><i class="icon-1" data-feather="home"></i></a>
             </span>
             <span>
@@ -203,21 +186,6 @@
             </span>
             <span>
                 <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
-=======
-                <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
-            </span>
-            <span>
-                <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
-            </span>
-            <span>
-                <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
-            </span>
-            <span>
-                <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
-            </span>
-            <span>
-                <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Abstract/abstract.html
             </span>
         </nav>
         <script src="../app/View/Resume/script.js" defer></script>

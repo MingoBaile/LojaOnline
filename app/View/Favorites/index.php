@@ -16,11 +16,7 @@
         </a>
         <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
         <div slot="actions" class="actions flex gap-3 center">
-<<<<<<< HEAD:app/View/Favorites/index.php
             <a href="../Login" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-=======
-            <a href="../Login/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Favorites/index.html
             <a href="../Cartshopping/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
@@ -105,11 +101,7 @@
             <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </span>
         <span>
-<<<<<<< HEAD:app/View/Favorites/index.php
             <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
-=======
-            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
->>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:app/View/Favorites/index.html
         </span>
     </nav>
 <script src="../app/View/Favorites/script.js" defer></script>
