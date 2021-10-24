@@ -49,22 +49,38 @@
         {
             "title":"Kits turbos",
             "img":"../../assets/img-products/categorias/categoria-kit.jpg",
+<<<<<<< HEAD
             "url":"../ListShopping"
+=======
+            "url":"../List/"
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed
         },
         {
             "title":"Faróis",
             "img":"../../assets/img-products/categorias/categoria-farou.jpg",
+<<<<<<< HEAD
             "url":"../ListShopping"
+=======
+            "url":"../List/"
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed
         },
         {
             "title":"Rodas",
             "img":"../../assets/img-products/categorias/categoria-roda.jpg",
+<<<<<<< HEAD
             "url":"../ListShopping"
+=======
+            "url":"../List/"
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed
         },
         {
             "title":"Turbos",
             "img":"../../assets/img-products/categorias/categoria-turbo.jpg",
+<<<<<<< HEAD
             "url":"../ListShopping"
+=======
+            "url":"../List/"
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed
         }
 
     ]

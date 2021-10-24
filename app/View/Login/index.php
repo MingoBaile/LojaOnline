@@ -15,12 +15,21 @@
 <body>
     <navigation-top style="width: 100%;">
         <a href="../Home/" slot="brand">
+<<<<<<< HEAD:app/View/Login/index.php
             <img src="assets/brand-white.svg" alt="Cartunings logo" height="40" aria-label="">
         </a>
         <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100">
         <div slot="actions" class="actions flex gap-3 center">
             <a href="../Favorites" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
             <a href="../Cartshopping" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+=======
+            <img src="../../assets/brand-white.svg" alt="Cartunings logo" height="40" aria-label="">
+        </a>
+        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100">
+        <div slot="actions" class="actions flex gap-3 center">
+            <a href="../Favorites/" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Cartshopping/" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:src/pages/Login/index.html
         </div>
     </navigation-top>
 
@@ -139,6 +148,7 @@
     </main>
     <nav class="navigation-bottom">
         <span>
+<<<<<<< HEAD:app/View/Login/index.php
             <a href="../Home"><i class="icon-1" data-feather="home"></i></a>
         </span>
         <span>
@@ -152,6 +162,21 @@
         </span>
         <span>
             <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
+=======
+            <a href="../Home/index.php"><i class="icon-1" data-feather="home"></i></a>
+        </span>
+        <span>
+            <a href="../Search/"><i class="icon-1" data-feather="search"></i></a>
+        </span>
+        <span>
+            <a href="../Favorites/"><i class="icon-1" data-feather="heart"></i></a>
+        </span>
+        <span>
+            <a href="../Cartshopping/"><i class="icon-1" data-feather="shopping-cart"></i></a>
+        </span>
+        <span>
+            <a href="../Login/"><i class="icon-1" data-feather="user"></i></a>
+>>>>>>> a9893e29ccff60fa0c27166d190a75baca2dc3ed:src/pages/Login/index.html
         </span>
     </nav>
 <script src="app/View/Login/script.js" defer></script>

@@ -1,0 +1,279 @@
+@import '../../../style/root.css';
+
+body{
+    background:var(--color-foreground-4);
+    width:100%;
+    height:100vh;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--scale-xxlarge)
+}
+
+nav{
+    width:100%;
+    max-height:var(--scale-xxextra);
+    padding:var(--scale-medium) var(--scale-big);
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background:var(--color-neutral-5);
+}
+
+nav .nav-container{
+    width:var(--width-main);
+    display:flex;
+    gap:var(--scale-big);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper-container{
+    width: 100%;
+    margin-bottom:var(--scale-large);
+    display:flex;
+    flex-direction: row;
+    gap:var(--scale-xxlarge);
+}
+
+.wrapper-container>.heading{
+    color:var(--color-neutral-4);
+    display:flex;
+    align-items:center;
+    gap:var(--scale-large);
+}
+
+.cabecalhostatus{
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+
+}
+
+/* inicio div cabecalhostatus*/
+.step-item{
+    border-radius: var(--radius-xxbig);
+    justify-content: space-between;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--scale-medium);
+    background-color: var(--color-principal-light);
+    padding: var(--scale-medium);
+    padding-right: var(--scale-large);
+    font-weight: var(--font-weight-subbold);
+    color: var(--color-neutral-4);
+    position: relative;
+}
+
+.cabecalhostatus{
+    display: flex;
+    flex-flow: row;
+    gap: var(--scale-extra)
+}
+
+.step-item::after{
+    content: '';
+    width: 100%;
+    height: var(--scale-xxsmall);
+    position: absolute;
+    background-color: var(--color-neutral-2);
+    top: 50%;
+    left: 100%;
+}
+.step-item:last-child::after{
+    width: 0;
+}
+
+.step-item>svg{
+    background-color:var(--color-neutral-1);
+    border-radius: var(--radius-xxbig);
+    padding: var(--scale-xsmall);
+}
+
+.step-item.active{
+    background-color: var(--color-primary-1);
+    color: var(--color-primary-4);
+}
+.step-item.active>svg{
+    background-color: var(--color-primary-2);
+}
+
+.step-item.check{
+    color: var(--color-feedback-positive-5);
+}
+.step-item.check>svg{
+    background-color: var(--color-feedback-positive-1);
+}
+/* fim div cabecalhostatus*/
+
+/* inicio div cabecalhostatus*/
+.cabecalhopagamentos{
+    background-color: var(--color-neutral-1);
+    padding: var(--scale-xlarge) 0 var(--scale-xlarge) 0;
+}
+/* fim div cabecalhostatus*/
+
+/* inicio session list-cads */
+.sessioncards{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--scale-xlarge);
+}
+
+.list-cads{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--scale-medium);
+}
+
+.dcards{
+    background-color: var(--color-principal-light);
+    padding: var(--scale-large);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--scale-xsmall);
+}
+
+.dcards>.body{
+    width: 100%;
+}
+
+.scards{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+/* fim session list-cads */
+
+/* inicio session add-cads */
+.add-cads{
+    background-color: var(--color-principal-light);
+    padding: var(--scale-large);
+    border-radius: var(--scale-xsmall);
+}
+.dadd-cads{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--scale-large);
+}
+
+.dadd-cads>input{
+    margin-bottom: var(--scale-medium);
+}
+
+.dactions-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap:var(--scale-large);
+    float:right;
+}
+
+.details-cards{
+    display: flex;
+    flex-direction: row;
+    gap: var(--scale-xlarge)
+}
+
+.class-label{
+    font-size: var(--fonte-subheding);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--scale-small);
+}
+/* fim session add-cads */
+
+/* inicio session call-add-cads */
+.call-add-cads{
+    width:100%;
+}
+/* fim session add-cads */
+
+/* inicio session account-data */
+.account{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--scale-xxlarge)
+}
+
+.account-data, .amount{
+    background-color: var(--color-principal-light);
+    padding: var(--scale-large);
+    border-radius: var(--scale-xsmall);
+}
+
+.daccount-data, .endereco{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name, .email, .sendereco, .cep{
+    display: flex;
+    flex-direction: column;
+}
+
+.view-more{
+    width:100%;
+}
+/* fim session account-data */
+
+/* inicio session amount */
+.d-amount{
+    display: flex;
+    flex-direction: column;
+}
+.squantity, .discount, .subtotal, .total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.discount .price{
+    color: var(--color-feedback-negative-3);
+}
+.subtotal .price{
+    text-decoration: line-through;
+}
+/* fim session amount */
+
+/* inicio session finish */
+.finish{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap:var(--scale-large);
+    float:right;
+}
+/* fim session finish */
+
+@media only screen and (max-width: 1199.98px){
+
+}
+@media only screen and (max-width: 991.98px){
+    main{
+        width:100%;
+        padding: var(--scale-large);
+    }
+}
+
+@media only screen and (max-width:767.98px){
+
+}
+
+@media only screen and (max-width:575.98px){
+
+}
