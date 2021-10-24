@@ -6,26 +6,50 @@
     class Product {
         private $user;
 
-        private $name;
+        private $id;
+        private $title;
+        private $category;
         private $descrition;
-        private $pricce;
+        private $favorite;
+        private $price;
+        private $imgBanner;
+        private $imgsGalery;
 
-        public function __construct(){
-            $this->user = new User('Gilson','09/08/1994','123','gilsonjosert@gmail.com');
-        }
+        // public function __construct(){}
+
+        // public function __construct($_title,$_category,$_descrition,$_favorite,$_price,$_imgBanner,$_imgsGalery){
+        //     $this->title = $_title;
+        //     $this->category = $_category;
+        //     $this->descrition = $_descrition;
+        //     $this->favorite = $_favorite;
+        //     $this->price = $_price;
+        //     $this->imgBanner = $_imgBanner;
+        //     $this->imgsGalery = $_imgsGalery;
+        // }
+
+        // public function __construct(){
+        //     $this->id = _id;
+        //     $this->user = new User('Gilson','09/08/1994','123','gilsonjosert@gmail.com');
+        // }
         
-        public function insertProduct($name,$descrition,$price){
-            $this->name = $name;
-            $this->descrition = $descrition;
-            $this->price = $price;
+        public function insertProduct($_title,$_category,$_descrition,$_favorite,$_price,$_imgBanner,$_imgsGalery){
+            $this->title = $_title;
+            $this->category = $_category;
+            $this->descrition = $_descrition;
+            $this->favorite = $_favorite;
+            $this->price = $_price;
+            $this->imgBanner = $_imgBanner;
+            $this->imgsGalery = $_imgsGalery;
         }
 
-        public function toString(){
-            print $this->user;
-            print $this->name;
-            print $this->descrition;
-            print $this->price;
-        }
+        // public function toString(){
+        //     print $this->user;
+        //     print $this->title;
+        //     print $this->descrition;
+        //     print $this->price;
+        // }
     }
+
+    new Product();
 
 ?>
