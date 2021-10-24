@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | Order</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="../../scripts/index.js" defer></script>
-    <script src="../../components/Navigation/index.js" defer></script>
+    <link rel="stylesheet" href="../app/View/OrderFinish/style.css">
+    <script src="../scripts/index.js" defer></script>
+    <script src="../components/Navigation/index.js" defer></script>
 </head>
 <body>
     <navigation-top >
-        <a href="../Home/" slot="brand">
-            <img src="../../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
+        <a href="../Home" slot="brand">
+            <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
         <div slot="actions" class="actions flex gap-3 center">
-            <a href="../Home/" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="home"></i></a>
+            <a href="../Home" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="home"></i></a>
         </div>
     </navigation-top>
     <!-- <nav>
@@ -56,6 +56,6 @@
             <button class="tertiary"><i data-feather="printer"></i>Imprimir comprovante</button>
         </footer>
     </main>
-<script src="./script.js" defer></script>
+<script src="../app/View/OrderFinish/script.js" defer></script>
 </body>
 </html>
