@@ -56,4 +56,14 @@ class User{
         $this->password = $password;
         $this->email = $email;
     }
+
+    public function saveUser(){
+        $db = Database::getConnection();
+
+        $query = $db->query('INSERT INTO Users (name,email,password) VALUES(:nome,:email,:password)');
+        $query->bindValeu(':nome',$this->nome);
+        $query->bindValeu(':email',$this->email);
+        $query->bindValeu(':password',$this->password);
+        $query->execute();
+    }
 }

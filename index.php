@@ -1,5 +1,10 @@
 <?php
     require_once __DIR__ . '/libs/Router.php';
+    
+    // Database
+    include ('dao/Database.php');
+
+    // Controllers
     include ('app/Controller/Home.php');
     include ('app/Controller/Login.php');
     include ('app/Controller/Address.php');
@@ -15,7 +20,15 @@
     // Use this namespace
     use Steampixel\Route;
 
+    // Database::getConnection();
+
     // Add your first route
+    Route::add('/', function() {
+        $controller = new Home();
+        $controller->home();
+    },'get');
+
+    //Home
     Route::add('/home', function() {
         $controller = new Home();
         $controller->home();
