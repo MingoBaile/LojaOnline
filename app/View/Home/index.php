@@ -4,27 +4,6 @@
     $data = json_decode($json);
     $products = $data->products;
     $categoria = $data->categoria;
-
-    
-    // $product = new Product();
-
-    // $product.insertProduct(
-    //     "Kit Opala SS - 6 cilindros",
-    // "Kits turbos",
-    // "Opala SS 1979 Original 2.5",
-    // "true",
-    // "1.500,00",
-    // "../../assets/img-products/car-opala-principal.jpg",
-    // [   "../../assets/img-products/car-opala-1.jpg",
-    //     "../../assets/img-products/car-opala-2.jpg",
-    //     "../../assets/img-products/car-opala-3.jpg"]);
-
-    // var_dump($product);
-
-    // foreach ($products as $key => $value){
-    //     print $value->title;
-    // }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
