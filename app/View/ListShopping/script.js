@@ -26,6 +26,6 @@ window.onload = function(){
     const btnHome = document.querySelector('.btnHome');
 
     btnHome.addEventListener('click',()=>{
-        document.location = '../Home/index.php';
+        document.location = '../Home';
     })
 }
