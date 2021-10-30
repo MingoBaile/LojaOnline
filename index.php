@@ -20,7 +20,11 @@
     // Use this namespace
     use Steampixel\Route;
 
-    // Database::getConnection();
+    Database::getConnection();
+    // Database::createSchemaUser();
+    // Database::createSchemaCategory();
+    // Database::createSchemaImgGalery();
+    // Database::createSchemaProduct();
 
     // Add your first route
     Route::add('/', function() {
