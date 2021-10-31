@@ -21,10 +21,15 @@
     use Steampixel\Route;
 
     Database::getConnection();
-    // Database::createSchemaUser();
-    // Database::createSchemaCategory();
-    // Database::createSchemaImgGalery();
-    // Database::createSchemaProduct();
+    Database::createSchemaUser();
+    Database::createSchemaCategory();
+    Database::createSchemaImgGalery();
+    Database::createSchemaProduct();
+    Database::createSchemaAddress();
+    Database::createSchemaFavorites();
+    Database::createSchemaCartShopping();
+    Database::createSchemaCards();
+    Database::createSchemaPayments();
 
     // Add your first route
     Route::add('/', function() {

@@ -60,3 +60,6 @@ MIT
 
 
 [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+
+## Debugar o PHP no visual code
+[//]: # (Debugar PHP https://www.linkedin.com/pulse/debugando-código-php-com-xdebug-visual-studio-code-ricardo-torquato/?originalSubdomain=pt)
