@@ -48,25 +48,20 @@
         $controller->login();
     },'get');
 
-    Route::add('/login', function() {
+    Route::add('/profile', function() {
+        $controller = new Profile();
+        $controller->loginAuth();
+    },['get','post']);
+
+    Route::add('/register', function() {
         $controller = new Login();
-        $controller->login();
+        $controller->registerUser();
     },'post');
 
     Route::add('/logout', function() {
         $controller = new Login();
         $controller->logout();
     },['get','post']);
-
-    Route::add('/profile', function() {
-        $controller = new Profile();
-        $controller->profile();
-    },'get');
-
-    Route::add('/profile', function() {
-        $controller = new Profile();
-        $controller->profile();
-    },'post');
 
     Route::add('/details', function() {
         $controller = new Details();

@@ -1,8 +1,9 @@
 <?php 
     // https://www.php.com.br/instalacao-php-linux
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        require_once 'app/Controller/auth/auth_login.php';
-        if(!auth_validate($_POST['nome'],$_POST['pass'])){
+        $user = $_SESSION['user'];
+        if(!isset($user)){
+            unset($_SESSION["user"]);
             header('Location: ../Login');
             die();
         }
@@ -61,7 +62,7 @@
         <aside class="aside-profile">
             <div class="card-perfil">
                 <img src="../assets/img-products/car-opala-principal.jpg" alt="Imagem ">
-                <label><?php echo "{$_POST['nome']}" ?></label>
+                <label><?php echo $user->getName() ?></label>
             </div>
             <div class="nav-link">
                 <ul class="nav-upper">
@@ -84,7 +85,7 @@
         </aside>
         
         <section class="profile-content">
-            <h4>Bem-vindo, <?php echo "{$_POST['nome']}" ?>!</h4>
+            <h4>Bem-vindo, <?php echo $user->getName() ?>!</h4>
             <article class="section-content profile-grid">
                 <div class="profile-grid-item">
                     <a href=""><i data-feather="user"></i>Perfil</a>

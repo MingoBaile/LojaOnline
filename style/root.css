@@ -475,6 +475,33 @@ nav .nav-container{
     color:var(--color-principal-light);
 }
 
+.notification{
+	display:flex;
+	flex-flow:row nowrap;
+	gap:var(--scale-medium);
+	padding:var(--scale-medium);
+	justify-content: center;
+	align-items:center;
+	width:100%;
+
+	background:var(--color-foreground-6);
+	color:var(--color-principal-light);
+	border-radius:var(--radius-small);
+	animation: slide-down 500ms both ease-in-out;
+}
+
+.notification p{
+	user-select: none;
+	font-weight: var(--font-weight-subbold);
+	font-size: var(--font-captalize);
+	width:100%;
+}
+
+.notification a{
+	padding:var(--scale-medium) !important;
+	max-height:var(--scale-large);
+}
+
 /* Media Desktops */
 @media only screen and (max-width: 1199.98px)  {
     main{

@@ -1,4 +1,14 @@
 <?php
+    include_once ('app/Model/User.php');
+    include_once ('components/Notification/Notification.php');
+    session_start();
+    $_SESSION['notification-login'] = false;
+    $_SESSION['notification-register-err'] = false;
+    $_SESSION['notification-register'] = false;
+    $_SESSION['notification-register-pass-err'] = false;
+    if(!isset($_SESSION["user"])){
+        header('Location: ../profile');
+    }
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +44,7 @@
                 <div class="body w-100">
                     <div class="input-group">
                         <label>E-mail</label>
-                        <input type="email"  placeholder="Digite seu e-mail aqui." class="w-100"/>
+                        <input type="email"  placeholder="Digite seu e-mail aqui." require class="w-100"/>
                     </div>
                 </div>
                 <footer class="w-100 flex justify-end">
@@ -42,19 +52,21 @@
                 </footer>
             </form>
             <section class="flex row gap-5">
-                <form class="flex column w-100 gap-4" action="../Profile" method="POST">
+                <form class="flex column w-100 gap-4" action="../profile" method="POST">
                     <header class="w-100 flex column gap-2">
                         <h4 class="heading">Acessar a conta</h4>
                         <h6 class="w-100 sub-heading">Entre na conta para continuar a venda</h6> 
                     </header>
+                    <?php $_SESSION['notification-login'] ? Notification::View("E-mail ou senha incorretos!","info") : '' ?>
+                    <?php $_SESSION['notification-login-empty'] ? Notification::View("Preencha os campos para acessar!","info") : '' ?>
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label for="nome">E-mail</label>
-                            <input type="text" name="nome" id="nome" placeholder="Digite seu e-mail aqui." class="w-100"/>
+                            <input type="text" require id="loginName" name="loginName" placeholder="Digite seu e-mail aqui." class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label for="nome" aria-label="Senha">Senha</label>
-                            <input type="password" name="pass" id="pass" placeholder="*********" class="w-100"/>
+                            <input type="password" require id="loginPassword" name="loginPassword" placeholder="*********" class="w-100"/>
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end gap-3">
@@ -62,27 +74,30 @@
                         <button class="primary" type="submit">Logar<i data-feather="log-in"></i></button>
                     </footer>
                 </form>
-                <form class="flex column w-100 gap-4">
+                <form class="flex column w-100 gap-4" action="../register" method="POST">
                     <header class="w-100 flex column gap-2">
                         <h4 class="heading">Não tem Cadastro</h4>
                         <h6 class="w-100 sub-heading">Faça cadastro para continuar a venda.</h6> 
                     </header>
+                    <?php $_SESSION['notification-register-err'] ? Notification::View("E-mail já cadastrados!","info") : '' ?>
+                    <?php $_SESSION['notification-register-pass-err'] ? Notification::View("Senhas não são iguais!","info") : '' ?>
+                    <?php $_SESSION['notification-register'] ? Notification::View("Usuário cadastrado!","info") : '' ?>
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label>Nome</label>
-                            <input type="text"  placeholder="João Oliveira" class="w-100"/>
+                            <input type="text" require id="name" name="name"  placeholder="João Oliveira" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>E-mail</label>
-                            <input type="email"  placeholder="joao@gmail.com" class="w-100"/>
+                            <input type="email" require id="email" name="email"  placeholder="joao@gmail.com" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>Senha</label>
-                            <input type="password"  placeholder="************" class="w-100"/>
+                            <input type="password" require id="password" name="password"  placeholder="************" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>Confirme a senha</label>
-                            <input type="password"  placeholder="************" class="w-100"/>
+                            <input type="password" require id="password1" name="password1"  placeholder="************" class="w-100"/>
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end">

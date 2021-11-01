@@ -4,27 +4,18 @@ class Database{
 
     private static $pdo;
 
-    public function __construct(){
-
-    }
+    public function __construct(){}
 
     static function getConnection(){
         try{
-            // if(this->pdo==null){
-            //     this->pdo = new PDO("sqlite:/cartuning.sqlite","","",array(
-            //         PDO::ATTR_PERSISTENT => true
-            //     ));
-            // }
-            // return this->pdo;
             if(!isset(self::$pdo)){
                 self::$pdo = new PDO("sqlite:dao/cartuning.sqlite","","",array(
                      PDO::ATTR_PERSISTENT => true
                  )); // Selecionar tipo de linguagem do banco
-                self::$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             return self::$pdo;
         }catch(PDOException $e){
-            // logerror($e->getMessage(), "opendatabase");
             print "Error in openhrsedb ".$e->getMessage();
         }
         // self usando como se fosse o this para o contexto de um static

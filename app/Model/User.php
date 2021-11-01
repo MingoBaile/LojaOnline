@@ -1,22 +1,16 @@
 <?php
 
-namespace app\Model;
+// namespace app\Model;
 
 class User{
 
-    private $id = 1;
     private $name;
-    private $date_nasc;
     private $password;
     private $email;
 
     // Getters
     public function getName(){
         return $this->name;
-    }
-
-    public function getDateNasc(){
-        return $this->date_nasc;
     }
 
     public function getPassword(){
@@ -32,10 +26,6 @@ class User{
         $this->name = $name;
     }
 
-    public function setDateNasc($date){
-        $this->date_nasc = $date;
-    }
-
     public function setPassword($password){
         $this->password = $password;
     }
@@ -44,26 +34,34 @@ class User{
         $this->email = $email;
     }
 
-    public function setId($id){
-        $this->id += $id;
-    }
-
-
-    public function __construct($name,$date_nasc,$password,$email){
-        setId(1);
+    public function __construct(string $name,string $email,string $password){
         $this->name = $name;
-        $this->date_nasc = $date_nasc;
-        $this->password = $password;
         $this->email = $email;
+        $this->password = password_hash($password,PASSWORD_BCRYPT);
     }
 
-    public function saveUser(){
+    public static function searchUser(string $email){
         $db = Database::getConnection();
-
-        $query = $db->query('INSERT INTO Users (name,email,password) VALUES(:nome,:email,:password)');
-        $query->bindValeu(':nome',$this->nome);
-        $query->bindValeu(':email',$this->email);
-        $query->bindValeu(':password',$this->password);
+        $query = $db->prepare('SELECT name, email, password FROM User WHERE email = :email;');
+        $query->bindValue(':email',$email);
         $query->execute();
+
+        $data = $query->fetch(); // get first return of table
+
+        if(!isset($data)) return false;
+        
+        $user = new User($data['name'],$data['email'],$data['password']);
+        $user->setPassword($data['password']);
+        return $user;
     }
+
+    public function equalsUser(string $email){
+        $db = Database::getConnection();
+        $query = $db->prepare('SELECT email FROM User WHERE email = :email;');
+        $query->bindValue(':email',$email);
+        $query->execute();
+        $data = $query->fetch();
+        return $data;
+    }
+
 }
