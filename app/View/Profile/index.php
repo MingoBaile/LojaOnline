@@ -2,8 +2,9 @@
     // https://www.php.com.br/instalacao-php-linux
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $user = $_SESSION['user'];
-        if(!isset($user)){
-            unset($_SESSION["user"]);
+        var_dump("Oiii");
+        
+        if($_SESSION['user']==NULL){
             header('Location: ../Login');
             die();
         }

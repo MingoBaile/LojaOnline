@@ -1,3 +1,7 @@
+<?php 
+    include_once ('app/Controller/Auth.php');
+    Auth::validation();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

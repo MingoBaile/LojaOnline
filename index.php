@@ -3,8 +3,10 @@
     
     // Database
     include_once ('dao/Database.php');
+    
 
     // Controllers
+    include_once ('app/Controller/Auth.php');
     include_once ('app/Controller/Home.php');
     include_once ('app/Controller/Login.php');
     include_once ('app/Controller/Address.php');
@@ -30,6 +32,9 @@
     Database::createSchemaCartShopping();
     Database::createSchemaCards();
     Database::createSchemaPayments();
+
+    session_start();
+    Auth::validation();
 
     // Add your first route
     Route::add('/', function() {
@@ -57,11 +62,6 @@
         $controller = new Login();
         $controller->registerUser();
     },'post');
-
-    Route::add('/logout', function() {
-        $controller = new Login();
-        $controller->logout();
-    },['get','post']);
 
     Route::add('/details', function() {
         $controller = new Details();

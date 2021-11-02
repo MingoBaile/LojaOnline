@@ -1,11 +1,8 @@
 <?php
-include_once (dirname(__FILE__) .'/Controller.php');
+include_once ('app/Controller/Controller.php');
+include_once ('app/Controller/Auth.php');
 
 class Profile extends Controller{
-
-    public function profile(){
-        $this->view("Profile");
-    }
 
     public function loginAuth(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -19,7 +16,6 @@ class Profile extends Controller{
             $user = User::searchUser($email);
             
             if(password_verify($password,$user->getPassword())){
-                session_start();
                 $_SESSION['user'] = $user;
                 $this->view("Profile");
             }else{
@@ -27,14 +23,15 @@ class Profile extends Controller{
                 $_SESSION['notification-login'] = true;
                 die();
             }
+        }else{
+            header('Location: ../Login');
+            die();
         }
     }
 
     public function logout(){
-        // if(unset($_SESSION["user"])){
         unset($_SESSION["user"]);
         $this->view("Home");
-        // }
     }
 }
 

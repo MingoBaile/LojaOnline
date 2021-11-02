@@ -1,5 +1,4 @@
 <?php 
-    // $product = require_once('../../app/Model/Product.php');
     $json = file_get_contents("app/View/Home/data.json");
     $data = json_decode($json);
     $products = $data->products;

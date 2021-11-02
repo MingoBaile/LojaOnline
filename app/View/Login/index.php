@@ -1,15 +1,5 @@
 <?php
-    include_once ('app/Model/User.php');
     include_once ('components/Notification/Notification.php');
-    session_start();
-    $_SESSION['notification-login'] = false;
-    $_SESSION['notification-register-err'] = false;
-    $_SESSION['notification-register'] = false;
-    $_SESSION['notification-register-pass-err'] = false;
-    if(!isset($_SESSION["user"])){
-        header('Location: ../profile');
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

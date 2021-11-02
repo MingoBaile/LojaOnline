@@ -1,20 +1,17 @@
 <?php
-include_once (dirname(__FILE__) .'/Controller.php');
+include_once ('app/Controller/Controller.php');
 include_once ('app/Model/User.php');
+include_once ('app/Controller/Auth.php');
 
 class Login extends Controller{
 
     public function login() {
-        unset($_SESSION["user"]);
-        unset($_SESSION['notification-login']);
-        unset($_SESSION['notification-register-err']);
-        unset($_SESSION['notification-register']);
-        unset($_SESSION['notification-register-pass-err']);
         $this->view("Login");
     }
 
     public function registerUser(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            Auth::resetSessionNotification();
             $name       = $_POST['name'];
             $email      = $_POST['email'];
             $password   = $_POST['password'];
@@ -33,6 +30,7 @@ class Login extends Controller{
 
             $db = Database::getConnection();
             $equals = $user->equalsUser($user->getEmail());
+
             if($equals){
                 $this->view("Login");
                 $_SESSION['notification-register-err'] = true;
