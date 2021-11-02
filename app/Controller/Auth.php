@@ -1,10 +1,8 @@
 <?php
 class Auth{
     public static function validation(){
-        // var_dump($_SESSION['user']);
-        // die();
         if(isset($_SESSION['user'])){
-            echo ('Autenticado!');
+            // echo ('Autenticado!');
         }else{
             unset($_SESSION['user']);
             // session_abort();

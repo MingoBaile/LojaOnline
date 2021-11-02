@@ -53,6 +53,11 @@
         $controller->login();
     },'get');
 
+    Route::add('/logout', function() {
+        $controller = new Profile();
+        $controller->logout();
+    },'get');
+
     Route::add('/profile', function() {
         $controller = new Profile();
         $controller->loginAuth();
