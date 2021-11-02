@@ -36,10 +36,11 @@ class Database{
     static function createSchemaCategory(){
         $connect = self::getConnection();
         $connect->exec('
-            CREATE TABLE IF NOT EXISTS Caterogy(
+            CREATE TABLE IF NOT EXISTS Category(
                 id          INTEGER PRIMARY KEY,
+                title       TEXT NOT NULL,
                 img         BLOB NOT NULL,
-                url         TEXT NOT NULL
+                type        TEXT NOT NULL
             )
         ');
     }
@@ -92,12 +93,7 @@ class Database{
         $connect->exec('
             CREATE TABLE IF NOT EXISTS Favorites(
                 idUser      INTEGER NOT NULL,
-                idProduct   INTEGER NOT NULL,
-                
-                PRIMARY KEY(idUser,idProduct),
-                FOREIGN KEY(idUser) REFERENCES Users(id),
-                FOREIGN KEY(idProduct) REFERENCES Product(id)
-                
+                idProduct   INTEGER NOT NULL
             )
         ');
     }
@@ -113,7 +109,6 @@ class Database{
                 PRIMARY KEY(idUser,idProduct),
                 FOREIGN KEY(idUser) REFERENCES Users(id),
                 FOREIGN KEY(idProduct) REFERENCES Product(id)
-                
             )
         ');
     }
@@ -129,9 +124,8 @@ class Database{
                 CVV         INTEGER NOT NULL,
 
                 idUser      INTEGER, 
-                PRIMARY KEY(cardName,CPF,cardNumber,CVV),     
+                PRIMARY KEY(cardName,CPF,cardNumber,CVV),
                 FOREIGN KEY(idUser) REFERENCES Users(id)
-                
             )
         ');
     }
@@ -155,15 +149,128 @@ class Database{
         ');
     }
 
-    static function selectShema($table,$instrution){
-        $result = this->pdo->query("SELECT $table FROM $instrution");
-        return $result;
+    static function userAll(){
+        $connect = self::getConnection();
+        $sql = $connect->prepare('SELECT * FROM `User`;');
+        $sql->execute();
+        $data = $sql->fetchAll();
+        return $data;
     }
 
-    static function printSchema($table){
-        foreach($result as $row){
-            print $row[$table] . "\n";
-        }
+    static function productAll(){
+        $connect = self::getConnection();
+        $sql = $connect->prepare('SELECT * FROM `Product`;');
+        $sql->execute();
+        $data = $sql->fetchAll();
+        return $data;
+    }
+
+    static function favoritesAll(){
+        $connect = self::getConnection();
+        $sql = $connect->prepare('SELECT * FROM `Favorites`;');
+        $sql->execute();
+        $data = $sql->fetchAll();
+        return $data;
+    }
+
+    static function inflateDB(){
+        $connect = self::getConnection();
+        // Inflate Product
+        $sqlProduct = 'INSERT INTO Product(`title`,`descrition`,`imgBanner`,`idCategoria`,`idImgGalerry`,`price`) VALUES(:title,:descrition,:imgBanner,:idCategoria,:idImgGalerry,:price);';
+        $sql = $connect->prepare($sqlProduct);
+        $sql->bindValue(':title',"Opala SS");
+        $sql->bindValue(':descrition',"Descrição do Opala SS");
+        $sql->bindValue(':imgBanner','assets/img-products/car-opala-principal.jpg');
+        $sql->bindValue(':idCategoria',0);
+        $sql->bindValue(':idImgGalerry',0);
+        $sql->bindValue(':price',1500.00);
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlProduct);
+        $sql->bindValue(':title',"Ferrari");
+        $sql->bindValue(':descrition',"Descrição do Ferrari");
+        $sql->bindValue(':imgBanner','assets/img-products/car-ferrari-principal.jpg');
+        $sql->bindValue(':idCategoria',1);
+        $sql->bindValue(':idImgGalerry',1);
+        $sql->bindValue(':price',7800.00);
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlProduct);
+        $sql->bindValue(':title',"Fiat 147");
+        $sql->bindValue(':descrition',"Descrição do Fiat 147");
+        $sql->bindValue(':imgBanner','assets/img-products/car-fiat147-principal.jpg');
+        $sql->bindValue(':idCategoria',2);
+        $sql->bindValue(':idImgGalerry',2);
+        $sql->bindValue(':price',2200.00);
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlProduct);
+        $sql->bindValue(':title',"Lancer");
+        $sql->bindValue(':descrition',"Descrição do Lancer");
+        $sql->bindValue(':imgBanner','assets/img-products/car-lancer-principal.jpg');
+        $sql->bindValue(':idCategoria',3);
+        $sql->bindValue(':idImgGalerry',4);
+        $sql->bindValue(':price',4500.00);
+        $sql->execute();
+
+        $sqlGaleryProduct = 'INSERT INTO galeryProduct(`id`,`img`) VALUES(:id,:img);';
+        $sql = $connect->prepare($sqlGaleryProduct);
+        $sql->bindValue(':id',0);
+        $sql->bindValue(':img','assets/img-products/car-opala-1.jpg');
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlGaleryProduct);
+        $sql->bindValue(':id',0);
+        $sql->bindValue(':img','assets/img-products/car-opala-2.jpg');
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlGaleryProduct);
+        $sql->bindValue(':id',0);
+        $sql->bindValue(':img','assets/img-products/car-opala-3.jpg');
+        $sql->execute();
+
+        $sqlFavorites = 'INSERT INTO Favorites(`idUser`,`idProduct`) VALUES(:idUser,:idProduct);';
+        $sql = $connect->prepare($sqlFavorites);
+        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idProduct',0);
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlFavorites);
+        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idProduct',2);
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlFavorites);
+        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idProduct',3);
+        $sql->execute();
+
+        $sqlCategory = 'INSERT INTO Category(`title`,`img`,`type`) VALUES(:title,:img,:type);';
+        $sql = $connect->prepare($sqlCategory);
+        $sql->bindValue(':title','Farou');
+        $sql->bindValue(':img','assets/img-products/categorias/categoria-farou.jpg');
+        $sql->bindValue(':type','farou');
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlCategory);
+        $sql->bindValue(':title','Kit');
+        $sql->bindValue(':img','assets/img-products/categorias/categoria-kit.jpg');
+        $sql->bindValue(':type','kit');
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlCategory);
+        $sql->bindValue(':title','Roda');
+        $sql->bindValue(':img','assets/img-products/categorias/categoria-roda.jpg');
+        $sql->bindValue(':type','roda');
+        $sql->execute();
+
+        $sql = $connect->prepare($sqlCategory);
+        $sql->bindValue(':title','Turbo');
+        $sql->bindValue(':img','assets/img-products/categorias/categoria-turbo.jpg');
+        $sql->bindValue(':type','turbo');
+        $sql->execute();
+
+
     }
 
 }

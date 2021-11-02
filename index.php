@@ -33,6 +33,23 @@
     Database::createSchemaCards();
     Database::createSchemaPayments();
 
+    foreach(Database::userAll() as $user){
+        var_dump($user['name']);
+    }
+
+    foreach(Database::productAll() as $product){
+        var_dump($product);
+    }
+
+    foreach(Database::favoritesAll() as $favorite){
+        var_dump($favorite);
+    }
+
+    // Database::inflateDB();
+
+    
+    
+
     session_start();
     Auth::validation();
 
