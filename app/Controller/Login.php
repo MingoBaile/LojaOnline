@@ -36,20 +36,22 @@ class Login extends Controller{
 
     public function recoverPass(){
         $email  = $_GET['email'];
-        if(!isset($email)){ 
-            header('Location: ../Login');
-            die();
-        }
+        // if(!isset($email)){ 
+        //     header('Location: ../Login');
+        //     die();
+        // }
         
         $newPassword = $_POST['newpassword'];
         $newPasswordConfirmation = $_POST['newpasswordConfirmation'];
 
-        $db = Database::getConnection();
-        $sql = $db->prepare('UPDATE User SET password = :password WHERE email = :email');
+        $this->view('Recover');
 
-        $sql->bindValue(':password',password_hash($newPassword,PASSWORD_BCRYPT));
-        $sql->bindValue(':email',$email);
-        $sql->execute();
+        // $db = Database::getConnection();
+        // $sql = $db->prepare('UPDATE User SET password = :password WHERE email = :email');
+
+        // $sql->bindValue(':password',password_hash($newPassword,PASSWORD_BCRYPT));
+        // $sql->bindValue(':email',$email);
+        // $sql->execute();
        
     }
 

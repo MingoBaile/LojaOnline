@@ -90,11 +90,6 @@
         $controller->registerUser();
     },'post');
 
-    Route::add('/details', function() {
-        $controller = new Details();
-        $controller->details();
-    },'get');
-
     Route::add('/details/([0-9]*)', function($id) {
         $controller = new Details();
         $controller->details($id);

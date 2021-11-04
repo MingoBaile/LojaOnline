@@ -31,7 +31,7 @@
         <aside class="aside-profile">
             <div class="card-perfil">
                 <img src="../assets/img-products/car-opala-principal.jpg" alt="Imagem ">
-                <label><?php echo $user->getName() ?></label>
+                <label><?= $user->getName(); ?></label>
             </div>
             <div class="nav-link">
                 <ul class="nav-upper">

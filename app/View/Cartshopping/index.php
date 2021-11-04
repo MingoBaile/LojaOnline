@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | CartShopping</title>
-    <link rel="stylesheet" href="../app/View/CartShopping/style.css">
+    <link rel="stylesheet" href="../app/View/Cartshopping/style.css">
     <script src="../scripts/index.js" defer></script>
     <script src="../components/Navigation/index.js" defer></script>
 </head>
