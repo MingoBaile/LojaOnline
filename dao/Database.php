@@ -60,7 +60,7 @@ class Database{
         $connect->exec('
             CREATE TABLE IF NOT EXISTS Product(
                 id          INTEGER PRIMARY KEY,
-                title       TEXT,
+                title       TEXT NOT NULL,
                 descrition  TEXT NOT NULL,
                 imgBanner   BLOB NOT NULL,
                 idCategoria INTEGER NOT NULL,
@@ -157,17 +157,17 @@ class Database{
         return $data;
     }
 
-    static function productAll(){
+    static function categoryAll(){
         $connect = self::getConnection();
-        $sql = $connect->prepare('SELECT * FROM `Product`;');
+        $sql = $connect->prepare('SELECT * FROM `Category`;');
         $sql->execute();
         $data = $sql->fetchAll();
         return $data;
     }
 
-    static function favoritesAll(){
+    static function productAll(){
         $connect = self::getConnection();
-        $sql = $connect->prepare('SELECT * FROM `Favorites`;');
+        $sql = $connect->prepare('SELECT * FROM `Product`;');
         $sql->execute();
         $data = $sql->fetchAll();
         return $data;

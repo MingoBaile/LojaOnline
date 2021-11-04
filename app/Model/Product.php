@@ -1,55 +1,83 @@
 <?php 
-    namespace app\Model;
-    // use app\Model\User;
-    require_once('User.php');
+    // namespace app\Model;
 
     class Product {
-        private $user;
 
         private $id;
         private $title;
-        private $category;
         private $descrition;
-        private $favorite;
+        private $idcategory;
         private $price;
         private $imgBanner;
-        private $imgsGalery;
+        private $imgsGallery;
 
-        // public function __construct(){}
-
-        // public function __construct($_title,$_category,$_descrition,$_favorite,$_price,$_imgBanner,$_imgsGalery){
-        //     $this->title = $_title;
-        //     $this->category = $_category;
-        //     $this->descrition = $_descrition;
-        //     $this->favorite = $_favorite;
-        //     $this->price = $_price;
-        //     $this->imgBanner = $_imgBanner;
-        //     $this->imgsGalery = $_imgsGalery;
-        // }
-
-        // public function __construct(){
-        //     $this->id = _id;
-        //     $this->user = new User('Gilson','09/08/1994','123','gilsonjosert@gmail.com');
-        // }
-        
-        public function insertProduct($_title,$_category,$_descrition,$_favorite,$_price,$_imgBanner,$_imgsGalery){
-            $this->title = $_title;
-            $this->category = $_category;
-            $this->descrition = $_descrition;
-            $this->favorite = $_favorite;
-            $this->price = $_price;
-            $this->imgBanner = $_imgBanner;
-            $this->imgsGalery = $_imgsGalery;
+        // Getters
+        public function getId(){
+            return $this->id;
         }
 
-        // public function toString(){
-        //     print $this->user;
-        //     print $this->title;
-        //     print $this->descrition;
-        //     print $this->price;
-        // }
-    }
+        public function getTitle(){
+            return $this->title;
+        }
 
-    new Product();
+        public function getDescrition(){
+            return $this->descrition;
+        }
+
+        public function getIdCategory(){
+            return $this->idcategory;
+        }
+
+        public function getPrice(){
+            return $this->price;
+        }
+
+        public function getImgBanner(){
+            return $this->imgBanner;
+        }
+
+        public function getImgsGallery(){
+            return $this->imgGallery;
+        }
+
+        // Setters
+        public function setId($_id){
+            $this->id = $_id;
+        }
+
+        public function setTitle($_title){
+            $this->title = $_title;
+        }
+
+        public function setDescrition($_descrition){
+            $this->descrition = $_descrition;
+        }
+
+        public function setIdCategory($_idcategory){
+            $this->idcategory = $_idcategory;
+        }
+
+        public function setPrice($_price){
+            $this->price = $_price;
+        }
+
+        public function setImgBanner($_imgBanner){
+            $this->imgBanner = $_imgBanner;
+        }
+
+        public function setImgsGallery($_imgsGallery){
+            $this->imgGallery = $_imgsGallery;
+        }
+
+        public function __construct(string $_id,string $_title,string $_descrition,string $_idcategory,string $_price,$_imgBanner,$_imgsGallery){
+            $this->id = $_id;
+            $this->title = $_title;
+            $this->descrition = $_descrition;
+            $this->idcategory = $_idcategory;
+            $this->price = $_price;
+            $this->imgBanner = $_imgBanner;
+            $this->imgsGallery = $_imgsGallery;
+        }
+    }
 
 ?>

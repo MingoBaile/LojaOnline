@@ -1,8 +1,21 @@
 <?php 
+    include_once ('app/Controller/Home.php');
+
     $json = file_get_contents("app/View/Home/data.json");
     $data = json_decode($json);
-    $products = $data->products;
-    $categoria = $data->categoria;
+    $products = Home::getProducts();
+    $categoria = Home::getCatagory();
+
+
+    // Search product examples return array output
+    // $product = Home::getProduct("F");
+    // foreach($products as $item){
+    //     var_dump($item->getTitle());
+    //     die();
+    // }
+    
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -20,7 +33,7 @@
         <a href="#" slot="brand" class="onVibrate">
             <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
-        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"/>
+        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100" id="search"/>
         <div slot="actions" class="actions flex gap-3 center">
             <a href="../Login" class="btn ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
             <a href="../Favorites" class="btn ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
@@ -32,24 +45,24 @@
             <h4 class="heading">Categorias</h4>
             <section class="list-categorias">
                 <?php foreach($categoria as $key => $item){?>
-                    <a href="<?= $item->url?>" class="categoira" id="<?= $item->title?>">
-                        <label><?= $item->title?></label>
+                    <a href="<?= $item['type'] ?>" class="categoira" id="<?= $item['id'] ?>">
+                        <label><?= $item['title']?></label>
                         <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
-                        <img src="<?= $item->img?>" alt="Categoria de <?= $item->title?>" title="<?= $item->title?>">
+                        <img src="../<?= $item['img'] ?>" alt="Categoria de <?= $item['title']?>" title="<?= $item['title']?>">
                     </a>
                 <?php }?>
             </section>
             <h4 class="heading">Últimos adicionados</h4>
             <section class="list-products">
                 <?php foreach($products as $key => $item){?>
-                    <div class="card-product">
+                    <div class="card-product" id="<?= $item->getId() ?>">
                         <div class="picture">
                             <span class="flex row justify-end">
                                 <button class="px-4 <?= $item->favorite=="true" ? "is-favorite":""?>"><i data-feather="heart"></i></button>
                             </span>
-                            <img src="<?= $item->imgBanner?>" alt="<?= $item->title?>">
+                            <img src="../<?= $item->getImgBanner() ?>" alt="<?= $item->getTitle() ?>">
                             <div class="galeria hover-only">
-                                <?php foreach($item->imgsGalery as $key => $imgs){?>
+                                <?php foreach($item->getImgsGallery() as $key => $imgs){?>
                                     <span>
                                         <img src="<?= $imgs ?>" alt="<?= $item->title?>">
                                     </span>
@@ -58,15 +71,15 @@
                         </div>
                         <div class="body">
                             <a class="information" href="../Details">
-                                <h5><?= $item->title?></h5>
-                                <p><?= $item->descrition?></p>
+                                <h5><?= $item->getTitle() ?></h5>
+                                <p><?= $item->getDescrition() ?></p>
                             </a>
                             <div class="value hover-only">
                                 <span class="flex row  align-center gap-3">
                                     <i data-feather="dollar-sign"></i>
                                     <span class="flex column gap-1 align-start values">
-                                        <small><?= $item->price?></small>
-                                        <strong class="price"><?= $item->price?></strong>
+                                        <small><?= ($item->getPrice() + 100*6) ?></small>
+                                        <strong class="price"><?= $item->getPrice() ?></strong>
                                     </span>
                                 </span>
                                 <div class="actions-card">

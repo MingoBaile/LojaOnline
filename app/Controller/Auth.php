@@ -2,10 +2,10 @@
 class Auth{
     public static function validation(){
         if(isset($_SESSION['user'])){
-            // echo ('Autenticado!');
+            return true;
         }else{
             unset($_SESSION['user']);
-            // session_abort();
+            return false;
         }
     }
 

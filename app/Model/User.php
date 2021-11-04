@@ -48,14 +48,14 @@ class User{
 
         $data = $query->fetch(); // get first return of table
 
-        if(!isset($data)) return false;
+        if(empty($data)) return false;
         
         $user = new User($data['name'],$data['email'],$data['password']);
         $user->setPassword($data['password']);
         return $user;
     }
 
-    public function equalsUser(string $email){
+    public static function equalsUser(string $email){
         $db = Database::getConnection();
         $query = $db->prepare('SELECT email FROM User WHERE email = :email;');
         $query->bindValue(':email',$email);

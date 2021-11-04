@@ -33,25 +33,10 @@
     Database::createSchemaCards();
     Database::createSchemaPayments();
 
-    foreach(Database::userAll() as $user){
-        var_dump($user['name']);
-    }
-
-    foreach(Database::productAll() as $product){
-        var_dump($product);
-    }
-
-    foreach(Database::favoritesAll() as $favorite){
-        var_dump($favorite);
-    }
-
     // Database::inflateDB();
 
-    
-    
-
     session_start();
-    Auth::validation();
+    // Auth::validation();
 
     // Add your first route
     Route::add('/', function() {
@@ -65,10 +50,30 @@
         $controller->home();
     },'get');
 
+    Route::add('/search', function() {
+        $controller = new Home();
+        $controller->search();
+    },'post');
+
     Route::add('/login', function() {
-        $controller = new Login();
-        $controller->login();
+        if(Auth::validation()){
+            $controller = new Profile();
+            $controller->profile();
+        }else{
+            $controller = new Login();
+            $controller->login();
+        }
     },'get');
+
+    Route::add('/recover', function() {
+        $controller = new Login();
+        $controller->recover();
+    },['get','post']);
+
+    Route::add('/recoverPass',function(){
+        $controller = new Login();
+        $controller->recoverPass();
+    },['get','post']);
 
     Route::add('/logout', function() {
         $controller = new Profile();

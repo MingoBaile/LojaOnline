@@ -1,42 +1,10 @@
 <?php 
     // https://www.php.com.br/instalacao-php-linux
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $user = $_SESSION['user'];
-        var_dump("Oiii");
-        
-        if($_SESSION['user']==NULL){
-            header('Location: ../Login');
-            die();
-        }
-        
-        // require_once('../../../app/Model/Product.php');
-        // $product = new Product();
-        // $product->insertProduct('Produto 1','Descricao do produto','1.500,00');
+    $user = $_SESSION['user'];
 
-        // encode json -> https://www.webtutorial.com.br/como-ler-um-arquivo-json-e-decodificar-para-um-objeto-php/
-        $json = file_get_contents("app/View/Profile/data.json");
-        $data = json_decode($json);
-
-        // for($i=0;$i<count($data);$i++){
-        //     print $data[$i]->id;
-        // }
-        // foreach ($data as $key => $value){
-        //     print $value->id;
-        // }
-        // sleep(1);
-        // header('Location: pages/Profile/index.php');
-        // die();
-        // function setTimeout($fn, $timeout){
-        //     sleep(($timeout/1000));
-        //     $fn();
-        // }
-
-        // $someFunctionToExecute = function() {
-        //     header('Location: pages/Profile/index.php');
-        //     die();
-        // }
-        // setTimeout($someFunctionToExecute, 3000);
-    }
+    // encode json -> https://www.webtutorial.com.br/como-ler-um-arquivo-json-e-decodificar-para-um-objeto-php/
+    $json = file_get_contents("app/View/Profile/data.json");
+    $data = json_decode($json);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

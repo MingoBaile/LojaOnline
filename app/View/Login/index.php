@@ -34,7 +34,7 @@
                 <div class="body w-100">
                     <div class="input-group">
                         <label>E-mail</label>
-                        <input type="email"  placeholder="Digite seu e-mail aqui." require class="w-100"/>
+                        <input type="email"  placeholder="Digite seu e-mail aqui." required class="w-100"/>
                     </div>
                 </div>
                 <footer class="w-100 flex justify-end">
@@ -52,15 +52,15 @@
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label for="nome">E-mail</label>
-                            <input type="text" require id="loginName" name="loginName" placeholder="Digite seu e-mail aqui." class="w-100"/>
+                            <input type="text" required id="loginName" name="loginName" placeholder="Digite seu e-mail aqui." class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label for="nome" aria-label="Senha">Senha</label>
-                            <input type="password" require id="loginPassword" name="loginPassword" placeholder="*********" class="w-100"/>
+                            <input type="password" required id="loginPassword" name="loginPassword" placeholder="*********" class="w-100"/>
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end gap-3">
-                        <button class="ghost">Esqueci a senha</button>
+                        <button class="ghost" name="open-modal-recover" type="button">Esqueci a senha</button>
                         <button class="primary" type="submit">Logar<i data-feather="log-in"></i></button>
                     </footer>
                 </form>
@@ -75,19 +75,19 @@
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label>Nome</label>
-                            <input type="text" require id="name" name="name"  placeholder="João Oliveira" class="w-100"/>
+                            <input type="text" required id="name" name="name"  placeholder="João Oliveira" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>E-mail</label>
-                            <input type="email" require id="email" name="email"  placeholder="joao@gmail.com" class="w-100"/>
+                            <input type="email" required id="email" name="email"  placeholder="joao@gmail.com" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>Senha</label>
-                            <input type="password" require id="password" name="password"  placeholder="************" class="w-100"/>
+                            <input type="password" required id="password" name="password"  placeholder="************" class="w-100"/>
                         </div>
                         <div class="input-group w-100">
                             <label>Confirme a senha</label>
-                            <input type="password" require id="password1" name="password1"  placeholder="************" class="w-100"/>
+                            <input type="password" required id="password1" name="password1"  placeholder="************" class="w-100"/>
                         </div>
                     </div>
                     <footer class="w-100 flex justify-end">
@@ -97,49 +97,6 @@
             </section>
         </div>
         </div>
-
-
-        <!-- <div class="login">
-            <div class="wrapper-container">
-                <table>
-                    <tr>
-                        <td>
-                            <h4 class="heading">Acessar a conta</h4>
-                            <h6 class="headingdesc"> Entre na conta para continuar a venda</h5> 
-                            <section>
-                                <input type="email"  placeholder="Digite seu e-mail aqui." slot="search" class="w-50"  />
-                            </section>
-                            <section>
-                                <input type="password"  placeholder="Digite sua senha aqui." slot="search" class="w-50"  />
-                                <p align="right">
-                            </section>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div>
-                                            <button w-15>Esqueci a senha<i data-feather="log-in"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>   
-                                                <button class="primary w-15 flex justify-between align-center">
-                                                    Continuar                            
-                                                </button>
-                                            </div>
-                                        </td>       
-                                    </tr>
-                                </table>
-                            </div>
-                        
-                        </td>
-            </div>
-                        <td>    
-                            <div>teste</div>
-                        </td>
-                    </tr>   
-                </table> -->
-            
         </div>
     </main>
     <nav class="navigation-bottom">
@@ -159,6 +116,25 @@
             <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
         </span>
     </nav>
+    <div class="modal">
+        <div class="overlay"></div>
+        <form class="flex column w-100 gap-4" action="../recover" method="POST">
+            <header class="w-100 flex column gap-2">
+                <h4 class="heading">Recuperar senha</h4>
+                <h6 class="w-100 sub-heading">Será enviado um e-mail para recuperar sua senha.</h6> 
+            </header>
+            <div class="body w-100 flex column gap-3">
+                <div class="input-group w-100">
+                    <label>E-mail</label>
+                    <input type="email" required id="emailRecover" name="emailRecover"  placeholder="joao@gmail.com" class="w-100"/>
+                </div>
+            </div>
+            <footer class="w-100 flex justify-end">
+                <button name="close-modal">Voltar</button>
+                <button class="primary" type="submit">Enviar<i data-feather="arrow-right"></i></button>
+            </footer>
+        </form>
+    </div>
 <script src="app/View/Login/script.js" defer></script>
 </body>
 </html>

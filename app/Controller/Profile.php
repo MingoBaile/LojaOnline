@@ -4,22 +4,26 @@ include_once ('app/Controller/Auth.php');
 
 class Profile extends Controller{
 
+    public function profile(){
+        $this->view("Profile");
+    }
+
     public function loginAuth(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $_SESSION['notification-login-empty'] = false;
             $email      = $_POST['loginName'];
             $password   = $_POST['loginPassword'];
-            if(!isset($email) && !isset($password)){
-                $this->view("Login");
-                $_SESSION['notification-login-empty'] = true;
-                die();
-            }
             $user = User::searchUser($email);
-            
-            if(password_verify($password,$user->getPassword())){
+
+            if($user == false){
+                header('Location: ../Login');
+                $_SESSION['notification-login'] = true;
+                die();
+            }else if(password_verify($password,$user->getPassword())){
                 $_SESSION['user'] = $user;
-                $this->view("Profile");
+                $this->profile();
             }else{
-                $this->view("Login");
+                header('Location: ../Login');
                 $_SESSION['notification-login'] = true;
                 die();
             }
