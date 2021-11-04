@@ -4,7 +4,6 @@
     // Database
     include_once ('dao/Database.php');
     
-
     // Controllers
     include_once ('app/Controller/Auth.php');
     include_once ('app/Controller/Home.php');
@@ -27,6 +26,7 @@
     Database::createSchemaCategory();
     Database::createSchemaImgGalery();
     Database::createSchemaProduct();
+    Database::createSchemaEvaluation();
     Database::createSchemaAddress();
     Database::createSchemaFavorites();
     Database::createSchemaCartShopping();
@@ -94,6 +94,16 @@
         $controller = new Details();
         $controller->details();
     },'get');
+
+    Route::add('/details/([0-9]*)', function($id) {
+        $controller = new Details();
+        $controller->details($id);
+    },'get');
+
+    Route::add('/addCart',function(){
+        $controller = new Details();
+        $controller->addCart();
+    },'post');
 
     Route::add('/favorites', function() {
         $controller = new Favorites();

@@ -55,4 +55,18 @@ window.onload = function(){
         }
     }
 
+    const addCartShopping = document.querySelector('button[name="addCartShopping"]');
+    const product = document.querySelector('[data-product="product"]');
+    let formData = new FormData();
+    formData.append('data',product.id);
+
+    addCartShopping.addEventListener('click',el=>{
+        fetch('/addCart', {
+            method: 'POST',
+            body: formData
+        });
+    });
+
+    
+
 }

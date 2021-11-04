@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <a class="information" href="../Details">
+                            <a class="information" href="../Details/<?= $item->getId()?>">
                                 <h5><?= $item->getTitle() ?></h5>
                                 <p><?= $item->getDescrition() ?></p>
                             </a>

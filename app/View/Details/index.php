@@ -1,5 +1,10 @@
 <?php 
-   
+    include_once ('app/Controller/Details.php');
+    include_once ('app/Controller/Auth.php');
+
+    $product = $_POST['product'];
+    $score = Details::getEvaluation($product->getId());
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,17 +57,17 @@
                 <button class="px-3"><i data-feather="home"></i></button>
             </section>
             <section class="details">
-                <div class="product-images">
-                    <img src="../assets/img-products/car-opala-principal.jpg" alt="">
+                <div class="product-images" data-product="product" id="<?= $product->getId(); ?>">
+                    <img src="../<?= $product->getImgBanner(); ?>" alt="">
                     <div class="galeria">
-                        <img src="../assets/img-products/car-opala-1.jpg" alt="">
-                        <img src="../assets/img-products/car-opala-2.jpg" alt="">
-                        <img src="../assets/img-products/car-opala-3.jpg" alt="">
+                        <?php foreach(Details::getImgs($product->getId()) as $img){ ?>
+                            <img src="../<?= $img ?>" alt="" >
+                        <?php } ?>
                     </div>
                 </div>
                 <aside class="product-detail">
                     <div class="header">
-                        <h5>Kit Opala SS - 6 cilindros </h5>
+                        <h5><?= $product->getTitle(); ?></h5>
                         <button class="px-3"><i data-feather="heart"></i></button>
                     </div>
                     <div class="values">
@@ -71,7 +76,7 @@
                             <span class="flex column gap-1 align-start values">
                                 <small class="desc">25% de desconto</small>
                                 <span class="flex align-center gap-2">
-                                    <strong class="price">345,00</strong>
+                                    <strong class="price"><?= $product->getPrice(); ?></strong>
                                     <small class="price-desc">500,00</small>
                                 </span>
                             </span>
@@ -80,12 +85,13 @@
                     <div class="avaliable">
                         <label>Avaliação do produto</label>
                         <span class="flex gap-2 align-center">
-                            <star-rater data-rating="4"></star-rater> 4,7
+                            <star-rater data-rating="<?= $score; ?>"></star-rater> <?= $score; ?>
                         </span>
                         
                     </div>
                     <div class="actions">
-                        <button class="primary w-100 flex justify-between align-center">
+                        <button class="primary w-100 flex justify-between align-center"
+                            name="addCartShopping">
                             Adicionar ao carrinho
                             <i data-feather="shopping-cart"></i>
                         </button>
@@ -114,8 +120,7 @@
                             <div class="tab-content active" id="detalhes">
                                 <p>Descrição do produto
                                 </p>
-                                <p>Opala SS 1979 Original 2.5, lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.
-                                </p>
+                                <p><?= $product->getDescrition(); ?></p>
                             </div>
                             <div class="tab-content" id="caracteristicas">
                                 <table class="table-left radius">
@@ -146,8 +151,8 @@
                 <div class="comments">
                     <h5>Comentários(1)</h5>
                     <span class="flex column gap-2">
-                        <span><h4>4,7/5</h4></span>
-                        <star-rater data-rating="4"></star-rater>
+                        <span><h4><?= $score; ?>/5</h4></span>
+                        <star-rater data-rating="<?= $score; ?>"></star-rater>
                     </span>
                     <div class="nps-rating">
                         <li>

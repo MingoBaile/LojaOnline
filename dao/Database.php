@@ -72,6 +72,17 @@ class Database{
         ');
     }
 
+    static function createSchemaEvaluation(){
+        $connect = self::getConnection();
+        $connect->exec('
+            CREATE TABLE IF NOT EXISTS Evaluation(
+                idProduct   INTEGER NOT NULL,
+                score       INTEGER NOT NULL,
+                FOREIGN KEY(idProduct) REFERENCES Product(id)
+            )
+        ');
+    }
+
     static function createSchemaAddress(){
         $connect = self::getConnection();
         $connect->exec('
@@ -92,7 +103,7 @@ class Database{
         $connect = self::getConnection();
         $connect->exec('
             CREATE TABLE IF NOT EXISTS Favorites(
-                idUser      INTEGER NOT NULL,
+                idUser      TEXT NOT NULL,
                 idProduct   INTEGER NOT NULL
             )
         ');
@@ -213,35 +224,49 @@ class Database{
         $sql->bindValue(':price',4500.00);
         $sql->execute();
 
+        $sqlEvaluation = 'INSERT INTO Evaluation(`idProduct`,`score`) VALUES(:idProduct,:score);';
+        $sql = $connect->prepare($sqlEvaluation);
+        $sql->bindValue(':idProduct',1);
+        $sql->bindValue(':score',4);
+        $sql->execute();
+
+        $sql->bindValue(':idProduct',1);
+        $sql->bindValue(':score',4);
+        $sql->execute();
+
+        $sql->bindValue(':idProduct',1);
+        $sql->bindValue(':score',5);
+        $sql->execute();
+
         $sqlGaleryProduct = 'INSERT INTO galeryProduct(`id`,`img`) VALUES(:id,:img);';
         $sql = $connect->prepare($sqlGaleryProduct);
-        $sql->bindValue(':id',0);
+        $sql->bindValue(':id',1);
         $sql->bindValue(':img','assets/img-products/car-opala-1.jpg');
         $sql->execute();
 
         $sql = $connect->prepare($sqlGaleryProduct);
-        $sql->bindValue(':id',0);
+        $sql->bindValue(':id',1);
         $sql->bindValue(':img','assets/img-products/car-opala-2.jpg');
         $sql->execute();
 
         $sql = $connect->prepare($sqlGaleryProduct);
-        $sql->bindValue(':id',0);
+        $sql->bindValue(':id',1);
         $sql->bindValue(':img','assets/img-products/car-opala-3.jpg');
         $sql->execute();
 
         $sqlFavorites = 'INSERT INTO Favorites(`idUser`,`idProduct`) VALUES(:idUser,:idProduct);';
         $sql = $connect->prepare($sqlFavorites);
-        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idUser',"gilsonjosert@gmail.com");
         $sql->bindValue(':idProduct',0);
         $sql->execute();
 
         $sql = $connect->prepare($sqlFavorites);
-        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idUser',"gilsonjosert@gmail.com");
         $sql->bindValue(':idProduct',2);
         $sql->execute();
 
         $sql = $connect->prepare($sqlFavorites);
-        $sql->bindValue(':idUser',0);
+        $sql->bindValue(':idUser',"gilsonjosert@gmail.com");
         $sql->bindValue(':idProduct',3);
         $sql->execute();
 
