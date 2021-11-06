@@ -6,6 +6,7 @@
     
     // Controllers
     include_once ('app/Controller/Auth.php');
+    include_once ('app/Controller/Admin.php');
     include_once ('app/Controller/Home.php');
     include_once ('app/Controller/Login.php');
     include_once ('app/Controller/Address.php');
@@ -44,6 +45,12 @@
         $controller->home();
     },'get');
 
+    // Add your first route
+    Route::add('/admin', function() {
+        $controller = new Admin();
+        $controller->admin();
+    },['get']);
+
     //Home
     Route::add('/home', function() {
         $controller = new Home();
@@ -77,7 +84,11 @@
 
     Route::add('/logout', function() {
         $controller = new Profile();
-        $controller->logout();
+        if(Auth::validation()){
+            $controller->logout();
+        }else{
+            $controller->logout();
+        }
     },'get');
 
     Route::add('/profile', function() {
@@ -98,6 +109,11 @@
     Route::add('/addCart',function(){
         $controller = new Details();
         $controller->addCart();
+    },'post');
+
+    Route::add('/getUser',function(){
+        $controller = new Admin();
+        $controller->getUser();
     },'post');
 
     Route::add('/favorites', function() {

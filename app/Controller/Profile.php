@@ -29,7 +29,6 @@ class Profile extends Controller{
             }
         }else{
             header('Location: ../Login');
-            die();
         }
     }
 
