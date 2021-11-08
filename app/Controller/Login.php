@@ -58,7 +58,6 @@ class Login extends Controller{
 
     public function registerUser(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            Auth::resetSessionNotification();
             $name       = $_POST['name'];
             $email      = $_POST['email'];
             $password   = $_POST['password'];
@@ -69,8 +68,7 @@ class Login extends Controller{
                 die();
             }else if($password != $password1){
                 $this->view("Login");
-                Notification::View("Senha não são iguais!","key");
-                // $_SESSION['notification-register-pass-err'] = true;
+                Notification::View("Senha não são iguais!","key","--color-feedback-negative-4");
                 die();
             }
 
@@ -81,8 +79,7 @@ class Login extends Controller{
 
             if($equals){
                 $this->view("Login");
-                Notification::View("Usuário já cadastrado!","info");
-                // $_SESSION['notification-register-err'] = true;
+                Notification::View("Usuário já cadastrado!","info","--color-feedback-negative-4");
                 die();
             }
 
@@ -91,8 +88,7 @@ class Login extends Controller{
             $query->bindValue(':email',$user->getEmail());
             $query->bindValue(':password',$user->getPassword());
             $query->execute();
-            Notification::View("Usuário cadastrado com sucesso!","check");
-            // $_SESSION['notification-register'] = true;
+            Notification::View("Usuário cadastrado com sucesso!","check","--color-feedback-positive-4");
             $this->view("Login");
         }
     }

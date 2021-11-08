@@ -11,26 +11,23 @@ class Profile extends Controller{
 
     public function loginAuth(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $_SESSION['notification-login-empty'] = false;
             $email      = $_POST['loginName'];
             $password   = $_POST['loginPassword'];
             $user = User::searchUser($email);
 
             if($user == false){
-                header('Location: ../Login');
-                Notification::View("E-mail ou senha incorretos!","info");
-                die();
+                Notification::View("E-mail ou senha incorretos!","info","--color-feedback-negative-4");
+                $this->view("Login");
             }else if(password_verify($password,$user->getPassword())){
                 $_SESSION['user'] = $user;
                 $this->profile();
             }else{
-                header('Location: ../Login');
-                Notification::View("E-mail ou senha incorretos!","info");
-                // $_SESSION['notification-login'] = true;
-                die();
+                Notification::View("E-mail ou senha incorretos!","info","--color-feedback-negative-4");
+                $this->view("Login");
             }
         }else{
-            header('Location: ../Login');
+            Notification::View("E-mail ou senha incorretos!","info","--color-feedback-negative-4");
+            $this->view("Login");
         }
     }
 
