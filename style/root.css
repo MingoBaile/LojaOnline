@@ -723,6 +723,12 @@ nav .nav-container{
     .navigation-bottom{
         display: flex;
     }
+	.notification{
+		width:90%;
+		left:50%;
+		transform: translateX(-50%);
+		bottom: var(--scale-extra);
+	}
 }
 
 /* Media all devices */
