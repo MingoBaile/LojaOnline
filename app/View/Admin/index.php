@@ -1,10 +1,5 @@
 <?php 
     $listUser = Admin::getUserAll();
-    // foreach($listUser as $user){
-    //     echo $user->getName().'<br>';
-    //     echo $user->getEmail().'<br>';
-    //     echo $user->getPassword().'<br> <br>';
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +71,7 @@
                             <div class="t-row" id="<?= $user->getEmail()?>">
                                 <span class="t-item"><?= $user->getName() ?></span>
                                 <span class="t-item"><?= $user->getEmail()?></span>
-                                <span class="t-item" data-ellipsis="<?= $user->getPassword()?>"><?= $user->getPassword()?></span>
+                                <span class="t-item" data-tooltip="<?= $user->getPassword()?>"><?= $user->getPassword()?></span>
                                 <span class="t-item t-actions">
                                     <!-- <button class="small" onclick="alert('<?= $user->getEmail() ?>')"><i data-feather="key"></i></button> -->
                                     <button class="small" id="<?= $user->getEmail()?>" data-open="modal-edit"><i data-feather="edit"></i></button>

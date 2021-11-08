@@ -2,6 +2,7 @@
 include_once ('app/Controller/Controller.php');
 include_once ('app/Model/User.php');
 include_once ('app/Controller/Auth.php');
+include_once ('components/Notification/Notification.php');
 
 class Login extends Controller{
 
@@ -68,7 +69,8 @@ class Login extends Controller{
                 die();
             }else if($password != $password1){
                 $this->view("Login");
-                $_SESSION['notification-register-pass-err'] = true;
+                Notification::View("Senha não são iguais!","key");
+                // $_SESSION['notification-register-pass-err'] = true;
                 die();
             }
 
@@ -79,7 +81,8 @@ class Login extends Controller{
 
             if($equals){
                 $this->view("Login");
-                $_SESSION['notification-register-err'] = true;
+                Notification::View("Usuário já cadastrado!","info");
+                // $_SESSION['notification-register-err'] = true;
                 die();
             }
 
@@ -88,7 +91,8 @@ class Login extends Controller{
             $query->bindValue(':email',$user->getEmail());
             $query->bindValue(':password',$user->getPassword());
             $query->execute();
-            $_SESSION['notification-register'] = true;
+            Notification::View("Usuário cadastrado com sucesso!","check");
+            // $_SESSION['notification-register'] = true;
             $this->view("Login");
         }
     }

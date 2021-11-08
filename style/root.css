@@ -650,9 +650,15 @@ nav .nav-container{
 	flex-flow:row nowrap;
 	gap:var(--scale-medium);
 	padding:var(--scale-medium);
+	padding-left:var(--scale-large);
 	justify-content: center;
 	align-items:center;
-	width:100%;
+	position: fixed;
+	width: auto;
+	bottom:0;
+    right:0;
+	margin-bottom:var(--scale-large);
+	margin-right:var(--scale-large);
 
 	background:var(--color-foreground-6);
 	color:var(--color-principal-light);
@@ -670,6 +676,19 @@ nav .nav-container{
 .notification a{
 	padding:var(--scale-medium) !important;
 	max-height:var(--scale-large);
+}
+
+.tooltip{
+	/* max-width: 128px; */
+	position: absolute;
+    padding:var(--scale-small);
+	display: none;
+
+    border-radius: var(--radius-small);
+    background: var(--color-neutral-5);
+    color:var(--color-principal-light);
+    font-size: var(--font-lead);
+	animation: slide-down 500ms both ease-in-out;
 }
 
 /* Media Desktops */

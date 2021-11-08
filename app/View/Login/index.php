@@ -26,7 +26,7 @@
 
     <main>
         <div class="wrapper-container">
-            <form class="flex column gap-4">
+            <!-- <form class="flex column gap-4">
                 <header class="w-100 flex column gap-2">
                     <h4 class="heading">Para continuar precisamos de um e-mail.</h4>
                     <h6 class="w-100 sub-heading">Caso nao queira se cadastrar, você pode só informar o e-mail!</h6> 
@@ -40,15 +40,13 @@
                 <footer class="w-100 flex justify-end">
                     <button class="primary">Continuar<i data-feather="arrow-right"></i></button>
                 </footer>
-            </form>
+            </form> -->
             <section class="flex row gap-5">
                 <form class="flex column w-100 gap-4" action="../profile" method="POST">
                     <header class="w-100 flex column gap-2">
                         <h4 class="heading">Acessar a conta</h4>
                         <h6 class="w-100 sub-heading">Entre na conta para continuar a venda</h6> 
                     </header>
-                    <?php $_SESSION['notification-login'] ? Notification::View("E-mail ou senha incorretos!","info") : '' ?>
-                    <?php $_SESSION['notification-login-empty'] ? Notification::View("Preencha os campos para acessar!","info") : '' ?>
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label for="nome">E-mail</label>
@@ -69,9 +67,6 @@
                         <h4 class="heading">Não tem Cadastro</h4>
                         <h6 class="w-100 sub-heading">Faça cadastro para continuar a venda.</h6> 
                     </header>
-                    <?php $_SESSION['notification-register-err'] ? Notification::View("E-mail já cadastrados!","info") : '' ?>
-                    <?php $_SESSION['notification-register-pass-err'] ? Notification::View("Senhas não são iguais!","info") : '' ?>
-                    <?php $_SESSION['notification-register'] ? Notification::View("Usuário cadastrado!","info") : '' ?>
                     <div class="body w-100 flex column gap-3">
                         <div class="input-group w-100">
                             <label>Nome</label>

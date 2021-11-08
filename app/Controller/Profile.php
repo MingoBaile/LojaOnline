@@ -1,6 +1,7 @@
 <?php
 include_once ('app/Controller/Controller.php');
 include_once ('app/Controller/Auth.php');
+include_once ('components/Notification/Notification.php');
 
 class Profile extends Controller{
 
@@ -17,14 +18,15 @@ class Profile extends Controller{
 
             if($user == false){
                 header('Location: ../Login');
-                $_SESSION['notification-login'] = true;
+                Notification::View("E-mail ou senha incorretos!","info");
                 die();
             }else if(password_verify($password,$user->getPassword())){
                 $_SESSION['user'] = $user;
                 $this->profile();
             }else{
                 header('Location: ../Login');
-                $_SESSION['notification-login'] = true;
+                Notification::View("E-mail ou senha incorretos!","info");
+                // $_SESSION['notification-login'] = true;
                 die();
             }
         }else{

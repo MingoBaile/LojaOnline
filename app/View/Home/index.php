@@ -1,5 +1,6 @@
 <?php 
     include_once ('app/Controller/Home.php');
+    include_once ('app/Controller/Details.php');
 
     $json = file_get_contents("app/View/Home/data.json");
     $data = json_decode($json);
@@ -45,7 +46,7 @@
             <h4 class="heading">Categorias</h4>
             <section class="list-categorias">
                 <?php foreach($categoria as $key => $item){?>
-                    <a href="<?= $item['type'] ?>" class="categoira" id="<?= $item['id'] ?>">
+                    <a href="../listshopping?categoria=<?= $item['title'] ?>" class="categoira" id="<?= $item['id'] ?>">
                         <label><?= $item['title']?></label>
                         <span class="hover-only">Acessar<i data-feather="arrow-right"></i></span>
                         <img src="../<?= $item['img'] ?>" alt="Categoria de <?= $item['title']?>" title="<?= $item['title']?>">
@@ -54,32 +55,32 @@
             </section>
             <h4 class="heading">Últimos adicionados</h4>
             <section class="list-products">
-                <?php foreach($products as $key => $item){?>
-                    <div class="card-product" id="<?= $item->getId() ?>">
+                <?php foreach($products as $key => $product){?>
+                    <div class="card-product" id="<?= $product->getId() ?>">
                         <div class="picture">
                             <span class="flex row justify-end">
-                                <button class="px-4 <?= $item->favorite=="true" ? "is-favorite":""?>"><i data-feather="heart"></i></button>
+                                <button class="px-4 <?= $product->favorite=="true" ? "is-favorite":""?>"><i data-feather="heart"></i></button>
                             </span>
-                            <img src="../<?= $item->getImgBanner() ?>" alt="<?= $item->getTitle() ?>">
+                            <img src="../<?= $product->getImgBanner() ?>" alt="<?= $product->getTitle() ?>">
                             <div class="galeria hover-only">
-                                <?php foreach($item->getImgsGallery() as $key => $imgs){?>
+                                <?php foreach(Details::getImgs($product->getId()) as $key => $imgs){?>
                                     <span>
-                                        <img src="<?= $imgs ?>" alt="<?= $item->title?>">
+                                        <img src="../<?= $imgs ?>">
                                     </span>
                                 <?php }?>
                             </div>
                         </div>
                         <div class="body">
-                            <a class="information" href="../Details/<?= $item->getId()?>">
-                                <h5><?= $item->getTitle() ?></h5>
-                                <p><?= $item->getDescrition() ?></p>
+                            <a class="information" href="../Details/<?= $product->getId()?>">
+                                <h5><?= $product->getTitle() ?></h5>
+                                <p><?= $product->getDescrition() ?></p>
                             </a>
                             <div class="value hover-only">
                                 <span class="flex row  align-center gap-3">
                                     <i data-feather="dollar-sign"></i>
                                     <span class="flex column gap-1 align-start values">
-                                        <small><?= ($item->getPrice() + 100*6) ?></small>
-                                        <strong class="price"><?= $item->getPrice() ?></strong>
+                                        <small><?= ($product->getPrice() + 100*6) ?></small>
+                                        <strong class="price"><?= $product->getPrice() ?></strong>
                                     </span>
                                 </span>
                                 <div class="actions-card">

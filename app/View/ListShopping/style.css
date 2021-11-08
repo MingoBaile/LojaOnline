@@ -81,6 +81,7 @@
 
 .wrapper-container > .list-products.list{
     grid-template-columns: 1fr;
+    gap:var(--scale-small);
 }
 
 .wrapper-container > .list-products.list > .card-product{

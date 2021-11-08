@@ -192,7 +192,7 @@ class Database{
         $sql->bindValue(':title',"Opala SS");
         $sql->bindValue(':descrition',"Descrição do Opala SS");
         $sql->bindValue(':imgBanner','assets/img-products/car-opala-principal.jpg');
-        $sql->bindValue(':idCategoria',0);
+        $sql->bindValue(':idCategoria',1);
         $sql->bindValue(':idImgGalerry',0);
         $sql->bindValue(':price',1500.00);
         $sql->execute();

@@ -1,18 +1,20 @@
 <?php 
     include_once ('app/Controller/Details.php');
     include_once ('app/Controller/Auth.php');
+    include_once ('app/Controller/ListShopping.php');
 
     $product = $_POST['product'];
     $score = Details::getEvaluation($product->getId());
+    $categoriaLink = Home::getCatagory();
     
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartunings | Listagem categoria</title>
+    <title>Cartunings | <?= $product->getTitle(); ?> </title>
     <link rel="stylesheet" href="../app/View/Details/style.css">
     <script src="../components/Navigation/index.js" defer></script>
     <script src="../components/Rating/index.js" defer></script>
@@ -31,24 +33,11 @@
     </navigation-top>
     <div class="sub-catgoria">
         <ul>
-            <li>
-                <a href="#kits" class="active">KITS</a>
-            </li>
-            <li>
-                <a href="#kits">RODAS</a>
-            </li>
-            <li>
-                <a href="#kits">Peças customizadas</a>
-            </li>
-            <li>
-                <a href="#kits">Faróis</a>
-            </li>
-            <li>
-                <a href="#kits">Turbo</a>
-            </li>
-            <li>
-                <a href="#kits">Pinturas</a>
-            </li>
+            <?php foreach($categoriaLink as $link){?>
+                <li>
+                    <a href="../Listshopping?categoria=<?= $link['title'] ?>"><?= $link['title'] ?></a>
+                </li>
+            <?php }?>
         </ul>
     </div>
     <main>

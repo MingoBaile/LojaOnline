@@ -5,7 +5,6 @@ const notification = document.querySelectorAll(".notification");
 
 notification.forEach(el=>{
     const close = el.querySelector('a');
-    console.log(close);
     close.addEventListener('click',item=>{
         el.remove();
     })

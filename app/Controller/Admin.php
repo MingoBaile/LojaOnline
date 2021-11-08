@@ -28,8 +28,7 @@ class Admin extends Controller{
     public function getUser(){
         $idUser = $_POST['data'];
         $data = User::searchUser($idUser);
-        header( "Content-type: application/json" );
-        echo json_encode($data);
+        return $this->http_get($data);
     }
 
     public function http_get($_data){
@@ -39,7 +38,6 @@ class Admin extends Controller{
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
         $result = curl_exec($ch);
         curl_close($ch);

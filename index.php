@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/libs/Router.php';
+    include_once __DIR__ . '/libs/Router.php';
     
     // Database
     include_once ('dao/Database.php');
@@ -121,7 +121,7 @@
         $controller->favorites();
     },'get');
 
-    Route::add('/listshopping', function() {
+    Route::add('/listshopping([a-z-0-9-]*)', function($param) {
         $controller = new ListShopping();
         $controller->listshopping();
     },'get');
