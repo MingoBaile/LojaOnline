@@ -114,12 +114,10 @@ tooltip.forEach(el=>{
     span.setAttribute('class',"tooltip");
     el.addEventListener('mouseover',item=>{
         document.body.appendChild(span);
-        console.log();
         span.innerHTML = el.getAttribute('data-tooltip');
-        span.style.display = "flex";
         span.style.left = (item.clientX-(span.offsetWidth/2))+"px";
         span.style.top = (item.clientY-(span.offsetHeight+8))+"px";
-        
+        span.style.display = "flex";
     });
     el.addEventListener('mouseleave',item=>{
         span.remove();

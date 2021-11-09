@@ -50,7 +50,6 @@
         </aside>
         
         <section class="profile-content">
-            <?php if(!empty($listUser)){?>
             <article class="section-content" id="users">
                 <h5 class="panel-title">Lista de Usuários</h5>
                 <div class="filter">
@@ -85,11 +84,10 @@
                     <div class="t-grid-foot"></div>
                 </div>
             </article>
-            <?php }?>
             <article class="section-content" id="products">
                 <h5 class="panel-title">Lista de Produtos</h5>
                 <div class="filter">
-                    <button class="primary small">Adicionar produto</button>
+                    <button class="primary small" data-open="modal-add-product">Adicionar produto</button>
                     <button class="secondary small">Atualizar</button>
                     <button class="ghost small">Remover todos</button>
                 </div>
@@ -152,6 +150,37 @@
             <footer class="w-100 flex justify-end">
                 <button data-close="modal-editl">Voltar</button>
                 <button class="primary" type="submit">Salvar<i data-feather="save"></i></button>
+            </footer>
+        </form>
+    </div>
+    <div class="modal" id="modal-add-product">
+        <div class="overlay"></div>
+        <form class="flex column w-100 gap-4" action="../recover" method="POST">
+            <header class="w-100 flex column gap-2">
+                <h4 class="heading">Adicionar produto</h4>
+                <h6 class="w-100 sub-heading">Você pode adicionar produtos!</h6>
+            </header>
+            <div class="body w-100 flex column gap-3">
+                <div class="input-group w-100">
+                    <label for="titleProduct">Titulo</label>
+                    <input type="text" required id="titleProduct" name="titleProduct" placeholder="Ex: João" class="w-100"/>
+                </div>
+                <div class="input-group w-100">
+                    <label for="descritionProduct">Descrição</label>
+                    <textarea id="descritionProduct" col="3" name="descritionProduct" placeholder="Descrição do produto..." class="w-100"></textarea>
+                </div>
+                <div class="input-group input-group-file w-100">
+                    <label>Adicionar imagem</label>
+                    <input type="file" id="imgBanner" name="imgBanner" class="w-100">
+                </div>
+                <div class="input-group w-100">
+                    <label for="priceProduct">Valor</label>
+                    <input type="number" required id="priceProduct" name="priceProduct" placeholder="R$ 0.0000,00" class="w-100"/>
+                </div>
+            </div>
+            <footer class="w-100 flex justify-end">
+                <button data-close="modal-editl">Cancelar</button>
+                <button class="primary" type="submit">Cadastrar<i data-feather="plus"></i></button>
             </footer>
         </form>
     </div>

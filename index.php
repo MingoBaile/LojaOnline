@@ -34,6 +34,7 @@
     Database::createSchemaCards();
     Database::createSchemaPayments();
 
+    // Percistir tabelas banco de dados
     // Database::inflateDB();
 
     session_start();
@@ -153,7 +154,7 @@
 
     Route::add('/.*', function() {
         http_response_code(404);
-        echo "Pagina não encontrada!";
+        include_once ('app/View/404/index.php');
     },['get','post']);
 
     // Run the router
