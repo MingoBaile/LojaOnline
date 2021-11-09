@@ -1,5 +1,6 @@
 <?php
 include_once ('app/Controller/Controller.php');
+include_once ('app/Controller/Home.php');
 include_once ('dao/Database.php');
 include_once ('app/Model/User.php');
 
@@ -29,6 +30,10 @@ class Admin extends Controller{
         $idUser = $_POST['data'];
         $data = User::searchUser($idUser);
         return $this->http_get($data);
+    }
+
+    public static function getProductAll(){
+        return Home::getProducts();
     }
 
     public function http_get($_data){

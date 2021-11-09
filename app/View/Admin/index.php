@@ -1,4 +1,5 @@
 <?php 
+    $poducts = Admin::getProductAll();
     $listUser = Admin::getUserAll();
 ?>
 
@@ -15,7 +16,7 @@
 </head>
 <body>
     <navigation-top >
-        <a href="#home" slot="brand">
+        <a href="../Home" slot="brand">
             <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
         <div slot="actions" class="actions flex gap-3 center">
@@ -31,13 +32,13 @@
             <div class="nav-link">
                 <ul class="nav-upper">
                     <li>
-                        <a href="#"><i data-feather="users"></i>Usuários</a>
+                        <a href="#" data-target="users"><i data-feather="users"></i>Usuários</a>
                     </li>
                     <li>
-                        <a href="#"><i data-feather="package"></i>Produtos</a>
+                        <a href="#" data-target="products"><i data-feather="package"></i>Produtos</a>
                     </li>
                     <li>
-                        <a href="#"><i data-feather="settings"></i>Configurações</a>
+                        <a href="#" data-target="configs"><i data-feather="settings"></i>Configurações</a>
                     </li>
                 </ul>
                 <ul class="nav-below">
@@ -50,11 +51,12 @@
         
         <section class="profile-content">
             <?php if(!empty($listUser)){?>
-            <article class="section-content">
+            <article class="section-content" id="users">
                 <h5 class="panel-title">Lista de Usuários</h5>
                 <div class="filter">
-                        <button class="primary small">Search</button>
-                        <button class="secondary small">Apply</button>
+                        <button class="primary small">Adicionar usuário</button>
+                        <button class="secondary small">Atualizar</button>
+                        <button class="ghost small">Remover todos</button>
                 </div>
                 <hr class="dividers"/>
                 <div class="t-grid" style="--cols:4;">
@@ -74,8 +76,8 @@
                                 <span class="t-item" data-tooltip="<?= $user->getPassword()?>"><?= $user->getPassword()?></span>
                                 <span class="t-item t-actions">
                                     <!-- <button class="small" onclick="alert('<?= $user->getEmail() ?>')"><i data-feather="key"></i></button> -->
-                                    <button class="small" id="<?= $user->getEmail()?>" data-open="modal-edit"><i data-feather="edit"></i></button>
-                                    <button class="small" onclick="alert('<?= $user->getEmail() ?>')"><i data-feather="trash"></i></button>
+                                    <button class="small" data-tooltip="Editar usuário" id="<?= $user->getEmail()?>"  data-open="modal-edit"><i data-feather="edit"></i></button>
+                                    <button class="small" data-tooltip="Excluir usuário" onclick="alert('<?= $user->getEmail() ?>')"><i data-feather="trash"></i></button>
                                 </span>
                             </div>
                         <?php }?>
@@ -84,6 +86,50 @@
                 </div>
             </article>
             <?php }?>
+            <article class="section-content" id="products">
+                <h5 class="panel-title">Lista de Produtos</h5>
+                <div class="filter">
+                    <button class="primary small">Adicionar produto</button>
+                    <button class="secondary small">Atualizar</button>
+                    <button class="ghost small">Remover todos</button>
+                </div>
+                <hr class="dividers"/>
+                <div class="t-grid" style="--cols:5;">
+                    <div class="t-grid-head">
+                        <div class="t-row">
+                            <span class="t-item">ID</span>
+                            <span class="t-item">Foto</span>
+                            <span class="t-item">Titulo</span>
+                            <span class="t-item">Descrição</span>
+                            <span class="t-item t-actions">Ações</span>
+                        </div>
+                    </div>
+                    <div class="t-grid-body">
+                        <?php foreach ($poducts as $key => $product){?>
+                            <div class="t-row" id="<?= $product->getId()?>">
+                                <span class="t-item"><?= $product->getId() ?></span>
+                                <span class="t-item"><img class="r-circle" src="../<?= $product->getImgBanner() ?>" width="32px" height="32px"></img></span>
+                                <span class="t-item"><?= $product->getTitle()?></span>
+                                <span class="t-item" data-tooltip="<?= $product->getDescrition()?>"><?= $product->getDescrition()?></span>
+                                <span class="t-item t-actions">
+                                    <button class="small" data-tooltip="Editar produto" id="<?= $product->getId()?>"  data-open="modal-edit"><i data-feather="edit"></i></button>
+                                    <button class="small" data-tooltip="Excluir produto" onclick="alert('<?= $product->getId() ?>')"><i data-feather="trash"></i></button>
+                                </span>
+                            </div>
+                        <?php }?>
+                    </div>
+                    <div class="t-grid-foot"></div>
+                </div>
+            </article>
+             <article class="section-content" id="configs">
+                <h5 class="panel-title">Configurações</h5>
+                <div class="filter">
+                    <button class="primary small">Adicionar</button>
+                    <button class="secondary small">Atualizar</button>
+                    <button class="ghost small">Remover</button>
+                </div>
+                <hr class="dividers"/>
+            </article>
         </section>
     </main>
     <div class="modal" id="modal-edit">

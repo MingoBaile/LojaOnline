@@ -28,3 +28,45 @@ function getUser(id){
         console.log(text);
     })
 }
+
+const users = document.getElementById('users');
+const products = document.getElementById('products');
+const configs = document.getElementById('configs');
+
+products.style.display = "none";
+configs.style.display = "none";
+
+const navlink = document.querySelectorAll('.nav-link a[data-target]');
+
+navlink.forEach(link=>{
+    // target = link.getAttribute('data-target');
+    link.addEventListener('click',event=>{
+        event.preventDefault();
+        target = event.target.getAttribute('data-target');
+        switch (target) {
+            case users.id:
+                users.style.display = "flex";
+                configs.style.display = "none";
+                products.style.display = "none";
+                break;
+            case products.id:
+                products.style.display = "flex";
+                users.style.display = "none";
+                configs.style.display = "none";
+                break;
+            case configs.id:
+                configs.style.display = "flex";
+                users.style.display = "none";
+                products.style.display = "none";
+                break;
+            default:
+                users.style.display = "none";
+                products.style.display = "none";
+                configs.style.display = "none";
+                break;
+        }
+    })
+});
+
+
+

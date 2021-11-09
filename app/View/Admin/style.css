@@ -65,6 +65,12 @@ main{
     font-weight: var(--font-weight-bold);
 }
 
+.nav-below li a:hover,.nav-upper li a:hover,.profile-grid-item>a:hover, .nav-below li a:hover >*,.nav-upper li a:hover>*,.profile-grid-item>a:hover>*{
+    background: var(--color-foreground-3);
+    color:var(--color-primary-3);
+    border-radius:var(--scale-small);
+}
+
 .nav-below{
     border-top:var(--scale-xxsmall) solid var(--color-neutral-1);
 }
