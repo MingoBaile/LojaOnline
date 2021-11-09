@@ -1,4 +1,5 @@
 <?php 
+    include_once ('app/Controller/Home.php');
     include_once ('app/Controller/Details.php');
     include_once ('app/Controller/Auth.php');
     include_once ('app/Controller/ListShopping.php');
@@ -6,6 +7,7 @@
     $product = $_POST['product'];
     $score = Details::getEvaluation($product->getId());
     $categoriaLink = Home::getCatagory();
+    $products = Home::getProducts();
     
 ?>
 <!DOCTYPE html>
@@ -138,137 +140,85 @@
                     </div>
                 </div>
                 <div class="comments">
-                    <h5>Comentários(1)</h5>
-                    <span class="flex column gap-2">
-                        <span><h4><?= $score; ?>/5</h4></span>
-                        <star-rater data-rating="<?= $score; ?>"></star-rater>
-                    </span>
-                    <div class="nps-rating">
-                        <li>
-                            <strong>5</strong>
-                            <progress class="progress" value="89" max="100"></progress>
-                        </li>
-                        <li>
-                            <strong>4</strong>
-                            <progress class="progress" value="100" max="100"></progress>
-                        </li>
-                        <li>
-                            <strong>3</strong>
-                            <progress class="progress" value="0" max="100"></progress>
-                        </li>
-                        <li>
-                            <strong>2</strong>
-                            <progress class="progress" value="0" max="100"></progress>
-                        </li>
-                        <li>
-                            <strong>1</strong>
-                            <progress class="progress" value="0" max="100"></progress>
-                        </li>
-                    </div>
-                    <button class="flex row justify-between align-center">Ver comentários <i data-feather="message-square"></i></button>
+                    <?php if(!isset($score)){?>
+                        <h5>Não há comentários nem avaliações!</h5>
+                        <button class="flex row justify-between align-center">Deixar comentário <i data-feather="message-square"></i></button>
+                    <?php }else{?>
+                        <h5>Comentários(1)</h5>
+                        <span class="flex column gap-2">
+                            <span><h4><?= $score; ?>/5</h4></span>
+                            <star-rater data-rating="<?= $score; ?>"></star-rater>
+                        </span>
+                        <div class="nps-rating">
+                            <li>
+                                <strong>5</strong>
+                                <progress class="progress" value="89" max="100"></progress>
+                            </li>
+                            <li>
+                                <strong>4</strong>
+                                <progress class="progress" value="100" max="100"></progress>
+                            </li>
+                            <li>
+                                <strong>3</strong>
+                                <progress class="progress" value="0" max="100"></progress>
+                            </li>
+                            <li>
+                                <strong>2</strong>
+                                <progress class="progress" value="0" max="100"></progress>
+                            </li>
+                            <li>
+                                <strong>1</strong>
+                                <progress class="progress" value="0" max="100"></progress>
+                            </li>
+                        </div>
+                        <button class="flex row justify-between align-center">Ver comentários <i data-feather="message-square"></i></button>
+                    <?php }?>
                 </div>
             </section>
             <h4 class="heading">Produtos relacionados</h4>
             <section class="list-products">
-                <div class="card-product">
-                    <div class="picture">
-                        <span class="flex row justify-end">
-                            <button class="px-3"><i data-feather="heart"></i></button>
-                        </span>
-                        <img src="../assets/img-products/car-opala-principal.jpg" alt="">
-                        <div class="galeria hover-only">
-                            <span>
-                                <img src="../assets/img-products/car-opala-1.jpg" alt="">
+                <?php foreach($products as $key => $product){?>
+                    <?php if($key<=2){?>
+                        <div class="card-product" id="<?= $product->getId(); ?>">
+                        <div class="picture">
+                            <span class="flex row justify-end">
+                                <button class="px-3"><i data-feather="heart"></i></button>
                             </span>
-                            <span>
-                                <img src="../assets/img-products/car-opala-2.jpg" alt="">
-                            </span>
-                            <span>
-                                <img src="../assets/img-products/car-opala-3.jpg" alt="">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Opala SS - 6 cilindros </h5>
-                            <p>Opala SS 1979 Original 2.5...</p>
-                        </a>
-                        <div class="value hover-only">
-                            <span class="flex row  align-center gap-3">
-                                <i data-feather="dollar-sign"></i>
-                                <span class="flex column gap-1 align-start values">
-                                    <small>500,00</small>
-                                    <strong class="price">345,00</strong>
-                                </span>
-                            </span>
-                            <div class="actions-card">
-                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
-                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                            <img src="../<?= $product->getImgBanner(); ?>" alt="<?= $product->getTitle(); ?>">
+                            <div class="galeria hover-only">
+                                <?php foreach(Details::getImgs($product->getId()) as $key => $imgs){?>
+                                    <span>
+                                        <img src="../<?= $imgs ?>">
+                                    </span>
+                                <?php }?>
                             </div>
-                            
                         </div>
-                    </div>
-                </div>
-                <div class="card-product">
-                    <div class="picture">
-                        <span class="flex row justify-end">
-                            <button class="px-3"><i data-feather="heart"></i></button>
-                        </span>
-                        <img src="../assets/img-products/car-lancer-principal.jpg" alt="">
-                        <div class="galeria hover-only"></div>
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Fiat 147 - 4 cilindros</h5>
-                            <p>Kit Retifica Fiat 147....</p>
-                        </a>
-                        <div class="value hover-only">
-                            <span class="flex row  align-center gap-3">
-                                <i data-feather="dollar-sign"></i>
-                                <span class="flex column gap-1 align-start values">
-                                    <small>2.100,00</small>
-                                    <strong class="price">1.899,00</strong>
+                        <div class="body">
+                            <a class="information" href="../Details/<?= $product->getId()?>">
+                                <h5><?= $product->getTitle(); ?></h5>
+                                <p><?= $product->getDescrition(); ?></p>
+                            </a>
+                            <div class="value hover-only">
+                                <span class="flex row  align-center gap-3">
+                                    <i data-feather="dollar-sign"></i>
+                                    <span class="flex column gap-1 align-start values">
+                                        <small><?= $product->getPrice(); ?></small>
+                                        <strong class="price"><?= $product->getPrice(); ?></strong>
+                                    </span>
                                 </span>
-                            </span>
-                            <div class="actions-card">
-                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
-                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                                <div class="actions-card">
+                                    <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
+                                    <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-product">
-                    <div class="picture">
-                        <span class="flex row justify-end">
-                            <button class="px-3"><i data-feather="heart"></i></button>
-                        </span>
-                        <img src="../assets/img-products/car-fiat147-principal.jpg" alt="">
-                        <div class="galeria hover-only"></div>
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Mitsubishi Lancer Gt 2016</h5>
-                            <p>Kit completo Mitsubishi Lancer Gt 2016...</p>
-                        </a>
-                        <div class="value hover-only">
-                            <span class="flex row  align-center gap-3">
-                                <i data-feather="dollar-sign"></i>
-                                <span class="flex column gap-1 align-start values">
-                                    <small>4.000,00</small>
-                                    <strong class="price">2.999,99</strong>
-                                </span>
-                            </span>
-                            <div class="actions-card">
-                                <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
-                                <button class="px-3"><i data-feather="shopping-cart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php }?>
+                <?php }?>
             </section>
         </div>
         <footer class="w-100 pb-4">
-            <button class="w-100">Ver mais items</button>
+            <a class="btn w-100" href="../Home">Ver mais items</a>
         </footer>
     </main>
     <nav class="navigation-bottom">

@@ -39,7 +39,6 @@ configs.style.display = "none";
 const navlink = document.querySelectorAll('.nav-link a[data-target]');
 
 navlink.forEach(link=>{
-    // target = link.getAttribute('data-target');
     link.addEventListener('click',event=>{
         event.preventDefault();
         target = event.target.getAttribute('data-target');
