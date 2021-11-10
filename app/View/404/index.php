@@ -13,10 +13,11 @@
     </head>
     <body>
         <main>
-            <i data-feather="info" class="icon-5"></i>
-            <h4 class="heading">Página não encontrada!</h4>
-            <section class="wrapper-container">
-            </section>
+            <div class="wrapper">
+                <h1 class="heading">404</h1>
+                <p>Wow! Não localizamos sua págima...</p>
+                <a href="../Home" class="btn">Go Home</a>
+            </div>
         </main>
         <script src="../app/View/404/script.js" defer></script>
     </body>
