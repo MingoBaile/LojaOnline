@@ -1,5 +1,5 @@
 <?php 
-    
+    $products = $_POST['products'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,74 +25,38 @@
         </div>
     </navigation-top>
     <main>
-        <div class="wrapper-container">
-            <div class="cabecalhofavoritos">
-                <h4 class="heading">Lista de Favoritos</h4>        
-            </div>
+        <section class="wrapper-container">
+            <h4 class="heading">Lista de Favoritos</h4>
             <section class="list-products">
-                <div class="card-product">
-                    <div class="picture">
-                        <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Opala SS - 6 cilindros </h5>
-                            <p>Opala SS 1979 Original 2.5...</p>
-                        </a>
-                    </div>
-                    <div class="value">
-                        <div class="actions-card">
-                            <button class="px-3 list-is-visible"><i data-feather="shopping-cart"></i></button>
-                            <button class="px-3"><i data-feather="share-2"></i></button>
-                            <button class="px-3"><i data-feather="trash"></i></button>
+                <?php foreach($products as $product){?>
+                    <div class="card-product">
+                        <div class="picture">
+                            <img src="./<?= $product->getImgBanner()?>" alt="">
                         </div>
-                        <a href="../Details/" class="btn tertiary">Ver Detalhes</a>
-                    </div>
-                </div>
-                <div class="card-product">
-                    <div class="picture">
-                        <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Opala SS - 6 cilindros </h5>
-                            <p>Opala SS 1979 Original 2.5...</p>
-                        </a>
-                    </div>
-                    <div class="value hover-only">
-                        <div class="actions-card">
-                            <button class="px-3 list-is-visible"><i data-feather="shopping-cart"></i></button>
-                            <button class="px-3"><i data-feather="share-2"></i></button>
-                            <button class="px-3"><i data-feather="trash"></i></button>
+                        <div class="body">
+                            <a class="information" href="#product">
+                                <h5><?=$product->getTitle()?></h5>
+                                <p><?=$product->getDescrition()?></p>
+                            </a>
                         </div>
-                        <a href="../Details/" class="btn tertiary">Ver Detalhes</a>
-                    </div>
-                </div>
-                <div class="card-product">
-                    <div class="picture">
-                        <img src="../../assets/img-products/car-opala-principal.jpg" alt="">
-                    </div>
-                    <div class="body">
-                        <a class="information" href="#product">
-                            <h5>Kit Opala SS - 6 cilindros </h5>
-                            <p>Opala SS 1979 Original 2.5...</p>
-                        </a>
-                    </div>
-                    <div class="value hover-only">
-                        <div class="actions-card">
-                            <button class="px-3 list-is-visible"><i data-feather="shopping-cart"></i></button>
-                            <button class="px-3"><i data-feather="share-2"></i></button>
-                            <button class="px-3"><i data-feather="trash"></i></button>
+                        <div class="value">
+                            <div class="actions-card">
+                                <a class="btn px-3" href="../Favorites/AddCart?q=<?=$product->getId()?>"><i data-feather="shopping-cart"></i></a>
+                                <a class="btn px-3" href="../Favorites/ShareProduct?q=<?=$product->getId()?>"><i data-feather="share-2"></i></a>
+                                <a class="btn px-3" href="../Favorites/Remove?q=<?=$product->getId()?>"><i data-feather="trash"></i></a>
+                            </div>
+                            <a href="../Details/<?=$product->getId()?>" class="btn tertiary">Ver Detalhes</a>
                         </div>
-                        <a href="../Details/" class="btn tertiary">Ver Detalhes</a>
                     </div>
-                </div>
+                <?php }?>
             </section>
             <footer>
-                <button><i data-feather="arrow-left"></i>Voltar</button>
-                <button class="secondary"><i data-feather="trash"></i>Limpar favoritos</button>
+                <a class="btn" href="../Home"><i data-feather="arrow-left"></i>Voltar</a>
+                <?php if(isset($products)){?>
+                    <a class="btn secondary" href="../Favorites/RemoveAll"><i data-feather="trash"></i>Limpar favoritos</a>
+                <?php }?>
             </footer>
-        </div>
+        </section>
     </main>
     <nav class="navigation-bottom">
         <span>
