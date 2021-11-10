@@ -14,8 +14,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | Listagem categoria</title>
-    <link rel="stylesheet" href="../app/View/ListShopping/style.css">
+    <link rel="stylesheet" media="all" onload="if(media!='all')media='all'" href="../app/View/ListShopping/style.css">
     <script src="../components/Navigation/index.js" defer></script>
+    <?php include_once('components/LoadFiles/LoadFiles.php');?>
 </head>
 <body>
     <navigation-top >

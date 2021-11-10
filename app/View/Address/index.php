@@ -8,9 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | Endereço</title>
-    <link rel="stylesheet" href="../app/View/Address/style.css">
+    <link rel="stylesheet" media="all" onload="if(media!='all')media='all'" href="../app/View/Address/style.css">
     <script src="../scripts/index.js" defer></script>
     <script src="../components/Navigation/index.js" defer></script>
+    <?php include_once('components/LoadFiles/LoadFiles.php');?>
 </head>
 <body>
     <navigation-top >

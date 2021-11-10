@@ -10,9 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartunings | Admin </title>
-    <link rel="stylesheet" href="../app/View/Admin/style.css">
+    <link rel="stylesheet" media="all" onload="if(media!='all')media='all'" href="../app/View/Admin/style.css">
     <script src="../scripts/index.js" async></script>
     <script src="../components/Navigation/index.js" async></script>
+    <?php include_once('components/LoadFiles/LoadFiles.php');?>
 </head>
 <body>
     <navigation-top >
