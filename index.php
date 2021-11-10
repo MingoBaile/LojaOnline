@@ -18,6 +18,7 @@
     include_once ('app/Controller/Profile.php');
     include_once ('app/Controller/OrderFinish.php');
     include_once ('app/Controller/Resume.php');
+    include_once ('app/Controller/Search.php');
     
     // Use this namespace
     use Steampixel\Route;
@@ -58,10 +59,15 @@
         $controller->home();
     },'get');
 
-    Route::add('/search', function() {
-        $controller = new Home();
+    Route::add('/search([a-z-0-9-]*)', function($param) {
+        $controller = new Search();
         $controller->search();
-    },'post');
+    },'get');
+
+    Route::add('/search', function() {
+        $controller = new Search();
+        $controller->page();
+    },'get');
 
     Route::add('/login', function() {
         if(Auth::validation()){

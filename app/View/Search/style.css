@@ -1,0 +1,19 @@
+@import '../../../style/root.css';
+@import '../ListShopping/style.css';
+
+
+main,.search{
+    display: flex;
+    flex-flow:column nowrap;
+}
+
+main{
+    gap:var(--scale-big);
+}
+.search{
+    width:100%;
+    gap:var(--scale-large);
+}
+.search>input{
+    height:var(--scale-extra);
+}

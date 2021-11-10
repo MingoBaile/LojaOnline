@@ -34,7 +34,7 @@
         <a href="#" slot="brand" class="onVibrate">
             <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
         </a>
-        <input type="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100" id="search"/>
+        <?php include_once('components/Search/Search.php') ?>
         <div slot="actions" class="actions flex gap-3 center">
             <a href="../Login" class="btn ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
             <a href="../Favorites" class="btn ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>

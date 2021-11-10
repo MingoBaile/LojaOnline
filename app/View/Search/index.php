@@ -1,11 +1,5 @@
-<?php 
-    include_once ('app/Controller/Home.php');
-    include_once ('app/Controller/ListShopping.php');
-    include_once ('app/Controller/Details.php');
-
-    $categoria = $_GET['categoria'];
-    $products = ListShopping::getProductCategory($categoria);
-    $categoriaLink = Home::getCatagory();
+<?php
+    $products = $_POST['search'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,43 +7,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartunings | Listagem categoria</title>
-    <link rel="stylesheet" href="../app/View/ListShopping/style.css">
+    <title>Cartunings | Search</title>
+    <link rel="stylesheet" href="app/View/Search/style.css">
+    <script src="../scripts/index.js" defer></script>
     <script src="../components/Navigation/index.js" defer></script>
 </head>
 <body>
-    <navigation-top >
-        <a href="../Home" slot="brand">
-            <img src="../assets/brand-white.svg" alt="Cartunings logo"  height="40"/>
+    <navigation-top style="width: 100%;">
+        <a href="../Home/" slot="brand">
+            <img src="assets/brand-white.svg" alt="Cartunings logo" height="40" aria-label="">
         </a>
-        <?php include_once('components/Search/Search.php') ?>
+        <!-- <input type="search" id="search" placeholder="Pesquise o seu kit ou peça" slot="search" class="w-100"> -->
         <div slot="actions" class="actions flex gap-3 center">
-            <a href="../Login" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
-            <a href="../Favorites" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
-            <a href="../Cartshopping" class="btn p-3  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
+            <a href="../Login" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="user"></i></a>
+            <a href="../Favorites" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="heart"></i></a>
+            <a href="../Cartshopping" class="btn  ghost-white r-circle"><i class="icon-1" data-feather="shopping-cart"></i></a>
         </div>
     </navigation-top>
-    <div class="sub-catgoria">
-        <ul>
-            <?php foreach($categoriaLink as $link){?>
-                <li>
-                    <a href="../Listshopping?categoria=<?= $link['title'] ?>"><?= $link['title'] ?></a>
-                </li>
-            <?php }?>
-        </ul>
-    </div>
+
     <main>
-        <div class="wrapper-container">
-            <section class="flex row  gap-3 justify-between">
-                <button class="px-3 btnHome"><i data-feather="home"></i></button>
-                <div class="lead-actions flex gap-3">
-                    <button class="px-3"><i data-feather="server"></i>
-                        <i data-feather="grid"></i></button>
-                    <button class="px-3"><i data-feather="filter"></i></button>
-                </div>
-            </section>
-            <h4 class="heading"><?= $categoria ?></h4>
-            <section class="list-products">
+        <aside class="search">
+            <h4 class="heading">Buscar produto</h4>
+            <?php include_once('components/Search/Search.php') ?>
+        </aside>
+        <section class="wrapper-container">
+            <h4 class="heading">Resultado de pesquisa</h4>
+            <section class="list-products list"> 
                 <?php foreach($products as $product){?>
                     <div class="card-product" id="<?= $product->getId() ?>">
                         <div class="picture">
@@ -88,12 +71,7 @@
                     </div>
                 <?php }?>
             </section>
-        </div>
-        <?php if(!$product){?>
-            <footer class="w-100 pb-4">
-                <button class="w-100">Continuar carregando</button>
-            </footer>
-        <?php }?>
+        </section>
     </main>
     <nav class="navigation-bottom">
         <span>
@@ -112,7 +90,7 @@
             <a href="../Login"><i class="icon-1" data-feather="user"></i></a>
         </span>
     </nav>
-<script src="../app/View/ListShopping/script.js" defer></script>
-<script src="../scripts/index.js" defer></script>
+<script src="app/View/Search/script.js" defer></script>
 </body>
 </html>
+

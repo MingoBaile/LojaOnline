@@ -133,3 +133,11 @@ if(scrollContainer != null || scrollContainer != undefined){
         scrollContainer.scrollLeft += evt.deltaY;
     });
 }
+
+const inputSearch = document.getElementById('search');
+
+inputSearch.addEventListener('keypress',el=>{
+    if(el.key === 'Enter'){
+       window.location.href = `../Search?search=${el.target.value}`;
+    }
+});
