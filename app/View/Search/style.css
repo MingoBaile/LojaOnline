@@ -10,10 +10,12 @@ main,.search{
 main{
     gap:var(--scale-big);
 }
+
 .search{
     width:100%;
     gap:var(--scale-large);
 }
+
 .search>input{
     height:var(--scale-extra);
 }

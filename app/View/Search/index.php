@@ -32,8 +32,14 @@
             <?php include_once('components/Search/Search.php') ?>
         </aside>
         <section class="wrapper-container">
-            <h4 class="heading">Resultado de pesquisa</h4>
-            <section class="list-products list"> 
+            <section class="flex row  gap-3 justify-between align-center">
+                <h4 class="heading">Resultado de pesquisa</h4>
+                <div class="lead-actions flex gap-3">
+                    <button class="px-3"><i data-feather="server"></i><i data-feather="grid"></i></button>
+                </div>
+            </section>
+            
+            <section class="list-products">
                 <?php foreach($products as $product){?>
                     <div class="card-product" id="<?= $product->getId() ?>">
                         <div class="picture">

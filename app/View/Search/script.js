@@ -1,22 +1,9 @@
-// const js = document.createElement("script").setAttribute('src',"../../scripts/index.js");
-// document.querySelector("head").appendChild(js);
+window.onload = function(){
+    const buttonList = document.querySelector('section>.lead-actions>button:nth-child(1)');
 
-const notification = document.querySelectorAll(".notification");
-
-notification.forEach(el=>{
-    const close = el.querySelector('a');
-    close.addEventListener('click',item=>{
-        el.remove();
-    })
-})
-
-const openRecover = document.querySelector("button[name='open-modal-recover'");
-const modal = document.querySelector('.modal');
-const overlay = modal.querySelector('.overlay');
-const closeModal = document.querySelector("button[name='close-modal']");
-
-overlay.addEventListener('click',modalClose);
-closeModal.addEventListener('click',modalClose);
-openRecover.addEventListener('click',el=>{modal.style.display = "flex"});
-
-function modalClose(el){modal.style.display = "none";}
+    buttonList.addEventListener('click',(_)=>{
+        const list = document.querySelector('section.list-products');
+        list.classList.toggle('list');
+        buttonList.classList.toggle('grid');
+    });
+}
