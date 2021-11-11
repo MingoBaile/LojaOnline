@@ -176,7 +176,7 @@ button span {
 	animation: animate-ripple 500ms both ease-in-out;
 }
 
-button.primary,a.primary:hover {
+button.primary,a.primary {
 	background: var(--color-primary-3);
 	color: var(--color-principal-light);
 }
@@ -644,6 +644,11 @@ table.table-left td:last-child{
 
 .t-grid>.t-grid-foot:empty{
 	display: none;
+}
+
+.is-favorite>svg{
+    fill:var(--color-feedback-negative-3);
+    stroke:var(--color-feedback-negative-3);
 }
 
 

@@ -44,7 +44,13 @@ div.cabecalhofavoritos>.heading{
     display:flex;
     align-items:flex-start;
     gap:var(--scale-large);
+}
 
+.wrapper-container>p{
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-paragraph-1);
+    font-weight: var(--font-weight-extra);
 }
 
 .list-products > .card-product{

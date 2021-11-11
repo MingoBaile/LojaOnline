@@ -1,13 +1,20 @@
 <?php 
     include_once ('app/Controller/Home.php');
-    include_once ('app/Controller/Details.php');
     include_once ('app/Controller/Auth.php');
+    include_once ('app/Controller/Details.php');
+    include_once ('app/Controller/Favorites.php');
     include_once ('app/Controller/ListShopping.php');
 
     $product = $_POST['product'];
     $score = Details::getEvaluation($product->getId());
     $categoriaLink = Home::getCatagory();
     $products = Home::getProducts();
+
+    if(Auth::validation()){
+        $IdUser = $_SESSION['user']->getEmail();
+    }else{
+        $IdUser = '';
+    }
     
 ?>
 <!DOCTYPE html>
@@ -46,7 +53,7 @@
     <main>
         <div class="wrapper-container">
             <section class="flex row  gap-3 justify-between">
-                <button class="px-3"><i data-feather="home"></i></button>
+                <a class="btn px-1" href="/Home"><i data-feather="home"></i></a>
             </section>
             <section class="details">
                 <div class="product-images" data-product="product" id="<?= $product->getId(); ?>">
@@ -60,7 +67,7 @@
                 <aside class="product-detail">
                     <div class="header">
                         <h5><?= $product->getTitle(); ?></h5>
-                        <button class="px-3"><i data-feather="heart"></i></button>
+                        <a class="btn px-2 <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
                     </div>
                     <div class="values">
                         <span class="flex row  align-center gap-3">
@@ -69,7 +76,7 @@
                                 <small class="desc">25% de desconto</small>
                                 <span class="flex align-center gap-2">
                                     <strong class="price"><?= $product->getPrice(); ?></strong>
-                                    <small class="price-desc">500,00</small>
+                                    <small class="price-desc"><?= ($product->getPrice() + 100*6) ?></small>
                                 </span>
                             </span>
                         </span>
@@ -82,11 +89,7 @@
                         
                     </div>
                     <div class="actions">
-                        <button class="primary w-100 flex justify-between align-center"
-                            name="addCartShopping">
-                            Adicionar ao carrinho
-                            <i data-feather="shopping-cart"></i>
-                        </button>
+                        <a class="primary btn w-100 flex justify-between align-center" href="../AddCart?q=<?= $product->getId()?>">Adicionar ao carrinho<i data-feather="shopping-cart"></i></a>
                         <button class="secondary w-100 flex justify-between align-center">
                             Finalizar compra
                             <i data-feather="chevron-right"></i>
@@ -183,7 +186,7 @@
                         <div class="card-product" id="<?= $product->getId(); ?>">
                         <div class="picture">
                             <span class="flex row justify-end">
-                                <button class="px-3"><i data-feather="heart"></i></button>
+                                <a class="btn px-2 <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
                             </span>
                             <img src="../<?= $product->getImgBanner(); ?>" alt="<?= $product->getTitle(); ?>">
                             <div class="galeria hover-only">
@@ -203,13 +206,13 @@
                                 <span class="flex row  align-center gap-3">
                                     <i data-feather="dollar-sign"></i>
                                     <span class="flex column gap-1 align-start values">
-                                        <small><?= $product->getPrice(); ?></small>
+                                        <small><?= ($product->getPrice() + 100*6) ?></small>
                                         <strong class="price"><?= $product->getPrice(); ?></strong>
                                     </span>
                                 </span>
                                 <div class="actions-card">
-                                    <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
-                                    <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                                    <a class="btn px-3 list-is-visible<?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
+                                    <a class="btn px-3" href="../AddCart?q=<?= $product->getId()?>"><i data-feather="shopping-cart"></i></a>
                                 </div>
                             </div>
                         </div>

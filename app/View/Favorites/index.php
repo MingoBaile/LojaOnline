@@ -26,15 +26,21 @@
     </navigation-top>
     <main>
         <section class="wrapper-container">
-            <h4 class="heading">Lista de Favoritos</h4>
+            <?php if(!empty($products)){ ?>
+                <h4 class="heading">Lista de Favoritos</h4>
+            <?php }?>
+            <?php if(empty($products)){ ?>
+                <p>Não há produtos favoritados!</p>
+            <?php }?>
             <section class="list-products">
                 <?php foreach($products as $product){?>
+                <?php if($product == NULL) {?> <?php }else{?>
                     <div class="card-product">
                         <div class="picture">
                             <img src="./<?= $product->getImgBanner()?>" alt="">
                         </div>
                         <div class="body">
-                            <a class="information" href="#product">
+                            <a class="information" href="../Details/<?=$product->getId()?>">
                                 <h5><?=$product->getTitle()?></h5>
                                 <p><?=$product->getDescrition()?></p>
                             </a>
@@ -49,11 +55,12 @@
                         </div>
                     </div>
                 <?php }?>
+                <?php }?>
             </section>
             <footer>
                 <a class="btn" href="../Home"><i data-feather="arrow-left"></i>Voltar</a>
-                <?php if(isset($products)){?>
-                    <a class="btn secondary" href="../Favorites/RemoveAll"><i data-feather="trash"></i>Limpar favoritos</a>
+                <?php if(!empty($products)){?>
+                    <a class="btn secondary" href="../Favorites/Drop"><i data-feather="trash"></i>Limpar favoritos</a>
                 <?php }?>
             </footer>
         </section>

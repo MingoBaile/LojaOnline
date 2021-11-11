@@ -113,10 +113,10 @@
         $controller->details($id);
     },'get');
 
-    Route::add('/addCart',function(){
-        $controller = new Details();
+    Route::add('/addCart([a-z-0-9-]*)',function($param){
+        $controller = new Favorites();
         $controller->addCart();
-    },'post');
+    },'get');
 
     Route::add('/getUser',function(){
         $controller = new Admin();
@@ -125,12 +125,32 @@
 
     Route::add('/favorites', function() {
         $controller = new Favorites();
-        $controller->favorites();
+        $controller->getFavorites();
     },'get');
 
     Route::add('/listshopping([a-z-0-9-]*)', function($param) {
         $controller = new ListShopping();
         $controller->listshopping();
+    },'get');
+
+    Route::add('/Favorites/AddCart([a-z-0-9-]*)', function($param) {
+        $controller = new Favorites();
+        $controller->AddCart();
+    },'get');
+
+    Route::add('/Favorites/Remove([a-z-0-9-]*)', function($param) {
+        $controller = new Favorites();
+        $controller->removeFavorites();
+    },'get');
+
+    Route::add('/Favorites/Drop', function() {
+        $controller = new Favorites();
+        $controller->removeAll();
+    },'get');
+
+    Route::add('/AddFavorites([a-z-0-9-]*)', function($param) {
+        $controller = new Favorites();
+        $controller->addFavorites();
     },'get');
 
     Route::add('/orderfinish', function() {

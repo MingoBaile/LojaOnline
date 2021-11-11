@@ -1,5 +1,19 @@
 <?php 
-    
+    include_once ('app/Controller/Home.php');
+    include_once ('app/Controller/Auth.php');
+    include_once ('app/Controller/Details.php');
+    include_once ('app/Controller/Favorites.php');
+    include_once ('app/Controller/ListShopping.php');
+
+    $categoria = $_GET['categoria'];
+    $products = ListShopping::getProductCategory($categoria);
+    $categoriaLink = Home::getCatagory();
+
+    if(Auth::validation()){
+        $IdUser = $_SESSION['user']->getEmail();
+    }else{
+        $IdUser = '';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -51,7 +65,7 @@
                          <h3>R$ 459,99</h3>
                      </div>
                      <div class="actions">
-                         <button class="px-4"><i data-feather="heart"></i></button>
+                         <a class="btn px-2 <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
                          <button class="px-4"><i data-feather="trash"></i></button>
                      </div>
                 </article>

@@ -257,7 +257,7 @@ class Database{
         $sqlFavorites = 'INSERT INTO Favorites(`idUser`,`idProduct`) VALUES(:idUser,:idProduct);';
         $sql = $connect->prepare($sqlFavorites);
         $sql->bindValue(':idUser',"gilsonjosert@gmail.com");
-        $sql->bindValue(':idProduct',0);
+        $sql->bindValue(':idProduct',1);
         $sql->execute();
 
         $sql = $connect->prepare($sqlFavorites);
