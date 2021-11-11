@@ -5,9 +5,11 @@
     include_once ('app/Controller/Favorites.php');
     include_once ('app/Controller/ListShopping.php');
 
-    $categoria = $_GET['categoria'];
-    $products = ListShopping::getProductCategory($categoria);
-    $categoriaLink = Home::getCatagory();
+    $products = $_POST['products'];
+    $tot = 0;
+    $subtot = 0;
+
+    $_REQUEST['products'] = $products;
 
     if(Auth::validation()){
         $IdUser = $_SESSION['user']->getEmail();
@@ -40,50 +42,76 @@
     </navigation-top>
     <main>
         <div class="wrapper-container">
-            <h4 class="heading">Lista de Carrinho</h4>
+            <?php if(!empty($products)){ ?>
+                <h4 class="heading">Lista de Carrinho</h4>
+            <?php }?>
+            <?php if(empty($products)){ ?>
+                <p>Não há produtos no carrinho!</p>
+            <?php }?>
             <section class="list-cart">
-                <article class="cart-item">
-                     <img src="../assets/img-products/car-opala-principal.jpg" alt="Imagem do produto - Kit Opala - 6 cilindros">
-                     <div class="cart-descrition">
-                        <h4>Kit Opala SS - 6 cilindros </h4>
-                        <p>Opala SS 1979 Original 2.5...</p>
-                     </div>
-                     <div class="cart-unidade">
-                        <label for="unidade">Unidade</label>
-                        <h3>R$ 459,99</h3>
-                        <strong>R$ 500,00</strong>
-                     </div>
-                     <div class="cart-quantidade">
-                         <div class="input-number">
-                             <button class="ghost px-2"><i data-feather="minus"></i></button>
-                            <input type="number" name="quantidade" id="quantidade" min="1" value="1">
-                            <button class="ghost px-2"><i data-feather="plus"></i></button>
-                         </div>
-                     </div>
-                     <div class="tot">
-                         <label for="tot">Total</label>
-                         <h3>R$ 459,99</h3>
-                     </div>
-                     <div class="actions">
-                         <a class="btn px-2 <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
-                         <button class="px-4"><i data-feather="trash"></i></button>
-                     </div>
-                </article>
-                <article class="cart-tot">
-                    <div class="desc-total">
-                        <label for="tot">Total descontos</label>
-                        <h5>000,00</h5>
+                <?php foreach($products as $product){?>
+                    <?php
+                        $tot += $product->getPrice()*Favorites::getAmount($IdUser,$product->getId());
+                        $subtot += ($product->getPrice() + 100*6)*Favorites::getAmount($IdUser,$product->getId());
+                    ?>
+                    <div class="hide">
+                        <input type="hidden" name="" id=""/>
+                        <input type="hidden" name="" id=""/>
+                        <input type="hidden" name="" id=""/>
+                        <input type="hidden" name="" id=""/>
+                        <input type="hidden" name="" id=""/>
                     </div>
-                    <div class="sub-total">
-                        <label for="tot">Total</label>
-                        <h5>1.000,00</h5>
-                    </div>
-                </article>
+                    <?php if($product == NULL) {?> <?php }else{?>
+                        <article class="cart-item">
+                            <img src="../<?=$product->getImgBanner()?>" alt="<?=$product->getTitle()?>">
+                            <div class="cart-descrition">
+                                <h4><?=$product->getTitle()?></h4>
+                                <p><?=$product->getDescrition()?></p>
+                            </div>
+                            <div class="cart-unidade">
+                                <label for="unidade">Unidade</label>
+                                <h3><?=$product->getPrice()?></h3>
+                                <strong><?= ($product->getPrice() + 100*6) ?></strong>
+                            </div>
+                            <div class="cart-quantidade">
+                                <div class="input-number">
+                                    <button class="ghost px-2"><i data-feather="minus"></i></button>
+                                    <input type="number" name="quantidade" id="quantidade" min="1" value="<?=Favorites::getAmount($IdUser,$product->getId())?>">
+                                    <button class="ghost px-2"><i data-feather="plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="tot">
+                                <label for="tot">Total</label>
+                                <h3>R$ <?=Favorites::getAmount($IdUser,$product->getId())*$product->getPrice()?></h3>
+                            </div>
+                            <div class="actions">
+                                <a style="padding-left:0;padding-right:0;" class="btn  <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart" class="icon-1"></i></a>
+                                <a style="padding-left:0;padding-right:0;" class="btn" href="../CartShopping/Remove?q=<?= $product->getId()?>"><i data-feather="trash" class="icon-1"></i></a>
+                            </div>
+                        </article>
+                    <?php }?>
+                <?php }?>
+                <?php if(!empty($products)){ ?>
+                    <article class="cart-tot">
+                        <div class="desc-total">
+                            <label for="tot">Total descontos</label>
+                            <h5 data-subtot="<?=$subtot?>">R$ <?=$subtot?></h5>
+                        </div>
+                        <div class="sub-total">
+                            <label for="tot">Total</label>
+                            <h5 data-tot="<?=$tot?>">R$ <?=$tot?></h5>
+                        </div>
+                    </article>
+                <?php }?>
             </section>
         </div>
         <footer class="w-100 flex justify-end gap-3">
-            <button>Continuar comprando</button>
-            <button class="primary">Finalizar compra<i data-feather="arrow-right"></i></button>
+            <?php if(empty($products)){ ?>
+                <a class="btn" href="../Home"><i data-feather="arrow-left"></i>Voltar</a>
+            <?php } else { ?>
+                <a class="btn" href="../Home">Continuar comprando</a>
+                <a class="btn primary" href="../Checkout/neworder">Finalizar compra<i data-feather="arrow-right"></i></a>
+            <?php }?>
         </footer>
     </main>
     <nav class="navigation-bottom">

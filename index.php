@@ -153,6 +153,11 @@
         $controller->addFavorites();
     },'get');
 
+    Route::add('/Checkout/newOrder', function() {
+        $controller = new Address();
+        $controller->Checkout();
+    },'get');
+
     Route::add('/orderfinish', function() {
         $controller = new OrderFinish();
         $controller->orderfinish();
@@ -175,7 +180,12 @@
 
     Route::add('/cartshopping', function() {
         $controller = new CartShopping();
-        $controller->cartshopping();
+        $controller->getCartShopping();
+    },'get');
+
+    Route::add('/cartShopping/Remove([a-z-0-9-]*)', function($param) {
+        $controller = new CartShopping();
+        $controller->removeCartShopping();
     },'get');
 
     Route::add('/.*', function() {

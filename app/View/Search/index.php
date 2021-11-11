@@ -1,5 +1,16 @@
 <?php
+    include_once ('app/Controller/Auth.php');
+    include_once ('app/Controller/Details.php');
+    include_once ('app/Controller/Favorites.php');
+    include_once ('app/Controller/ListShopping.php');
+
     $products = $_POST['search'];
+
+    if(Auth::validation()){
+        $IdUser = $_SESSION['user']->getEmail();
+    }else{
+        $IdUser = '';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,7 +55,7 @@
                     <div class="card-product" id="<?= $product->getId() ?>">
                         <div class="picture">
                             <span class="flex row justify-end">
-                                <button class="px-3"><i data-feather="heart"></i></button>
+                                <a class="btn px-2 <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
                             </span>
                             <img src="../<?= $product->getImgBanner() ?>" alt="">
                             <div class="galeria hover-only">
@@ -69,8 +80,8 @@
                                     </span>
                                 </span>
                                 <div class="actions-card">
-                                    <button class="px-3 list-is-visible"><i data-feather="heart"></i></button>
-                                    <button class="px-3"><i data-feather="shopping-cart"></i></button>
+                                    <a class="btn px-2 list-is-visible <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
+                                    <a class="btn" href="../AddCart?q=<?= $product->getId()?>"><i data-feather="shopping-cart"></i></a>
                                 </div>
                                 
                             </div>

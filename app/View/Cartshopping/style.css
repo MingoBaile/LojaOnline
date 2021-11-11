@@ -10,6 +10,13 @@ main,.wrapper-container{
     gap:var(--scale-xlarge);
 }
 
+.wrapper-container>p{
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-paragraph-1);
+    font-weight: var(--font-weight-extra);
+}
+
 /* ROW */
 .cart-item,.cart-quantidade,.cart-tot,.desc-total,.sub-total{
     flex-flow:row nowrap;
@@ -70,7 +77,7 @@ main,.wrapper-container,.list-cart,.cart-descrition,.cart-unidade,.cart-quantida
 }
 
 .cart-item>.actions{
-    max-width:64px;
+    max-width:var(--scale-extra);
     justify-content: space-between;
 }
 
