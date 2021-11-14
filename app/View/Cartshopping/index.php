@@ -8,8 +8,8 @@
     $products = $_POST['products'];
     $tot = 0;
     $subtot = 0;
-
-    $_REQUEST['products'] = $products;
+    unset($_SESSION['order']);
+    $_SESSION['order'] = $products;
 
     if(Auth::validation()){
         $IdUser = $_SESSION['user']->getEmail();

@@ -211,7 +211,7 @@
                                     </span>
                                 </span>
                                 <div class="actions-card">
-                                    <a class="btn px-3 list-is-visible<?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
+                                    <a class="btn px-3 list-is-visible <?= Favorites::isFavorites($IdUser,$product->getId()) ? "is-favorite" : ""?>" href="../AddFavorites?q=<?= $product->getId()?>"><i data-feather="heart"></i></a>
                                     <a class="btn px-3" href="../AddCart?q=<?= $product->getId()?>"><i data-feather="shopping-cart"></i></a>
                                 </div>
                             </div>

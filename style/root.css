@@ -100,7 +100,7 @@ label{
 	color:var(--color-neutral-3);
 }
 
-button.small{
+button.small,a.btn.small{
 	height:var(--scale-xxlarge) !important;
 	padding: var(--scale-medium) !important;
 }
@@ -262,10 +262,70 @@ input[type="search"]::placeholder{
 	color:var(--color-neutral-2);
 }
 
-input:hover,
-select:hover {
-	background: var(--color-neutral-1);
+input:hover {
+	background:var(--color-neutral-1);
 }
+
+select:hover {
+	background:url('/assets/chevron-down.svg')
+      no-repeat right var(--scale-large) center / var(--scale-large), var(--color-neutral-1);
+}
+
+select{
+	appearance: none;
+	background:url('/assets/chevron-down.svg')
+      no-repeat right var(--scale-large) center / var(--scale-large), var(--color-principal-light);
+}
+select option{
+	min-height:var(--scale-xbig);
+	font-size:var(--font-captalize);
+	font-family: var(--font-accent);
+	color:var(--color-neutral-5);
+	font-weight: var(--font-weight-subbold);
+}
+select option:hover{
+	background: var(--color-neutral-3);
+}
+input[type="radio"]{
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	padding:0;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	min-width: var(--scale-xlarge);
+	min-height: var(--scale-xlarge);
+	border: var(--scale-xsmall) solid var(--color-neutral-3);
+	border-radius: 50%;
+	transform: translateY(-0.075em);
+	display: grid;
+  	place-content: center;
+}
+
+input[type="radio"]:focus{
+	border-radius: 50%;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: var(--scale-medium);
+  height: var(--scale-medium);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-primary-2);
+}
+
+input[type="radio"]:checked{
+	border-color: var(--color-primary-2);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
 
 .input-group{
 	display: flex;

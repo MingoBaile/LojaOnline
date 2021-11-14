@@ -64,10 +64,10 @@ class Database{
                 descrition  TEXT NOT NULL,
                 imgBanner   BLOB NOT NULL,
                 idCategoria INTEGER NOT NULL,
-                idImgGalerry INTEGER,
+                idImgsGallery INTEGER,
                 price       REAL NOT NULL,
                 FOREIGN KEY(idCategoria) REFERENCES category(id),
-                FOREIGN KEY(idImgGalerry) REFERENCES galeryProduct(id)
+                FOREIGN KEY(idImgsGallery) REFERENCES galeryProduct(id)
             )
         ');
     }
@@ -87,14 +87,16 @@ class Database{
         $connect = self::getConnection();
         $connect->exec('
             CREATE TABLE IF NOT EXISTS Address(
-                id          INTEGER PRIMARY KEY,
-                nameAddress
+                idUser      TEXT NOT NULL,
+                nameAddress TEXT NOT NULL,
                 street      TEXT NOT NULL,
                 number      INTEGER NOT NULL,
                 cep         TEXT NOT NULL,
+                state       TEXT NOT NULL,
                 district    TEXT NOT NULL,
                 country     TEXT NOT NULL,
-                complement  TEXT
+                complement  TEXT,
+                PRIMARY KEY(idUser)
             )
         ');
     }
@@ -187,13 +189,13 @@ class Database{
     static function inflateDB(){
         $connect = self::getConnection();
         // Inflate Product
-        $sqlProduct = 'INSERT INTO Product(`title`,`descrition`,`imgBanner`,`idCategoria`,`idImgGalerry`,`price`) VALUES(:title,:descrition,:imgBanner,:idCategoria,:idImgGalerry,:price);';
+        $sqlProduct = 'INSERT INTO Product(`title`,`descrition`,`imgBanner`,`idCategoria`,`idImgsGallery`,`price`) VALUES(:title,:descrition,:imgBanner,:idCategoria,:idImgsGallery,:price);';
         $sql = $connect->prepare($sqlProduct);
         $sql->bindValue(':title',"Opala SS");
         $sql->bindValue(':descrition',"Descrição do Opala SS");
         $sql->bindValue(':imgBanner','assets/img-products/car-opala-principal.jpg');
         $sql->bindValue(':idCategoria',1);
-        $sql->bindValue(':idImgGalerry',0);
+        $sql->bindValue(':idImgsGallery',0);
         $sql->bindValue(':price',1500.00);
         $sql->execute();
 
@@ -202,7 +204,7 @@ class Database{
         $sql->bindValue(':descrition',"Descrição do Ferrari");
         $sql->bindValue(':imgBanner','assets/img-products/car-ferrari-principal.jpg');
         $sql->bindValue(':idCategoria',1);
-        $sql->bindValue(':idImgGalerry',1);
+        $sql->bindValue(':idImgsGallery',1);
         $sql->bindValue(':price',7800.00);
         $sql->execute();
 
@@ -211,7 +213,7 @@ class Database{
         $sql->bindValue(':descrition',"Descrição do Fiat 147");
         $sql->bindValue(':imgBanner','assets/img-products/car-fiat147-principal.jpg');
         $sql->bindValue(':idCategoria',2);
-        $sql->bindValue(':idImgGalerry',2);
+        $sql->bindValue(':idImgsGallery',2);
         $sql->bindValue(':price',2200.00);
         $sql->execute();
 
@@ -220,7 +222,7 @@ class Database{
         $sql->bindValue(':descrition',"Descrição do Lancer");
         $sql->bindValue(':imgBanner','assets/img-products/car-lancer-principal.jpg');
         $sql->bindValue(':idCategoria',3);
-        $sql->bindValue(':idImgGalerry',4);
+        $sql->bindValue(':idImgsGallery',4);
         $sql->bindValue(':price',4500.00);
         $sql->execute();
 

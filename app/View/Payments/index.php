@@ -1,5 +1,19 @@
 <?php 
-    
+    $user = $_SESSION['user'];
+    $products = $_SESSION['order'];
+    $address = $_SESSION['address'];
+    $desc = 0;
+    $subtot = 0;
+    $tot =0;
+    foreach($products as $product){
+        $tot += $product->getPrice();
+        $subtot += ($product->getPrice() + 100*6);
+    }
+    unset($_SESSION['order']);
+    unset($_SESSION['address']);
+    $_SESSION['order'] = $products;
+    $_SESSION['address'] = $address;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +49,7 @@
         <h4 class="heading">Selecionar a forma de pagamento</h4>
         
         <div class="wrapper-container">
-            <section class="sessioncards">
+            <!-- <section class="sessioncards">
                 <div class="list-cads">
                     <div class="dcards">
                         <INPUT TYPE="RADIO" NAME="cads" VALUE="op1">
@@ -100,58 +114,55 @@
                 <div class="call-add-cads">
                     <button class="tertiary call-add-cads">Adicionar cartão<i data-feather="plus"></i></button>
                 </div>
-            </section>
+            </section> -->
             <section class="account">
                 <div class="account-data">
                     <h4 class="heading">Dados da conta</h4>
-                    <div class="daccount-data">    
-                        <span class="name">  
+                    <div class="daccount-data mt-3">
+                        <span class="name">
                             <small>Nome</small>
-                            <strong>Gilson Santos</strong>  
+                            <strong><?=$user->getName();?></strong>
                         </span>
-                        <span class="email">  
+                        <span class="email">
                             <small>E-mail </small>
-                            <strong>gilsonjosert@gmail.com</strong>  
+                            <strong><?=$user->getEmail();?></strong>
                         </span>
                     </div>
-                    <h4 class="heading">Endereço</h4>
-                    <div class="endereco">        
-                        <span class="sendereco">  
+                    <h4 class="heading mt-4">Endereço</h4>
+                    <div class="endereco mt-3">
+                        <span class="sendereco">
                             <small>Nome endereço</small>
-                            <strong>Casa principal</strong>  
+                            <strong><?=$address[0]->getNameAddress()?></strong>
                         </span>
-                        <span class="cep">  
+                        <span class="cep">
                             <small>CEP</small>
-                            <strong>79000-000</strong>  
+                            <strong><?=$address[0]->getCep()?></strong>
                         </span>
                     </div>
-                
-                    <div>
+                    <!-- <div>
                         <button class="white view-more"><i data-feather="arrow-down"></i>Ver mais</i></button>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="amount">
                     <h4 class="heading">Valor Total</h4>
                     <div class="d-amount">
-            
                         <span class="squantity">  
                             <div><small>Quantidade</small></div>
-                            <div><strong>2</strong> </div>
+                            <div><strong><?=count($products)?></strong> </div>
                         </span>
                         <span class="discount">  
                             <div><small>Desconto</small></div> 
-                            <div><strong class="price">-500,00</strong></div>
+                            <div><strong class="price">- <?=$subtot-$tot?></strong></div>
                         </span>
                         <span class="subtotal">  
                             <div><small>Sub Total</small></div>
-                            <div><strong class="price">R$ 4.000,00</strong>  </div>
+                            <div><strong class="price">R$ <?=$subtot?></strong>  </div>
                         </span>
                         <span class="total">  
                             <div><small>Total</small></div>
-                            <div><strong class="price">R$ 3.500,00</strong> </div> 
+                            <div><strong class="price">R$ <?=$tot?></strong> </div> 
                         </span>
-                        
                     </div>
                 </div>
                 <div class="finish">

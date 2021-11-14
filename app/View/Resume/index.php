@@ -1,4 +1,22 @@
 <?php 
+    $user = $_SESSION['user'];
+    $products = $_SESSION['order'];
+    $address = $_SESSION['address'];
+    $desc = 0;
+    $subtot = 0;
+    $tot =0;
+    foreach($products as $product){
+        $tot += $product->getPrice();
+        $subtot += ($product->getPrice() + 100*6);
+    }
+    $finc = array();
+    array_push($finc,$tot);
+    array_push($finc,$subtot);
+    unset($_SESSION['order']);
+    unset($_SESSION['address']);
+    $_SESSION['order'] = $products;
+    $_SESSION['address'] = $address;
+    $_SESSION['finc'] = $finc;
 
 ?>
 <!DOCTYPE html>
@@ -37,47 +55,47 @@
                 <Section class="sessioncards">
                     <div class="account-data">
                         <h4 class="heading">Dados da conta</h4>
-                        <div class="daccount-data">    
-                            <span class="name">  
+                        <div class="daccount-data mt-3">
+                            <span class="name">
                                 <small>Nome</small>
-                                <strong>Gilson Santos</strong>  
+                                <strong><?=$user->getName();?></strong>
                             </span>
-                            <span class="email">  
+                            <span class="email">
                                 <small>E-mail </small>
-                                <strong>gilsonjosert@gmail.com</strong>  
+                                <strong><?=$user->getEmail();?></strong>
                             </span>
                         </div>
-                        <div>
+                        <!-- <div>
                             <button class="white view-more"><i data-feather="arrow-down"></i>Ver mais</i></button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="account-data">
                         <h4 class="heading">Endereço</h4>
-                        <div class="endereco">        
+                        <div class="endereco mt-3">        
                             <span class="sendereco">  
                                 <small>Nome endereço</small>
-                                <strong>Casa principal</strong>  
+                                <strong><?=$address[0]->getNameAddress()?></strong>  
                             </span>
                             <span class="cep">  
                                 <small>CEP</small>
-                                <strong>79000-000</strong>  
+                                <strong><?=$address[0]->getCep()?></strong>  
                             </span>
                         </div>
-                        <div class="endereco">
+                        <div class="endereco mt-3">
                             <span class="logradouro">  
                                 <small>Logradouro</small>
-                                <strong>Rua</strong>  
+                                <strong><?=$address[0]->getStreet()?></strong>  
                             </span>
                             <span class="numero">  
                                 <small>Número</small>
-                                <strong>100</strong>  
+                                <strong><?=$address[0]->getNumber()?></strong>  
                             </span>
                         </div>
-                        <div>
+                        <!-- <div>
                             <button class="white view-more"><i data-feather="arrow-down"></i>Ver mais</i></button>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="account-data">
+                    <!-- <div class="account-data">
                         <h4 class="heading">Pagamento</h4>
                         <div class="dpagamento">        
                             <span class="spagamento">  
@@ -106,71 +124,48 @@
                         <div>
                             <button class="white view-more"><i data-feather="arrow-down"></i>Ver mais</i></button>
                         </div>                     
-                    </div>
+                    </div> -->
                 </Section>
                 <section class="list-products sessioncards">
-                    <section class="account-data sessioncards list-products">
-                        <h4 class="heading">Produtos</h4>
-                    <div class="card-product">
-                        <div class="picture">
-                            <img src="../assets/img-products/car-opala-principal.jpg" alt="">
+                    <div class="products">
+                        <div class="tile">
+                            <h4>Produtos</h4>
+                            <a href="../Cartshopping" class="btn small"><i data-feather="edit" class="icon-1"></i></a>
                         </div>
-                        <div class="body">
-                            <a class="information" href="#product">
-                                <h5>Kit Opala SS - 6 cilindros </h5>
-                                <p>Opala SS 1979 Original 2.5...</p>
-                            </a>
-                        </div>
-                        <div class="value hover-only">
-                            <div class="actions-card">
-                                <button class="px-3"><i data-feather="trash"></i></button>
-                            </div>
-                        </div>
+                        <?php foreach($products as $key => $product){ ?>
+                            <article class="account-product">
+                                <img src="../<?=$product->getImgBanner()?>" alt="<?=$product->getTitle()?>">
+                                <div class="body">
+                                    <h4><?=$product->getTitle()?></h4>
+                                    <p><?=$product->getDescrition()?></p>
+                                </div>
+                            </article>
+                        <?php }?>
                     </div>
-                    <div class="card-product">
-                        <div class="picture">
-                            <img src="../assets/img-products/car-opala-principal.jpg" alt="">
-                        </div>
-                        <div class="body">
-                            <a class="information" href="#product">
-                                <h5>Kit Opala SS - 6 cilindros </h5>
-                                <p>Opala SS 1979 Original 2.5...</p>
-                            </a>
-                        </div>
-                        <div class="value hover-only">
-                            <div class="actions-card">
-                                <button class="px-3"><i data-feather="trash"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    </section>
-                    
                     <div class="amount">
                         <h4 class="heading">Valor Total</h4>
                         <div class="d-amount">
-                
                             <span class="squantity">  
                                 <div><small>Quantidade</small></div>
-                                <div><strong>2</strong> </div>
+                                <div><strong><?=count($products)?></strong> </div>
                             </span>
                             <span class="discount">  
                                 <div><small>Desconto</small></div> 
-                                <div><strong class="price">-500,00</strong></div>
+                                <div><strong class="price">- <?=$subtot-$tot?></strong></div>
                             </span>
                             <span class="subtotal">  
                                 <div><small>Sub Total</small></div>
-                                <div><strong class="price">R$ 4.000,00</strong>  </div>
+                                <div><strong class="price">R$ <?=$subtot?></strong>  </div>
                             </span>
                             <span class="total">  
                                 <div><small>Total</small></div>
-                                <div><strong class="price">R$ 3.500,00</strong> </div> 
+                                <div><strong class="price">R$ <?=$tot?></strong> </div> 
                             </span>
-                            
                         </div>
                     </div>
                     <span class="finish">
                         <a href="../Payments" class="btn"><i data-feather="arrow-left"></i>Volta</a>
-                        <a href="../Home" class="btn primary">Finalizar Compra<i data-feather="arrow-right"></i></a>    
+                        <a href="../OrderFinish" class="btn primary">Finalizar Compra<i data-feather="arrow-right"></i></a>    
                     </span>
                 </section>
             </section>

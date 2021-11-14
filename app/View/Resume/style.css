@@ -138,6 +138,46 @@ nav .nav-container{
     border-radius: var(--scale-small);
 }
 
+section>.products{
+    display: flex;
+    gap:var(--scale-medium);
+    flex-flow:column nowrap;
+    padding: var(--scale-large);
+    justify-content: center;
+
+    background:var(--color-principal-light);
+    border-radius: var(--radius-small);
+}
+
+section>.products>.tile{
+    display: flex;
+    gap:var(--scale-large);
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-heading-x1);
+}
+
+.account-product{
+    user-select: none;
+    display: flex;
+    gap:var(--scale-large);
+    flex-flow:row nowrap;
+    padding: var(--scale-medium);
+    align-items: center;
+
+    background:var(--color-principal-light);
+    border-radius: var(--radius-small);
+    border:var(--scale-xxsmall) solid var(--color-neutral-1);
+}
+
+.account-product > img{
+    width:var(--scale-xxbig);
+    height:var(--scale-xxbig);
+    border-radius: var(--radius-small);
+
+}
+
 .colunns{
     width: 100%;
     display: flex;

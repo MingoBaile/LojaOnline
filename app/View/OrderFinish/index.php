@@ -1,5 +1,10 @@
 <?php 
-    
+    $products = $_SESSION['order'];
+    $address = $_SESSION['address'];
+    $finc = $_SESSION['finc'];
+    unset($_SESSION['order']);
+    unset($_SESSION['address']);
+    unset($_SESSION['finc']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

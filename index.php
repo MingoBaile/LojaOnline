@@ -173,6 +173,16 @@
         $controller->address();
     },'get');
 
+    Route::add('/address/insertAddress', function() {
+        $controller = new Address();
+        $controller->insertAddress();
+    },'post');
+
+    Route::add('/address/Remove([a-z-0-9-]*)', function($param) {
+        $controller = new Address();
+        $controller->removeAddress();
+    },'get');
+
     Route::add('/resume', function() {
         $controller = new Resume();
         $controller->resume();

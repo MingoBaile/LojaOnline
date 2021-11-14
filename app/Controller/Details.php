@@ -8,13 +8,13 @@ class Details extends Controller{
     public function details($id){
         $idProduct = $id;
         $db = Database::getConnection();
-        $sql = $db->prepare('SELECT id, title, descrition, imgBanner, idCategoria, idImgGalerry, price FROM Product WHERE id = :id');
+        $sql = $db->prepare('SELECT id, title, descrition, imgBanner, idCategoria, idImgsGallery, price FROM Product WHERE id = :id');
         $sql->bindValue(':id',$idProduct);
         $sql->execute();
 
         $data = $sql->fetch();
         if(!isset($data)) die();
-        $product = new Product($data['id'],$data['title'],$data['descrition'],$data['idCategoria'],$data['price'],$data['imgBanner'],$data['idImgGalerry']);
+        $product = new Product($data['id'],$data['title'],$data['descrition'],$data['idCategoria'],$data['price'],$data['imgBanner'],$data['idImgsGallery']);
         $_POST['product'] = $product;
         $this->view("Details");
     }

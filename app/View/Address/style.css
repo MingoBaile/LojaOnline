@@ -141,11 +141,14 @@ nav .nav-container{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap:var(--scale-large);
     border-radius: var(--scale-xsmall);
 }
 
 .dcards>.body{
     width: 100%;
+    user-select: none;
+    color:var(--color-neutral-4);
 }
 
 .scards{
@@ -205,23 +208,46 @@ nav .nav-container{
     gap: var(--scale-xxlarge)
 }
 
-.account-data, .amount{
-    background-color: var(--color-principal-light);
+section>.products{
+    display: flex;
+    gap:var(--scale-medium);
+    flex-flow:column nowrap;
     padding: var(--scale-large);
-    border-radius: var(--scale-xsmall);
+    justify-content: center;
+
+    background:var(--color-principal-light);
+    border-radius: var(--radius-small);
 }
 
-.daccount-data, .endereco{
-
+section>.products>.tile{
     display: flex;
-    flex-direction: row;
+    gap:var(--scale-large);
+    flex-flow:row nowrap;
     justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-heading-x1);
 }
 
-.name, .email, .sendereco, .cep{
+.account-data{
+    user-select: none;
     display: flex;
-    flex-direction: column;
+    gap:var(--scale-large);
+    flex-flow:row nowrap;
+    padding: var(--scale-medium);
+    align-items: center;
+
+    background:var(--color-principal-light);
+    border-radius: var(--radius-small);
+    border:var(--scale-xxsmall) solid var(--color-neutral-1);
 }
+
+.account-data > img{
+    width:var(--scale-xxbig);
+    height:var(--scale-xxbig);
+    border-radius: var(--radius-small);
+
+}
+
 
 .view-more{
     width:100%;

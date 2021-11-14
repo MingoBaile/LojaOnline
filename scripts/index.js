@@ -99,6 +99,15 @@ inputNumber.forEach(input =>{
     });
 });
 
+const notification = document.querySelectorAll(".notification");
+
+notification.forEach(el=>{
+    const close = el.querySelector('a');
+    close.addEventListener('click',item=>{
+        el.remove();
+    })
+});
+
 const notifications = document.querySelectorAll(".notification");
 if(notifications != undefined || notifications != null){
     for(var i=0;i<notifications.length;i++){
