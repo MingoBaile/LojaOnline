@@ -15,7 +15,7 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] Carrinho					Gilson [_] Back End Jeferson
 - [X] Endereço					Gilson [_] Back End Diogo
 - [X] Pagamento				  Jeferson [_] Back End Jeferson
-- [ ] Resumo				  Jeferson [_] Back End Jeferson
+- [X] Resumo				  Jeferson [_] Back End Jeferson
 - [X] OrderFinish				Gilson [_] Back End Diogo
 
 ## Histórias de Usuário
