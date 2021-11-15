@@ -12,18 +12,18 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [X] Login						Gilson [_] Back End Diogo
 - [X] Detalhe item				Gilson [_] Back End	Gilson
 - [X] Favoritos				  Jeferson [_] Back End Jeferson prazo para entrega 10/10
-- [ ] Carrinho					Gilson [_] Back End Jeferson
+- [X] Carrinho					Gilson [_] Back End Jeferson
 - [X] Endereço					Gilson [_] Back End Diogo
 - [X] Pagamento				  Jeferson [_] Back End Jeferson
 - [ ] Resumo				  Jeferson [_] Back End Jeferson
 - [X] OrderFinish				Gilson [_] Back End Diogo
 
 ## Histórias de Usuário
-- [ ] Navegar por uma lista de produtos
-- [ ] Buscar por produtos através do nome
-- [ ] Visualizar detalhes de um produto
-- [ ] Navegar por categorias
-- [ ] Adicionar produtos à sacola de compras
+- [X] Navegar por uma lista de produtos
+- [X] Buscar por produtos através do nome
+- [X] Visualizar detalhes de um produto
+- [X] Navegar por categorias
+- [X] Adicionar produtos à sacola de compras
 - [ ] Finalizar uma compra
 
 ## Histórias Bônus
