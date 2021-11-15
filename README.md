@@ -33,7 +33,7 @@ Loja online é uma aplicação que permite clientes selecionem e comprem produto
 - [ ] Se cadastrar para receber novidades
 
 ```sh
-cd src
+php -S localhost:8888 -t .
 ```
 
 ## Colaboradores do projeto
